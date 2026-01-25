@@ -9,9 +9,11 @@
 
 
 
-1. 关闭所有模块，重启设备。
+## **Step 1**:
+关闭所有模块，重启设备。
 
-2. 重启后在内置存储根目录放置原始 `boot` 镜像 `original.img` 和拥有 Root 的镜像（以 `KernelSU` 为例） `ksu.img` 。确认自己设备的槽位：
+## **Step 2**:
+重启后在内置存储根目录放置原始 `boot` 镜像 `original.img` 和拥有 Root 的镜像（以 `KernelSU` 为例） `ksu.img` 。确认自己设备的槽位：
    
    ```bash
    su -c getprop ro.boot.slot_suffix
@@ -33,9 +35,11 @@
    
    **现在不要重启设备！**
 
-3. 正常更新系统。如成功，转到 [步骤5](#update_while_keeping_root_step5) ，如失败，转到 [步骤4](#update_while_keeping_root_step4)。
+## **Step 3**:
+正常更新系统。如成功，转到 [步骤5](#update_while_keeping_root_step5) ，如失败，转到 [步骤4](#update_while_keeping_root_step4)。
 
-4. 如果更新进度条没走完就提示 *当前已是最新版本* 并收到 *安装更新失败* 的通知，说明本方法不适合，用 `dd` 命令刷回你原来的镜像：<a id="update_while_keeping_root_step4"></a>
+## **Step 4**:
+如果更新进度条没走完就提示 *当前已是最新版本* 并收到 *安装更新失败* 的通知，说明本方法不适合，用 `dd` 命令刷回你原来的镜像：<a id="update_while_keeping_root_step4"></a>
    
    - 如果当前在 `A` 槽位：
      
@@ -49,7 +53,8 @@
      su -c dd if=ksu.img of=/dev/block/by-name/boot_b
      ```
 
-5. 在提示 *重启设备以完成更新* 时，回到终端模拟器 *依次键入* 下面的命令：<a id="update_while_keeping_root_step5"></a>
+## **Step 5**:
+在提示 *重启设备以完成更新* 时，回到终端模拟器 *依次键入* 下面的命令：<a id="update_while_keeping_root_step5"></a>
    
    - 如果当前在 `A` 槽位，重启后会处于 `B` 槽位：
    
@@ -71,4 +76,5 @@
    blockdev --setro /dev/block/by-name/boot_a
    ```
 
-6. 重启设备，完成系统更新。现在应当仍旧拥有 Root 权限。
+## **Step 6**:
+重启设备，完成系统更新。现在应当仍旧拥有 Root 权限。
