@@ -6,6 +6,7 @@ hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“读读友好的手册”"
   tagline: --no_clever_tagline_needed
+  image: /logo.jpg
   actions:
     - theme: brand
       text: 从头阅读

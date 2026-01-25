@@ -5,6 +5,7 @@ export default defineConfig({
   title: "酷安Pad Pro GT 交流群 文档站",
   description: "--no_clever_tagline_needed",
   themeConfig: {
+    siteTitle: 'TB710FU Doc',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
@@ -36,7 +37,12 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'gitee', link: 'https://gitee.com/WASDDestroy/tb710fu-doc' }
+    ],
+
+    footer: {
+      copyright: 'Copyright © 2025-至今， Coolapk @WASD_Destroy 和 Coolapk @fhh730 ，采用 CC BY-SA 4.0 许可'
+    }
+    
   }
 })
