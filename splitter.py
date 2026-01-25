@@ -32,6 +32,7 @@ with open(fileName, "r", encoding="utf-8") as myFile:
         myOutputFile.write(fileReader)
         
         fileReader = myFile.readline()
+        # Fix dead lock
         while fileReader and not fileReader.startswith("## "):
             myOutputFile.write(fileReader)
             fileReader = myFile.readline()
