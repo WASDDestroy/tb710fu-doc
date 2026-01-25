@@ -41,7 +41,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: 'Copyright © 2025-至今， Coolapk @WASD_Destroy 和 Coolapk @fhh730 ，采用 CC BY-SA 4.0 许可'
+      copyright: 'Copyright © 2025-至今， 酷安 @WASD_Destroy 和 @fhh730 ，采用 CC BY-SA 4.0 许可'
     }
     
   }
