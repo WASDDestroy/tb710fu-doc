@@ -1,3 +1,8 @@
+01/25
+按照章节分割文档
+删除了目录部分，用 vitepress 自带的导航栏替代
+提供 vitepress 所需的文件树，安装 vitepress 之后直接复制到 vitepress 所在目录即可使用
+
 01/23
 合并了保留 Root 进行系统更新的教程
 
