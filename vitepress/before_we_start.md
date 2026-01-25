@@ -1,8 +1,10 @@
 # 写在开始之前
 
-> Reversion 3, 2026/01, Authored by @追风筝的人[（CoolApk @WASD_Destroy）](http://www.coolapk.com/u/18634835) & @Y [（CoolApk @fhh730）](http://www.coolapk.com/u/4386408)
+> 2026/01, 修订4
+> 作者：@追风筝的人[（CoolApk @WASD_Destroy）](http://www.coolapk.com/u/18634835)
+> & @Y [（CoolApk @fhh730）](http://www.coolapk.com/u/4386408)
 > 
-> No clever tagline needed.
+> "No clever tagline needed."
 
 你好！我是这份文档的维护者。  
 我无法保证实时解答所有问题，但**认真阅读本文很可能让你的问题迎刃而解**，也能减少群友重复回答相同问题的负担。
