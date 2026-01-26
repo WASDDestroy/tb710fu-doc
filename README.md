@@ -1,8 +1,10 @@
+# TB710FU Doc
+
 这是酷安Pad Pro GT 交流群的文档仓库！
 
 本仓库主要用于群内有意向合作的成员进行版本控制。
 
-现已完成 vitepress 化，要使用 vitepress 预览网页，遵循下面的步骤：
+## 现已完成 vitepress 化，要使用 vitepress 预览网页，遵循下面的步骤：
 
 1. 安装 node.js
 
@@ -50,3 +52,11 @@ pnpm docs:build
 
 > [!warning]
 > 每次输出构建内容时记得提前清空或者删除 `dist` 文件夹！
+
+## TODO
+[ ] 通用救砖包教程
+[ ] avbtool 教程 和 AVB2.0 解析
+[ ] dd 教程
+[ ] 迁移 打开USB调试 安装9008驱动 安装ADB驱动 三部分内容
+[ ] rawprogram.xml解析
+[ ] 其他可读性优化和重排
