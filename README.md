@@ -59,7 +59,7 @@ pnpm docs:build
 
 - [ ] avbtool 教程 和 AVB2.0 解析
 
-- [ ] dd 教程
+- [x] dd 教程
 
 - [ ] 迁移 打开USB调试 安装9008驱动 安装ADB驱动 三部分内容
 
