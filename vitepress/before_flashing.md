@@ -114,7 +114,7 @@ adb reboot edl
 确认上述文件都存在后，底层备份工作就完成了。要知道怎样使用备份，请跳转到 [刷入第三方ROM或者备份](./flash_3rd_party_rom.md)。
 
 > [!tip]
-> 可以在这里找到[通用救砖包的制作方法](./how_to_make_generic_pc_firmware.md)。
+> 可以在这里找到[通用救砖包的制作方法](./make_generic_pc_firmware.md)。
 
 ## （2）用户数据备份
 如果你获取了 Root 权限，请自行使用"数据备份"APP，否则自行解决。
