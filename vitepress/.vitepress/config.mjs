@@ -33,6 +33,7 @@ export default defineConfig({
           { text: '刷入第三方 ROM、救砖包，和自己创建的备份', link: '/flash_3rd_party_rom' },
           { text: '常见问题速查', link: '/faq' },
           { text: '扩展: dd命令', link: '/dd_command' },
+          { text: '制作通用 9008 包', link: '/make_generic_pc_firmware'},
         ]
       }
     ],
