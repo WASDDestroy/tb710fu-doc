@@ -49,6 +49,8 @@
 
 若你对计算机基础（如文件系统、权限、网络）不熟悉，推荐阅读：[《你缺失的那门计算机课》](https://www.criwits.top/missing/)（涵盖从文件管理到 AI 的系统入门）。
 
+关于 Android 的文档可以访问 Google 的文档站：[Android 操作系统文档](https://source.android.google.cn/docs?hl=zh-cn)，本教程的写作就参考了其中的部分文档。
+
 ## 💬 反馈与共建
 
 发现错误？有改进建议？欢迎在群内 @追风筝的人 或私聊。  
