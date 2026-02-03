@@ -43,7 +43,8 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: 'Copyright © 2025-至今， 酷安 @WASD_Destroy 和 @fhh730 ，采用 CC BY-SA 4.0 许可'
+      message: '<a href="http://beian.miit.gov.cn" target="_blank">浙ICP备2025219672号-1</a>',
+      copyright: 'Copyright © 2025 - 至今， 酷安 @WASD_Destroy 和 酷安 @fhh730 ，采用 CC BY-SA 4.0 许可'
     }
     
   }
