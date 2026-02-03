@@ -48,8 +48,8 @@ export default defineConfig({
         items: [
           { text: '序言', link: '/before_we_start' },
           { text: '提问的智慧', link: '/how_to_ask' },
-          { text: '可解锁设备怎样玩机', link: '/flash_unlocked_device' },
-          { text: '前置知识和术语', link: '/glossary' },
+          { text: '刷机必修一', link: '/flash_unlocked_device' },
+          { text: '术语表', link: '/glossary' },
           { text: '刷机工具教程——高通工具箱', link: '/qcom_toolbox' },
           { text: '刷机工具教程——匣', link: '/geekflashtool' },
           { text: '刷机前必做', link: '/before_flashing' },

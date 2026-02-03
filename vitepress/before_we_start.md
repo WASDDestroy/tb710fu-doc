@@ -28,7 +28,7 @@
 
 ## 🧭 根据你的经验，这样阅读更高效
 
-- **完全新手**？从 [完整的可解锁设备刷机流程](./flash_unlocked_device.md) 开始。
+- **完全新手**？从 [刷机必修一](./flash_unlocked_device.md) 和 [提问的智慧](./how_to_ask.md) 开始。
 - **会刷机但不懂 9008**？先看 [术语表](./glossary.md) 了解分区、EDL、Firehose 等概念。
 - **明白基本概念，准备上路实习**? 看 [刷机前准备](./before_flashing.md) 即可万事大吉。
 - **熟悉 9008**？直接跳转到 [GKI Root 教程](./flash_gki_root.md)、[LKM Root 教程 - 9008版](./flash_lkm_root_9008.md) 或 [第三方 ROM 刷写](./flash_3rd_party_rom.md)。
