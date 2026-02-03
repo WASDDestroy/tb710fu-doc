@@ -18,7 +18,7 @@
 |         图片 1            |          图片 2           |
 
 > [!note]
-> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./geekflashtool.md#Install_Driver) 进行学习。
+> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
 
 下面开始正式教程：
 

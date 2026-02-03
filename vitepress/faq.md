@@ -33,7 +33,7 @@ _所有方法已测试可用，如果仍旧遇到问题请继续读下一问_
 > [!tip]
 > 建议使用刷机匣提供的驱动，它不会产生签名问题。
 > 
-> 如果你不会安装，跳转到 [安装驱动](./geekflashtool.md#Install_Driver) 进行学习。
+> 如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
 
 2. 设备是否已经完全关机？请使用组合键**电源+音量减**强制重启设备。
 
@@ -199,9 +199,9 @@ _图 3：fastboot 选项中的"启动到另一个替代槽位"_
 
 ## **问 16：欸，怎么我 ADB 命令全报错了？怎么执行了之后没反应？**
 
-先看看 `ADB` 和 `fastboot` 工具是不是没装上，[这里](./before_flashing.md#Install_ADB)有详细的 `ADB` 安装步骤。
+先看看 `ADB` 和 `fastboot` 工具是不是没装上，[这里](./flash_unlocked_device.md#Install_ADB)有详细的 `ADB` 安装步骤。
 
-如果 `ADB` 已正确安装，检查一下命令是否错误，再看看 USB 连接是否正常， [USB 调试](./before_flashing.md#USB_Debugging) 是否开启。
+如果 `ADB` 已正确安装，检查一下命令是否错误，再看看 USB 连接是否正常， [USB 调试](./flash_unlocked_device.md#USB_Debugging) 是否开启。
 
 ---
 

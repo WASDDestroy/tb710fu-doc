@@ -29,7 +29,7 @@ GKI Root 对于官方和第三方 ROM 都适用。
 
 
 > [!note]
-> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./geekflashtool.md#Install_Driver) 进行学习。
+> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
 
 
 ## **Step 0**:
@@ -45,7 +45,7 @@ GKI Root 对于官方和第三方 ROM 都适用。
 ![](./media/image28.webp)
 
 > [!tip]
-> 如果上面的步骤不生效，将平板开机，[打开 USB 调试](./before_flashing.md#USB_Debugging)，电脑[安装 ADB 工具](./before_flashing.md#Install_ADB)，然后在电脑端按组合键 `Win+R` 打开"运行"对话框，输入 `cmd`，打开命令提示符，输入`adb reboot edl`，即可重启到 9008 模式。
+> 如果上面的步骤不生效，将平板开机，[打开 USB 调试](./flash_unlocked_device.md#USB_Debugging)，电脑[安装 ADB 工具](./flash_unlocked_device.md#Install_ADB)，然后在电脑端按组合键 `Win+R` 打开"运行"对话框，输入 `cmd`，打开命令提示符，输入`adb reboot edl`，即可重启到 9008 模式。
 
 设备管理器出现如下图红线划出的 `9008 结尾的设备`就证明进入 9008 模式成功。
 ![](./media/image29.webp)

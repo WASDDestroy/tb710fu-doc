@@ -30,7 +30,7 @@
 
 
 > [!note]
-> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./geekflashtool.md#Install_Driver) 进行学习。
+> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
 
 
 ## **Step 0**:
@@ -51,7 +51,7 @@
 现在将设备重启到 9008 模式：关机， **按住** 音量加，并插入数据线，设备应当先显示充电符号，并在几秒钟后黑屏，且电脑发出插入设备的提示音。这时可以 **松开音量键** ，准备在电脑端发送引导。
 
 > [!tip]
-> 如果无法进入，将平板开机，[打开 USB 调试](./before_flashing.md#USB_Debugging)，电脑上[安装 ADB 工具](./before_flashing.md#Install_ADB)，然后在电脑上输入命令`adb reboot edl`即可进入 9008 模式。
+> 如果无法进入，将平板开机，[打开 USB 调试](./flash_unlocked_device.md#USB_Debugging)，电脑上[安装 ADB 工具](./flash_unlocked_device.md#Install_ADB)，然后在电脑上输入命令`adb reboot edl`即可进入 9008 模式。
 
 发送引导方式：
 
