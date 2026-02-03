@@ -224,7 +224,14 @@ adb --version
 >
 > 3. 用户门槛降低，破坏用户设备变得更容易：用户只需要下载并刷入模块，潜在的消去了“下载并知道我所更改的每一个文件”的步骤，导致恶意代码容易藏身于模块中。且模块痕迹基本不残留在更改的文件中，导致作恶后难以追踪“幕后凶手”。[案例 - zygisk.apk 事件](https://www.coolapk.com/feed/67763977?s=MDEzNGI4OWYxMWM1ODUzZzY5Nzc2M2Rhega1590)
 
-1. **小新 Pro GT 用户可以不看这条** 如果 Magisk 版本低：神仙自动救砖 / 音量键自动救砖
+> [!tip] 我们应该怎么做？
+> 1. 永远只从官方发布源下载模块，例如下载 Zygisk Next 应当访问他们的 GitHub Releases 页面（也就是[这里](https://github.com/Dr-TSNG/ZygiskNext/releases)）
+>
+> 2. 不能确定模块的用途、适用环境和用法则不要刷入；
+>
+> 3. 大道至简，少刷玄学模块，减少模块数量。
+
+1. **小新 Pro GT 用户可以不看这条 ->** 如果 Magisk 版本低：神仙自动救砖 / 音量键自动救砖
 
 2. Zygisk Next: 一切需要 Zygisk 框架的模块的基石
 
