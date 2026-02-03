@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lastUpdated: true,
   title: "酷安Pad Pro GT 交流群 文档站",
   description: "--no_clever_tagline_needed",
   themeConfig: {
