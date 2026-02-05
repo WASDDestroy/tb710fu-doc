@@ -1,4 +1,4 @@
-# 保留 Root 权限进行系统更新
+# 保留 用户数据 和 Root 权限进行系统更新
 
 > [!warning]
 > 此为进阶玩法，不建议没有命令行基础的用户进行操作。
@@ -24,13 +24,13 @@
    如果当前在 `A` 槽位：
    
    ```bash
-   su -c dd if=original.img of=/dev/block/by-name/boot_a
+   su -c dd if=/sdcard/original.img of=/dev/block/by-name/boot_a
    ```
    
    如果当前在 `B` 槽位：
    
    ```bash
-   su -c dd if=original.img of=/dev/block/by-name/boot_b
+   su -c dd if=/sdcard/original.img of=/dev/block/by-name/boot_b
    ```
    
    **现在不要重启设备！**
@@ -44,13 +44,13 @@
    - 如果当前在 `A` 槽位：
      
      ```bash
-     su -c dd if=ksu.img of=/dev/block/by-name/boot_a
+     su -c dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_a
      ```
    
    - 如果当前在 `B` 槽位：
      
      ```bash
-     su -c dd if=ksu.img of=/dev/block/by-name/boot_b
+     su -c dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_b
      ```
 
 ## **Step 5**:
@@ -62,7 +62,7 @@
    su
    blockdev --setrw /dev/block/by-name/boot_b
    dd if=/dev/block/by-name/boot_b of=/sdcard/next_version_boot.img
-   dd if=ksu.img of=/dev/block/by-name/boot_b
+   dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_b
    blockdev --setro /dev/block/by-name/boot_b
    ```
    
@@ -72,7 +72,7 @@
    su
    blockdev --setrw /dev/block/by-name/boot_a
    dd if=/dev/block/by-name/boot_a of=/sdcard/next_version_boot.img
-   dd if=ksu.img of=/dev/block/by-name/boot_a
+   dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_a
    blockdev --setro /dev/block/by-name/boot_a
    ```
 
