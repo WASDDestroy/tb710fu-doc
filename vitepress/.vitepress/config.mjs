@@ -60,7 +60,7 @@ export default defineConfig({
           { text: '刷入 TWRP', link: '/flash_twrp' },
           { text: '使用 TWRP 刷入 KernelSU LKM', link: '/flash_lkm_root_twrp' },
           { text: '解除 Root', link: '/unroot' },
-          { text: '保留 Root 权限进行系统更新', link: '/update_while_keeping_root' },
+          { text: '保留 用户数据 和 Root 权限进行系统更新', link: '/update_while_keeping_root' },
           { text: '刷入第三方 ROM、救砖包，和自己创建的备份', link: '/flash_3rd_party_rom' },
           { text: '常见问题速查', link: '/faq' },
           { text: '扩展: dd命令', link: '/dd_command' },
