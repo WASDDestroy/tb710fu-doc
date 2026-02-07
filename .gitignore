@@ -2,3 +2,4 @@
 /vitepress/.vitepress/cache/
 /vitepress/.vitepress/theme/
 /vitepress/.vitepress/dist/
+/vitepress/pnpm-lock.yaml
