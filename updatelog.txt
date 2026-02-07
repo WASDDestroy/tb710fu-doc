@@ -1,3 +1,8 @@
+02/07
+更新 update_while_keeping_root.md 的标题和对应侧栏条目的标题
+重写 comparison_and_warning.md
+修正 before_flashing.md 中错误的文件数目
+
 02/05
 通过增加.gitignore保证vitepress的缓存和依赖不会被提交到仓库，从而允许vitepress直接部署到Git工作目录，进而修复了文档“最后一次编辑时间”无法被正确显示的问题
 
