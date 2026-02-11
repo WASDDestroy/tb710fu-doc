@@ -15,8 +15,11 @@ hero:
       text: 疑难解答
       link: /faq
     - theme: alt
-      text: Root 相关
+      text: 安装 Root
       link: /state_machine
+    - theme: alt
+      text: 卸载 Root
+      link: /state_machine#UnRoot
 
 features:
   - title: 免解锁 Root 设备
