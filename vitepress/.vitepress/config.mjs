@@ -42,6 +42,7 @@ export default defineConfig({
     nav: [
       { text: "主页", link: "/" },
       { text: "开始了解", link: "/before_we_start" },
+      { text: "更新日志", link: "/updatelog" },
     ],
 
     sidebar: [
