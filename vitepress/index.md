@@ -21,6 +21,8 @@ hero:
 features:
   - title: 免解锁 Root 设备
     details: 使用一些简单有效的技巧刷入可启动的 Root 镜像
+  - title: 解除 Root
+    details: “往返自然”
   - title: 刷入第三方 ROM
     details: “愿你刷机半生，归来仍是 ZUXOS”
   - title: 更多进阶内容
