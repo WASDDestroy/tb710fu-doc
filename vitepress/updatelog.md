@@ -2,6 +2,9 @@
 
 ## 02/11
 
+- 为 Root 导航增加次级标题
+- 在主页区分 安装 Root 和 卸载 Root
+- 修正若干显示和明确性方面的问题
 - 重构 Root 教程相关部分
 - 添加 Root 导航（state_machine.md）
 
