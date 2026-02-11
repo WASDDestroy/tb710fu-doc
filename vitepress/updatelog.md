@@ -2,6 +2,7 @@
 
 ## 02/11
 
+- 重构 Root 教程相关部分
 - 添加 Root 导航（state_machine.md）
 
 ## 02/07
