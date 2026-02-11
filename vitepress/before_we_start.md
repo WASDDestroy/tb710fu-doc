@@ -2,8 +2,6 @@
 
 > 修订4，修订工作于2026/01开始。
 >
-> 上一次修改：2026/02/03, WASDDestroy
->
 > 作者：
 >
 > @追风筝的人[（酷安 @WASD_Destroy）](http://www.coolapk.com/u/18634835)
