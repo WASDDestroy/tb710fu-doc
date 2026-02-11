@@ -50,7 +50,7 @@
 
 - **明白基本概念，准备上路实习**? 看 [刷机前准备](./before_flashing.md) 即可万事大吉。
 
-- **熟悉 9008**？直接跳转到 [GKI Root 教程](./flash_gki_root.md)、[LKM Root 教程 - 9008版](./flash_lkm_root_9008.md) 或 [第三方 ROM 刷写](./flash_3rd_party_rom.md)。
+- **熟悉 9008**？直接跳转到 [Root 导航](./state_machine.md) 或 [第三方 ROM 刷写](./flash_3rd_party_rom.md)。
 
 - **遇到问题**？先查 [FAQ](./faq.md)！
 

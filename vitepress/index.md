@@ -14,6 +14,9 @@ hero:
     - theme: alt
       text: 疑难解答
       link: /faq
+    - theme: alt
+      text: Root 相关
+      link: /state_machine
 
 features:
   - title: 免解锁 Root 设备

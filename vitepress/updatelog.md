@@ -1,5 +1,9 @@
 # 更新日志
 
+## 02/11
+
+- 添加 Root 导航（state_machine.md）
+
 ## 02/07
 
 - 更新 update_while_keeping_root.md 的标题和对应侧栏条目的标题
