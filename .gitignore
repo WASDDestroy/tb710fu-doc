@@ -1,5 +1,5 @@
-/vitepress/node_modules/
-/vitepress/.vitepress/cache/
-/vitepress/.vitepress/theme/
-/vitepress/.vitepress/dist/
-vitepress/pnpm-lock.yaml
+/node_modules/
+/.vitepress/cache/
+/.vitepress/theme/
+/.vitepress/dist/
+/pnpm-lock.yaml
