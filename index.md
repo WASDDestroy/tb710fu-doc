@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“联想奇迹”"
-  tagline: --no_clever_tagline_needed
+  tagline: --final_version?
   image: /logo.jpg
   actions:
     - theme: brand
@@ -15,17 +15,12 @@ hero:
       text: 疑难解答
       link: /faq
     - theme: alt
-      text: 安装 Root
+      text: Root相关
       link: /state_machine
-    - theme: alt
-      text: 卸载 Root
-      link: /state_machine#UnRoot
 
 features:
   - title: 免解锁 Root 设备
     details: 使用一些简单有效的技巧刷入可启动的 Root 镜像
-  - title: 解除 Root
-    details: “往返自然”
   - title: 刷入第三方 ROM
     details: “愿你刷机半生，归来仍是 ZUXOS”
   - title: 更多进阶内容
