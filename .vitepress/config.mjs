@@ -72,6 +72,7 @@ export default defineConfig({
           { text: "扩展: dd命令", link: "/dd_command" },
           { text: "扩展：制作通用 9008 包", link: "/make_generic_pc_firmware" },
           { text: "扩展：AVB 机制入门", link: "/avb_guide" },
+          { text: "附录1：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
         ],
       },
     ],
