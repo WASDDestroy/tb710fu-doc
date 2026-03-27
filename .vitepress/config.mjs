@@ -49,12 +49,13 @@ export default defineConfig({
       {
         text: "快速访问",
         items: [
+          { text: "术语表", link: "/glossary" },
           { text: "序言", link: "/before_we_start" },
           { text: "提问的智慧", link: "/how_to_ask" },
           { text: "刷机必修一", link: "/flash_unlocked_device" },
-          { text: "术语表", link: "/glossary" },
           { text: "刷机工具教程——高通工具箱", link: "/qcom_toolbox" },
           { text: "刷机工具教程——匣", link: "/geekflashtool" },
+          { text: "重要警告 ⭐", link: "/important_warns"},
           { text: "刷机前必做 ⭐", link: "/before_flashing" },
           { text: "Root 方案比较和须知事项", link: "/comparison_and_warn" },
           { text: "Root 导航 ⭐", link: "/state_machine" },
