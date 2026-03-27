@@ -14,10 +14,10 @@
 npm install -global pnpm
 ```
 
-3. 创建一个目录并切换到它：
+3. 克隆仓库并切换到它：
 ```shell
-mkdir <your_dir>
-cd <your_dir>
+git clone https://gitee.com/WASDDestroy/tb710fu-doc.git
+cd tb710fu-doc
 ```
 
 4. 安装 vitepress：
@@ -25,21 +25,14 @@ cd <your_dir>
 pnpm install -D vitepress
 ```
 
-5. 初始化 vitepress：
-```shell
-pnpm vitepress init
-```
+5. 将仓库中的文件复制到 vitepress 所在目录，如有冲突，选择覆盖。
 
-6. 完成交互式初始化。
-
-7. 将仓库中的文件复制到 vitepress 所在目录，如有冲突，选择覆盖。
-
-8. 在终端启动 vitepress 开发服务器：
+6. 在终端启动 vitepress 开发服务器：
 ```shell
 pnpm docs:dev
 ```
 
-9. 访问终端中给出的地址即可预览页面。直接打开目录下的 Markdown 文件就可以编辑。所有对文件的更改在保存后即刻生效，不需要重启服务器。
+7. 访问终端中给出的地址即可预览页面。直接打开目录下的 Markdown 文件就可以编辑。所有对文件的更改在保存后即刻生效，不需要重启服务器。
 
 > [!note]
 > 话虽如此，更改资源时还是有可能导致网页*暂时*出错的。不过解决也简单，*刷新*就好。
