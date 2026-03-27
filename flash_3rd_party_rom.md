@@ -9,15 +9,7 @@
 ## 总而言之......
 由于无法解锁 BootLoader，目前的刷机包均以 9008 刷机包形式提供，并且都是从设备存储内回读制成的。
 
-目前为止，小新 Pad Pro GT 总共可以运行五个系统：
-
-- ZUXOS
-- ColorOS 15
-- HyperOS 2.0
-- ColorOS 16
-- HyperOS 3.0
-
-这五个系统中，ColorOS 15 和 HyperOS 2 不能互刷，需要先回到 ZUXOS 再刷另外一个。
+关于第三方 ROM 的信息，请跳转 [第三方 ROM 信息汇总](./appendix_3rd_party_roms.md) 进行查询。
 
 对于其他方向，无论是**刷第三方系统**、**回到原系统**或者**救砖**，均遵循以下步骤：
 

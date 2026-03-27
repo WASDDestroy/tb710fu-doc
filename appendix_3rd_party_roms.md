@@ -9,6 +9,7 @@
 2. [驱动安装](./flash_unlocked_device.md)
 3. [9008 工具教程](./geekflashtool.md)
 4. [全分区备份教程](./before_flashing.md)
+5. [第三方 ROM 刷写教程](./flash_3rd_party_rom.md)
 
 ## 版本选择：
 
@@ -23,6 +24,10 @@
 | ZUXOS 1.5.04.384 及以上              | 不支持     | 不支持                             |
 
 ## Bug 汇总
+
+> [!important]
+> ColorOS 15 和 HyperOS 2 不能互刷，需要先回到 ZUXOS 再刷另外一个。
+> 不管怎样刷写系统，都无法保留用户数据，务必事先备份。
 
 1. HyperOS 2
 
