@@ -3,9 +3,6 @@
 > [!warning]
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
 
-> [!note]
-> 下面的教程均建立在你安装好了 9008 驱动的前提下，如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
-
 ## 总而言之......
 由于无法解锁 BootLoader，目前的刷机包均以 9008 刷机包形式提供，并且都是从设备存储内回读制成的。
 
