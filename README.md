@@ -11,7 +11,7 @@
 
 2. 安装 pnpm：
 ```shell
-npm install -global pnpm
+npm install -g pnpm
 ```
 
 3. 克隆仓库并切换到它：
