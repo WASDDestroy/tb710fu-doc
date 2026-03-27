@@ -1,5 +1,7 @@
 # 术语表
 
+~~似乎专业书籍都喜欢把这玩意放序言之前~~
+
 ## 1. `9008 模式`
 指的是高通设备的应急下载模式（EDL, Emergency DownLoad mode），可以通过特定物理按键或者物理按键组合进入，也可以通过工程线，或者在部分设备上使用`adb reboot edl`这条 `USB 调试` 命令进入。
 
@@ -147,6 +149,9 @@ _2026.01：KernelSU 3.0 起官方不再建议使用 GKI 镜像，但是和安全
 ## 14. `Fastboot`
 社区惯用说法，事实上常常指的是 `BootLoader` 模式。它管理后续启动流程的签名验证，并实现从设备底层引导跳转到启动 `Linux` 内核这一流程的各个操作步骤。在未解锁 `BootLoader` 的情况下，`BootLoader` 禁止刷写系统分区，如果强行通过其他手段刷入，将触发 `AVB2.0` 检测，系统会拒绝启动。
 
+> [!note]
+> 关于如何使用 AOSP 提供的 BootLoader，请参阅 [刷机必修一](./flash_unlocked_device.md)
+
 ## 15. `FastbootD`
 用于实现对 `super` 分区内容的操作，需要解锁 `BootLoader` 才能刷写。
 
@@ -154,6 +159,9 @@ _2026.01：KernelSU 3.0 起官方不再建议使用 GKI 镜像，但是和安全
 `Android 系统` 的恢复模式，类似于 `Windows` 系统的 `WinRE` ，或 `Linux` 系统的 `LiveCD` 。它提供了基础的存储访问功能，能够访问和修改设备中除了底层固件分区以外的多数分区，并和电脑通信，读取和发送文件。
 
 联想使用的是 `AOSP` 的 `原生 Recovery` ，虽然不如 `TWRP` 等 `第三方 Recovery` 友好和强大，但是仍旧能够提供基础的功能。
+
+> [!note]
+> 关于如何使用 AOSP 提供的 Recovery，请参阅 [刷机必修一](./flash_unlocked_device.md)
 
 ## 17. `第一屏`
 指的是含有 Powered by Android 字样和厂商 Logo 的页面，卡在这一步说明 `内核` 等文件有问题。
