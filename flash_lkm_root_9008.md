@@ -1,16 +1,9 @@
 # 刷写 LKM Root - 使用 9008
 
-> [!important]
-> 如果你在页面 wasddestroy.site 看到了这段文字，说明作者临时上传了一个尚在编写中的文档副本。
->
-> 此副本可能未经插图、含有晦涩难懂的语言表达、甚至可能含有作者未察觉的逻辑冲突和事实错误。
->
-> 请谨慎对待这样的页面，并提醒作者尽早完成增补。
-
 > [!warning]
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
 
-## **Step 0**:
+## Step 0:
 
 自己下载群文件夹中合适的文件：
 
@@ -19,123 +12,204 @@
 3. 签名工具：位于 `AVB2.0相关` 文件夹中的 `一键签名工具.rar`
 4. Root 管理器：位于 `管理器合集` 文件夹中，根据你准备使用的实现自行选择。推荐 `KernelSU`
 
-![](./media/image42.webp)
+![需要的文件](./media/LKM_9008/file_required.png)
 
 确保电脑安装了 Python 3 环境，推荐 Python 3.13。如果没有，请前往这里下载：[Python 3, Windows 发行版下载](https://www.python.org/downloads/windows/)。
 
-> [!note]
-> 事实上可以使用 Microsoft Store 内提供的 Python ；如果在未安装 Python 的 Windows 电脑上打开终端并输入 Python ，它会自动打开这个商店页面。
-
-## **Step 1**:
-
-将设备重启到 9008 模式：关机， **按住** 音量加，并插入数据线，设备应当先显示充电符号，并在几秒钟后黑屏，且电脑发出插入设备的提示音。这时可以 **松开音量键** ，准备在电脑端发送引导。
-
-> [!tip]
-> 如果无法进入，参考 [常见问题解答 - 进入 9008](./faq.md#问-1怎么进入-9008-模式) 中提供的操作逐个尝试即可。
-
-发送引导方式：
-
-1. 点击 `选择设备/引导/配置`
-
-![](./media/image44.webp)
-
-2. 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮，并在弹出的对话框选择从群文件夹 `神秘引导文件` 下载的 `xbl_s_devprg_ns.melf` 文件，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
-
-![](./media/image45.webp)
-
-![](./media/image46.webp)
-
-3. 现在回到刷机匣的主界面，点击 `读信息` ，确认一下设备连接是否正常，如果正常，应当能够读取到分区信息。注意日志页面中有当前活动插槽的信息，**记住此信息，稍后有用**。
-
-![](./media/image47.webp)
-
-![](./media/image48.webp)
+![](./media/LKM_9008/recommended_python.png)
 
 > [!note]
-> 日志内有上图所示的错误信息是正常的
+> 事实上可以使用 Microsoft Store 内提供的 Python ；如果在未安装 Python 的 Windows 电脑上打开终端并输入 Python ，它会自动打开这个商店页面：
+>
+> ![](./media/LKM_9008/install_python_via_ms_store.png)
 
-## **Step 2**:
+## Step 1:
+
+将设备重启到 9008 模式并准备好读写。
+
+1. 将平板关机。
+2. **按住** 音量加，并插入数据线。设备应当先显示充电符号，并在几秒钟后黑屏，且电脑发出插入设备的提示音。这时可以 **松开音量键** ，准备在电脑端发送引导。
+
+    ![](./media/LKM_9008/press_vol_up.webp)
+   
+   > [!tip]
+   > 如果无法进入，参考 [常见问题解答 - 进入 9008](./faq.md#问-1怎么进入-9008-模式) 中提供的操作逐个尝试即可。
+
+3. 发送引导：
+   - 点击 `选择设备/引导/配置`
+    
+    ![](./media/LKM_9008/select_config_button.png)
+    
+    - 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮。
+    
+    ![](./media/LKM_9008/selector_page.png)
+
+    - 在弹出的对话框选择从群文件夹 `神秘引导文件` 下载的 `xbl_s_devprg_ns.melf` 文件，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
+
+    ![](./media/LKM_9008/select_firehose_file.png)
+
+4. 现在点击配置选择页面的蓝色 `确定` 按钮，回到刷机匣的主界面。
+
+    ![](./media/LKM_9008/confirm_config.png)
+
+5. 点击 `读信息` ，确认一下设备连接是否正常。
+
+    ![](./media/LKM_9008/read_info.png)
+
+    如果正常，应当能够读取到分区信息，并可能能够正确读取软件信息：
+
+    ![](./media/LKM_9008/read_info_success.png)
+
+    > [!important]
+    > 
+    > 日志内有下图所示的的错误信息是正常的：
+    >
+    > ![](./media/LKM_9008/normal_errors.png)
+
+6. 查看日志，注意其中有当前活动插槽的信息（下图），**记住此信息，稍后有用**。
+
+    ![](./media/LKM_9008/current_slot.png)
+
+    本例中我们的活动插槽就是 A 槽。
+
+7. 如果以上任何步骤出现问题，请参考 [常见问题解答 - 进入 9008](./faq.md#问-1怎么进入-9008-模式) 、 [常见问题解答 - 忘记选择引导](./faq.md#问-3-这是什么情况) 以及 [常见问题解答 - 从 9008 模式强制重启](./faq.md#问-4-9008-刷机出错后例如忘记发送引导如何强制重启到其他操作模式如-fastboot)
+
+## Step 2:
 
 读取活动插槽的 `vbmeta` 和 `init_boot` 。
 
-勾选**正确槽位**的 `init_boot` 和 `vbmeta` 两个分区后，按右侧的回读按键从设备读出分区，记得选择容易记忆且有区分度的目录，例如作者选择将回读的文件存储在 `D:\LKM\Readback` 中。
+1. 在刷机匣的操作页面搜索并勾选**和刚才看到的槽位对应**的 `init_boot` 和 `vbmeta` 两个分区。
+   
+   > [!note]
+   > 活动插槽为 A ，则选择 `init_boot_a` 和 `vbmeta_a` ;
+   >
+   > 活动插槽为 B ，则选择 `init_boot_b` 和 `vbmeta_b` 。
 
-![](./media/image54.webp)
+    ![](./media/LKM_9008/select_init_boot.png)
 
-![](./media/image55.webp)
+    ![](./media/LKM_9008/select_vbmeta.png)
 
-![](./media/image56.webp)
+    > [!warning]
+    > 选择 `vbmeta` 时，不要错选成 `vbmeta_system` !
 
-点击 `重启` 按钮，选择重启到 `系统` 。
+2. 按工作界面右侧的 `回读` 按键从设备读出分区，记得选择容易记忆且有区分度的目录，例如选择将回读的文件存储在 `D:\LKM\Readback` 中。
 
-## **Step 3**:
+    ![](./media/LKM_9008/readback_button.png)
+
+    ![](./media/LKM_9008/select_readback_location.png)
+
+3. 回读完成后点击 `重启至` 按钮，选择重启到 `系统模式` 。
+
+    ![](./media/LKM_9008/reboot_to_system.png)
+
+## Step 3:
 
 安装 Root 管理器，修补 `init_boot` 。
 
-将刚才准备的 Root 管理器传输到平板并安装。将刚刚读取的 `init_boot` 镜像也传输到平板上。打开 Root 管理器，点击 `未安装` ，然后选择刚刚传输到平板的镜像。管理器会自动进行修补。
+1. 将下载好的 Root 管理器传输到平板并安装。将刚刚读取的 `init_boot` 镜像也传输到平板上。
 
-> [!tip]
-> 如果管理器提示选择 KMI ，则应选择 `android14-6.1` 。
+    ![](./media/LKM_9008/files_in_internal_storage.png)
 
-修补完成的镜像会存储到平板内置存储中的 `Download` 文件夹中。留意管理器输出中提供的文件名，在电脑上导航到 `Download` 文件夹，找到这个文件并传输到电脑上。（此文件的名字通常包含 `kernelsu_patched` 或者 `magisk_patched` 等字样，以 `.img` 扩展名结尾）。
+2. 打开 Root 管理器，点击 `未安装` 。
 
-> [!tip]
-> 如果在电脑上找不到 `Download` 文件夹中对应的 `.img` 文件，拔插一次 USB 线一般可以解决。
+    ![](./media/LKM_9008/tap_not_installed.png)
 
-## **Step 4**:
+3. 点击“选择一个文件”。
+   
+   ![](./media/LKM_9008/tap_select_a_file.png)
+
+4. 找到并点击刚刚传输到平板的镜像。使用文件选择界面左上角的“三横线”按钮可以选择使用其他文件管理器，或者导航到不同的存储位置。
+
+5. 点击管理器的“下一步”，管理器会自动进行修补。
+   
+    > [!tip]
+    > 如果管理器提示选择 KMI ，则应选择 `android14-6.1` 。
+
+6. 留意修补日志：修补完成的镜像会被重命名并存储到平板内置存储中的 `Download` 文件夹中。在电脑上导航到 `Download` 文件夹，找到这个文件并传输到电脑上。（此文件的名字通常包含 `kernelsu_patched` 或者 `magisk_patched` 等字样，以 `.img` 扩展名结尾）。
+   
+    ![](./media/LKM_9008/patch_log.png)
+
+    > [!tip]
+    > 如果在电脑上找不到 `Download` 文件夹中对应的 `.img` 文件，重新连接一次平板一般可以解决（~~So \*\*\*\* you, MTP~~）。
+
+## Step 4:
 
 签名 `init_boot` 并重建 `vbmeta` 。
 
-解压一键签名工具。
+1. 解压一键签名工具。
+   
+   ![](./media/LKM_9008/extract_sign_tool.png)
 
-将刚刚**回读的**`vbmeta_<slot>.img` 重命名为 `vbmeta.img` ，放置到工具中含有 *非链式* 字样的 `.bat` 文件的目录中。
+2. 将刚刚**回读的**`vbmeta_<slot>.img` 重命名为 `vbmeta.img` ，放置到工具中含有 *非链式* 字样的 `.bat` 文件的目录中。
 
-将**修补好的**`init_boot_<slot>.img` （现在应该名为 `kernelsu_patched_<some_numbers>.img`）重命名为 `init_boot.img`，放置到和上面的 `vbmeta.img` 相同的目录中。
+3. 将**由你的 Root 管理器修补好的**`init_boot_<slot>.img` （现在它的名字应该类似于 `kernelsu_patched_20260407_035938.img`）重命名为 `init_boot.img`，放置到和上面的 `vbmeta.img` 相同的目录中。
+   
+4. 完成上面两步之后签名工具所在的目录大概像这样：
+   
+    ![](./media/LKM_9008/rename_and_move_images.png)
 
-双击 `非链式.bat` ，等待工具自动操作。刚刚放置到 `.bat` 文件相同目录下的两个镜像文件现在应该已经完成了签名。
+5. 双击 `非链式.bat` ，等待工具自动操作。刚刚放置到 `.bat` 文件相同目录下的两个镜像文件（就是你刚刚移动过来的镜像）现在已经签名完毕。
+   
+    ![](./media/LKM_9008/run_sign_tool.png)
 
-> [!important]
-> 推荐检查工具的结果，确认工具是否正确签名了 `init_boot` 并重建对应的 `vbmeta` 。
+    > [!important]
+    > 谨慎检查工具的**完整**结果，确认工具是否正确签名了 `init_boot` 并重建对应的 `vbmeta` 。
+    >
+    > ![](./media/LKM_9008/successfully_signed_init_boot.png)
 
-将工具生成的 `backup` 文件夹中的镜像妥善保存，以备后续系统更新时还原使用。
+6. 将工具生成的 `backup` 文件夹中的镜像妥善保存，以备后续系统更新时还原使用。
 
-## **Step 5**:
+    ![](./media/LKM_9008/save_backup_carefully.png)
+
+    > [!danger]
+    > 系统增量更新时使用的是 `bsdiff / bspatch` 算法。
+    >
+    > 该算法要求应用补丁的分区摘要和 “分区未修改时的摘要” 保持一致。也就是说安装了 Root 的设备无法进行增量更新。
+    >
+    > 如果不保存你的备份，我们无法提供任何和系统更新以及救砖相关的帮助。
+
+## Step 5:
 
 刷入 `init_boot` 和 `vbmeta` 。
 
-将平板重启到 9008 模式。在刷机匣中选择正确的引导文件后点击 `读信息` 。
+1. 将平板重启到 9008 模式。在刷机匣中选择正确的引导文件后点击 `读信息` 。这一步的操作和 [第一步](#step-1) 是一样的。
 
-为**活动插槽（就是刚才要求记住的插槽）的 **`init_boot` 和 `vbmeta` 分区选择刚刚签好名的对应文件，并点按 `刷入` 按钮。
+2. 为**活动插槽（就是刚才要求记住的插槽）的** `init_boot` 和 `vbmeta` 分区选择**刚刚签好名的对应文件**。
 
-![](./media/image57.webp)
+    ![](./media/LKM_9008/select_init_boot_for_flashing.png)
 
-![](./media/image58.webp)
+    ![](./media/LKM_9008/select_vbmeta_for_flashing.png)
 
-## **Step 6 （非常重要）**:
+3. 点按 `刷入` 按钮，等待工具自动完成操作。
 
-点击刷机匣右侧界面 `更多功能` 里的 `槽位功能` ，然后**点击"重设当前槽位"**，如下图；
+## Step 6 （非常重要）:
 
-![](./media/image59.webp)
+> [!danger]
+> 不做这步，只能卡在 `BootLoader` 模式！最坏情况甚至可能只能通过工程线进入 9008 救砖！
 
-完成上述步骤后，在刷机匣找到如下图选项，点击 `重启 -> 系统` 即可重启到系统界面，开机后安装和所用镜像 `匹配` 的 Root 管理器（例如刷入的是 `KernelSU` 的镜像就安装 `KernelSU` 的管理器，其他同理），完成全流程。
+1. 点击刷机匣右侧界面 `更多功能` 里的 `槽位功能` ，然后**点击"重设当前槽位"**。
 
-![](./media/image38.webp)
+    ![](./media/LKM_9008/reset_current_slot.png)
 
-## **Step 7**:
+2. 完成上述步骤后，将日志面板折叠起来，在刷机匣找到如下图选项，点击 `重启 -> 系统` 即可重启到系统。
 
-设备应当正确启动。启动后应当看到管理器中显示工作中\<LKM>，如下图所示：
+    ![](./media/LKM_9008/reboot_to_system_with_function_btn.png)
 
-![](./media/image60.webp)
+## Step 7:
 
-## **Step 8**:
+1. 设备应当正确启动。启动后应当看到管理器中显示工作中\<LKM>，如下图所示：
 
-确认管理器处于工作中后请关闭管理器中的 `检查更新` 选项~~以防忍不住点了直接安装~~，此选项位于 `设置` 选项卡，请参考下图
+    ![](./media/LKM_9008/lkm_working.png)
 
-![](./media/image40.webp) ![](./media/image61.webp)
+## Step 8:
 
-## **注意事项**:
+1. 确认管理器处于工作中后请关闭管理器中的 `检查更新` 选项~~以防忍不住点了直接安装~~。
+
+    ![](./media/LKM_9008/disable_check_upd.png)
+
+## 注意事项:
 
 > [!danger]
 > 严禁使用管理器的 `直接安装` 和 `安装到另一个槽位` 功能。管理器不知道设备没有解锁，不会重建 `vbmeta` 结构。这么做会导致**设备AVB校验不通过，无法开机**，表现为提示红色感叹号，后续启动时只能卡在 `BootLoader模式` 。
 >
-> 严禁使用管理器 `卸载` （注意：**不是**`卸载模块`）功能。这么做也会破坏 `vbmeta` 结构，造成和上面的行为相同的后果。
+> 严禁使用管理器 `卸载` （位于“设置”面板最下方，注意：**不是**`卸载模块`）功能。这么做也会破坏 `vbmeta` 结构，造成和上面的行为相同的后果。
