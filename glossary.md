@@ -40,8 +40,8 @@
 
 - `vendor_boot` : 用于存储厂商提供的内核驱动
 - `abl` : `Android Bootloader` 的存放位置
-- `userdata` : 用户数据分区
-- `metadata` : 解密用户数据分区所需密钥的存储位置，想 **保住数据救砖** 不要刷入其他包中的这个文件
+- `userdata` : 用户数据分区，想 **保住数据救砖** 不要刷入救砖包中可能存在的这个文件
+- `metadata` : 解密用户数据分区所需密钥的存储位置，想 **保住数据救砖** 不要刷入救砖包中可能存在的这个文件
 
 如果你对 `Android` 的分区感兴趣，可以试试这个网站：[柚坛wiki - Android 分区详解](https://wiki.uotan.net/index.php?title=Android_%E5%88%86%E5%8C%BA%E8%AF%A6%E8%A7%A3)提供的文章
 
