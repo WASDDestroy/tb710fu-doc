@@ -3,15 +3,19 @@
 > [!warning]
 > 以下内容仅适用于 TB710FU。
 
+> [!tip] 作者的看法
+> 选择用 9008 刷 LKM 就好，这么做更符合平时在其他可解锁设备上安装 Root 的逻辑。
+>
+> **但是仍旧请仔细跟随教程进行操作。**
+
 ## 方案解析 - GKI VS LKM
 
 1. GKI 模式：KernelSU 最原始的 Root 实现方式，直接替换内核镜像。
 
    优点：
-   - 全部 ROM 通用，包括所有版本的 ZUXOS、ColorOS 和 HyperOS
+   - **全部版本、全部 ROM 通用**，包括所有版本的 ZUXOS、ColorOS 和 HyperOS
    - 9008模式下只需要刷写一个分区
-   - 使用 `avbtool.py` 进行签名时不需要生成 `vbmeta` ，更加方便
-   - 隐藏效果似乎更好些
+   - 使用 `avbtool.py` 进行签名时不需要生成 `vbmeta` 。
 
    缺点：
    - 已知刷入后有功耗明显偏高的案例
@@ -24,7 +28,12 @@
    - 不需要开发者*编译*内核
 
    缺点：
-   - 需要开发者为每个版本提供一个拥有 AVB页脚 的 init_boot 和配套的 vbmeta 镜像
+   - ~~需要开发者为每个版本提供一个拥有 AVB页脚 的 init_boot 和配套的 vbmeta 镜像~~
+
+> [!tip] 关于隐藏性
+> 一般讨论的隐藏都是基于 Bootloader 已解锁为前提所进行的操作。
+>
+> 既然 Bootloader 仍旧处于锁定状态， TEE 工作正常，平板也不需要运行银行类等检测严格的 APP ，那么为何需要纠结隐藏？
 
 ## 方案解析 - Magisk, KernelSU, KernelSU Next, SukiSU Ultra
 
@@ -81,6 +90,6 @@
 ## 特别注意：Root之后...
 
 1. 失去以较低劳动成本更新到高版本系统的可能。如有需要，具体参考[解除Root](./unroot.md)和[保留 用户数据 和 Root权限 进行系统增量更新](./update_while_keeping_root.md)
-2. 不能使用需要刷写含有AVB页脚的分区的软件，例如 `Konabess`
+2. 不能使用需要刷写含有AVB页脚的分区的软件，例如 `Konabess` ，除非你知道如何使用 `avbtool.py` 对产出的镜像进行签名。
 3. 软件可能检测到 Root 的痕迹，并进一步造成包括但不限于封号的后果
 4. **刷入不正确的模块或者运行不正确的脚本会导致设备变砖。**
