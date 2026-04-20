@@ -58,7 +58,16 @@ export default defineConfig({
           { text: "重要警告 ⭐", link: "/important_warns"},
           { text: "刷机前必做 ⭐", link: "/before_flashing" },
           { text: "Root 方案比较和须知事项", link: "/comparison_and_warn" },
-          { text: "Root 导航 ⭐", link: "/state_machine" },
+          { text: "Root 教程导航 ⭐", link: "/state_machine" },
+          { text: "Root 相关教程",
+            items: [
+              { text: "刷写 GKI Root", link: "/flash_gki_root"},
+              { text: "9008 刷写 LKM Root ⭐", link: "/flash_lkm_root_9008"},
+              { text: "TWRP 刷写 LKM Root", link: "/flash_lkm_root_twrp"},
+              { text: "移除 GKI Root", link: "/unroot_gki"},
+              { text: "移除 LKM Root", link: "/unroot_lkm"},
+            ]
+          },
           { text: "刷入 TWRP", link: "/flash_twrp" },
           {
             text: "保留 用户数据 和 Root 权限进行系统增量更新",

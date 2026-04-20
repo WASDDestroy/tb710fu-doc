@@ -7,6 +7,15 @@
 >
 > 感谢群友@T_T的读写块设备方式！
 
+> [!important]
+> 本教程仅针对 GKI 模式！
+>
+> 事实上为了正确应用增量更新，必须还原所有修改过的分区。
+>
+> 例如刷入了第三方 Recovery ，就需要还原当前活动插槽的 `recovery` ；刷入了 LKM ，就需要还原 `init_boot` 分区 和 `vbmeta` 分区 ；刷入了 `vendor_boot` 进行降压，就需要还原 `vendor_boot` 和 `vbmeta` 。
+>
+> 关于上面提及的 `vbmeta` ，请参考 [AVB 入门](./avb_guide.md) 。
+
 ## **Step 1**:
 
 关闭所有模块，重启设备。
