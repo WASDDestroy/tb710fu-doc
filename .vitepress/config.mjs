@@ -47,7 +47,8 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: "快速访问",
+        text: "教程本篇",
+        collapsed: false,
         items: [
           { text: "术语表", link: "/glossary" },
           { text: "序言", link: "/before_we_start" },
@@ -60,6 +61,7 @@ export default defineConfig({
           { text: "Root 方案比较和须知事项", link: "/comparison_and_warn" },
           { text: "Root 教程导航 ⭐", link: "/state_machine" },
           { text: "Root 相关教程",
+            collapsed: false,
             items: [
               { text: "刷写 GKI Root", link: "/flash_gki_root"},
               { text: "9008 刷写 LKM Root ⭐", link: "/flash_lkm_root_9008"},
@@ -78,10 +80,16 @@ export default defineConfig({
             link: "/flash_3rd_party_rom",
           },
           { text: "常见问题速查 ⭐", link: "/faq" },
-          { text: "扩展: dd命令", link: "/dd_command" },
-          { text: "扩展：制作通用 9008 包", link: "/make_generic_pc_firmware" },
-          { text: "扩展：AVB 机制入门", link: "/avb_guide" },
           { text: "附录1：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
+        ],
+      },
+      {
+        text: "扩展篇",
+        collapsed: false,
+        items: [
+          { text: "dd命令", link: "/dd_command" },
+          { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
+          { text: "AVB 机制入门", link: "/avb_guide" },
         ],
       },
     ],
