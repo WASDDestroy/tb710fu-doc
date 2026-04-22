@@ -89,6 +89,7 @@ export default defineConfig({
         items: [
           { text: "dd命令", link: "/dd_command" },
           { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
+          { text: "修复 GSN", link: "/fix_gsn" },
           { text: "AVB 机制入门", link: "/avb_guide" },
         ],
       },
