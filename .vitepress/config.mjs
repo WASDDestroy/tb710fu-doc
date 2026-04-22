@@ -76,8 +76,12 @@ export default defineConfig({
             link: "/update_while_keeping_root",
           },
           {
-            text: "刷入第三方 ROM、救砖包，和自己创建的备份",
+            text: "刷入第三方 ROM 和自己创建的备份",
             link: "/flash_3rd_party_rom",
+          },
+          {
+            text: "救砖",
+            link: "/unbrick_device",
           },
           { text: "常见问题速查 ⭐", link: "/faq" },
           { text: "附录1：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
