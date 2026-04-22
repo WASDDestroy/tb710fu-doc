@@ -63,7 +63,7 @@ export default defineConfig({
           { text: "Root 相关教程",
             collapsed: false,
             items: [
-              { text: "刷写 GKI Root", link: "/flash_gki_root"},
+              { text: "刷写 GKI Root ❌", link: "/flash_gki_root"},
               { text: "9008 刷写 LKM Root ⭐", link: "/flash_lkm_root_9008"},
               { text: "TWRP 刷写 LKM Root", link: "/flash_lkm_root_twrp"},
               { text: "移除 GKI Root", link: "/unroot_gki"},

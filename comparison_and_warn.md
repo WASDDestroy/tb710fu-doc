@@ -3,10 +3,12 @@
 > [!warning]
 > 以下内容仅适用于 TB710FU。
 
-> [!tip] 作者的看法
-> 选择用 9008 刷 LKM 就好，这么做更符合平时在其他可解锁设备上安装 Root 的逻辑。
+> [!danger] GKI 弃用提示
+> KernelSU 官方维护的 GKI 内核已经停止更新。
 >
-> **但是仍旧请仔细跟随教程进行操作。**
+> 小新 Pad Pro GT 刷入 GKI 内核进行 Root 后，在恢复出厂时可能会出现卡第一屏 / 第二屏的问题。要解决这个问题，请将活动插槽的 `boot` 镜像替换为原厂镜像。
+>
+> 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。请参考 [Root 导航](./state_machine.md) 中使用 LKM 模式获取 Root 的教程获取 Root ，或者对于**已经使用 GKI 获取 Root 的用户**，先参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，然后使用 LKM 获取 Root 。
 
 ## 方案解析 - GKI VS LKM
 
