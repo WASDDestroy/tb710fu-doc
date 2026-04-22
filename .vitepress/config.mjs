@@ -95,6 +95,7 @@ export default defineConfig({
           { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
           { text: "修复 GSN", link: "/fix_gsn" },
           { text: "AVB 机制入门", link: "/avb_guide" },
+          { text: "avbtool.py 简易教程", link: "/avbtool_tutorial"},
         ],
       },
     ],

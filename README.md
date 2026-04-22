@@ -51,7 +51,7 @@ pnpm docs:build
 
 - [x] 通用救砖包教程
 - [ ] rawprogram.xml解析
-- [ ] avbtool 教程 和 AVB2.0 解析
+- [x] avbtool 教程 和 AVB2.0 解析
 - [x] dd 教程
 - [x] 迁移 打开USB调试 安装9008驱动 安装ADB驱动 三部分内容
 - [ ] 防回滚情况概述
