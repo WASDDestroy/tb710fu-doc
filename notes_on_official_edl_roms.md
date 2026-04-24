@@ -1,0 +1,29 @@
+# 官方 9008 救砖包说明
+
+1. rawprogram_unsparse0_half.xml 也就是 rawprogram0.xml，不刷写 `persist`
+2. rawprogram_unsparse0.xml 同上，但是刷写 `persist`
+3. contents.xml 说明目录内的文件在平板内的储存方式以及这些文件的构建方式
+4. provision.xml 用于初次使用 UFS 时的初始配置
+5. 剩余的 rawprogram.xml 和 patch.xml 同正常高通平台无差别，根据文件中带的数字决定他们作用于某个 LUN：
+   | rawprogram / patch 号码 | 操作的分区                                                                                                                                                                                                                                                             |
+   |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | 0                       | super, metadata, userdata, vbmeta_system                                                                                                                                                                                                                               |
+   | 1                       | xbl, xbl_config, multiimgqti, multiimgoem, apdp (Slot `A` Only)                                                                                                                                                                                                        |
+   | 2                       | xbl, xbl_config, multiimgqti, multiimgoem, apdp (Slot `B` Only)                                                                                                                                                                                                        |
+   | 3                       | cdt, ddr                                                                                                                                                                                                                                                               |
+   | 4                       | uefi, aop, aop_config, tz, hyp, modem, bluetooth, abl, dsp, keymaster, boot, devcfg, qupfw, vbmeta, dtbo, uefisecapp, imagefv, shrm, cpucp, featenabler, vendor_boot, recovery, xbl_ramdump, init_boot, cpucp_dtb, pvmfw, spuservice, toolsfv, storsec (Slot `A` Only) |
+   | 5                       | modemst1, modemst2, fsg, fsc                                                                                                                                                                                                                                           |
+6. super_*.img 和 super 内子分区的对应关系
+   | super_*.img 号码 | 子分区名称             |
+   |------------------|------------------------|
+   | 1                | super 分区表，非子分区 |
+   | 2                | odm                    |
+   | 3                | product                |
+   | 4                | system                 |
+   | 5                | system_dlkm            |
+   | 6                | system_ext             |
+   | 7                | vendor                 |
+   | 8                | vendor_dlkm            |
+
+   可能可以用于降低回读版 9008 救砖包的大小。
+7. 官方包提供的线刷脚本是可用的，但是需要自行输入端口号方可开始刷机。
