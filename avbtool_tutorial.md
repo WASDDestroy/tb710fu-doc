@@ -24,42 +24,42 @@
 
 ```text
     generate_test_image
-                        Generates a test image with a known pattern for testing: 0x00 0x01 0x02 ... 0xff 0x00 0x01 ...
-    version             Prints version of avbtool.
-    extract_public_key  Extract public key.
+                        生成带有测试格式的镜像，测试格式: 0x00 0x01 0x02 ... 0xff 0x00 0x01 ...
+    version             打印 avbtool 的版本.
+    extract_public_key  从 .pem 文件中提取公钥.
     extract_public_key_digest
-                        Extract SHA-256 digest of public key.
-    make_vbmeta_image   Makes a vbmeta image.
-    add_hash_footer     Add hashes and footer to image.
+                        从 .pem 文件中提取公钥，并返回公钥的 SHA-256 摘要.
+    make_vbmeta_image   创建 vbmeta 镜像.
+    add_hash_footer     向镜像添加哈希数据和 AVB 页脚.
     append_vbmeta_image
-                        Append vbmeta image to image.
+                        将 vbmeta 镜像附加到镜像中.
     add_hashtree_footer
-                        Add hashtree and footer to image.
-    erase_footer        Erase footer from an image.
-    zero_hashtree       Zero out hashtree and FEC data.
+                        向镜像添加哈希树和 AVB 页脚.
+    erase_footer        从镜像中擦除页脚信息.
+    zero_hashtree       用二进制数码 0 覆盖哈希树和前向纠错数据.
     extract_vbmeta_image
-                        Extracts vbmeta from an image with a footer.
-    resize_image        Resize image with a footer.
-    info_image          Show information about vbmeta or footer.
-    verify_image        Verify an image.
+                        从镜像中提取带页脚的 vbmeta 镜像.
+    resize_image        设定镜像大小，会保留页脚信息.
+    info_image          显示 vbmeta 镜像或 AVB 页脚包含的信息.
+    verify_image        验证镜像.
     print_partition_digests
-                        Prints partition digests.
+                        打印分区的摘要.
     calculate_vbmeta_digest
-                        Calculate vbmeta digest.
+                        计算 vbmeta 的摘要.
     calculate_kernel_cmdline
-                        Calculate kernel cmdline.
-    set_ab_metadata     Set A/B metadata.
+                        计算内核命令行.
+    set_ab_metadata     设定 A/B 插槽的元数据.
     make_certificate (make_atx_certificate)
-                        Create an avb_cert extension certificate.
+                        创建 "avb_cert extension" 证书.
     make_cert_permanent_attributes (make_atx_permanent_attributes)
-                        Create avb_cert extension permanent attributes.
+                        创建 "avb_cert extension" ，带永久属性.
     make_cert_metadata (make_atx_metadata)
-                        Create avb_cert extension metadata.
+                        创建 "avb_cert extension" 元数据.
     make_cert_unlock_credential (make_atx_unlock_credential)
-                        Create an avb_cert extension unlock credential.
+                        创建 "avb_cert extension" 解锁凭据.
 ```
 
-上面所有的命令都支持 -h 参数。例如 `./avbtool.py add_hash_footer -h`
+上面所有的命令都支持 -h 参数。例如 `./avbtool.py add_hash_footer -h` ，这会显示这个命令支持的所有参数。
 
 我们主要使用命令 `add_hash_footer` `add_hashtree_footer` `erase_footer` `info_image` 和 `make_vbmeta_image`
 
@@ -87,7 +87,7 @@
    --rollback_index <重要，填写正确的回滚指数，严禁填写 9999999999 等无意义数值，这个数值会被存储在防篡改存储中，不要随意尝试！>\
    --prop <属性的名称>:<属性的值> # 可以有很多条
    ```
-4. add_hashtree_footer （仅限 Linux）
+4. add_hashtree_footer （依赖 FEC ，仅限 Linux 可以创建被 AVB 信任的镜像）
    
    添加 Hashtree 描述符，看看下面的例子：
    
