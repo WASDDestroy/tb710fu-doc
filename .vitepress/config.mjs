@@ -44,6 +44,9 @@ export default defineConfig({
       { text: "开始了解", link: "/before_we_start" },
       { text: "更新日志", link: "/updatelog" },
     ],
+    editLink: {
+      pattern: 'https://gitee.com/WASDDestroy/tb710fu-doc/blob/master/:path'
+    },
 
     sidebar: [
       {
