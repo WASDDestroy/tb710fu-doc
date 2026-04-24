@@ -31,11 +31,11 @@
 >
 > 我发誓不是在给他们打广告。
 
-## **Step 0**: 准备必要环境
+## Step 0: 准备必要环境
 
 以联想设备为例。
 
-### <a id="USB_Debugging"></a>**打开 USB 调试**：
+### <a id="USB_Debugging"></a>打开 USB 调试：
 
 1. 打开设置；
 
@@ -55,7 +55,7 @@
 > [!note]
 > 对于其他设备，如果找不到“软件版本”字样，可能需要寻找诸如 `版本号` 、 `OS版本` 等字样并连续点击。
 
-### <a id="Install_ADB"></a>**安装 ADB 工具**：
+### <a id="Install_ADB"></a>安装 ADB 工具：
 
 1. 在群文件夹 `搞机工具` 或者 [Android Developers](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn) 下载`platform-tools-latest-windows.zip`，这就是 ADB工具包 。
 
@@ -81,7 +81,7 @@ adb --version
 
 这说明 ADB 工具已经正确安装。
 
-### <a id="Install_Driver"></a>**安装9008驱动**：
+### <a id="Install_Driver"></a>安装9008驱动：
 
 对于可以解锁的设备来说这一步不强制。
 
@@ -89,7 +89,7 @@ adb --version
 
 - 方法2：下载群内**搞机工具**文件夹中的工具“匣”，打开软件主界面后安装9008刷机驱动。
 
-## **Step 1**: 申请解锁
+## Step 1: 申请解锁
 
 > [!warning]
 > 不建议尝试强行解锁 BootLoader 的行为。
@@ -120,13 +120,40 @@ adb --version
 > [!warning]
 > 如果有 9008 使用能力（对于 MTK 机型则是 BootROM 深刷），到这一步就可以开始备份 `底层数据` 了！推荐刷机匣。
 
-## **Step 2**: 刷写 Root
+## Step 2: 刷写 Root
 
-以 TB710FU 为例（Linux Kernel Version `6.1.112` , `vab`, 有独立 `init_boot` 分区）
+0. 比较几种 Root 实现：
+   
+   | \    | Magisk                                                         | KernelSU                                                                                              | KernelSU Next                                                                                   | SukiSU Ultra                                                                                                                |
+   |------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
+   | 优势 | - 兼容性好<br>- 内置 Zygisk 实现<br>- 弹窗申请 `su` ，操作直观 | -  `元模块` 提供强大的挂载能力<br>- 稳定性和安全性最佳<br>- 极好的隐藏性<br>- 允许控制用户 UID 和 GID | -  `元模块` 提供强大的挂载能力<br>- 极好的隐藏性<br>- 个性化管理器<br>- 允许控制用户 UID 和 GID | -  `元模块` 提供强大的挂载能力<br>- 极好的隐藏性<br>- 内置 SusFS 和 KPM 支持<br>- 个性化管理器<br>- 允许控制用户 UID 和 GID |
+   | 劣势 | - 需要在系统内完成修补，免解锁刷入更复杂。                     | - Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                             | - Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                       | - bug 较多<br>- Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                                     |
 
-1.  `得到 init_boot 和 boot 镜像` ，通过救砖包或者 Payload Dumper 实现
+   *注：现在更推荐使用 KernelSU 的 LKM 模式来获取 Root，这个模式下也需要在 Android 系统中修补镜像*
 
-2.  选择 Root 实现并安装：
+1. 确定可用的 Root 实现：
+   - 5.10 以下内核版本的设备：首选 `Magisk` 。
+   - 5.10 及以上内核版本的设备：`Magisk`, `KernelSU` 和 `APatch` 任君选择。
+2.  得到 `init_boot` 或 `boot` 镜像 ，通过救砖包或者 `Payload Dumper` 实现
+   > [!tip] 如何确定应该使用 `init_boot` 还是 `boot` ?
+   >
+   > 从出厂搭载 Android 13 的设备（内核版本 5.15）开始，原先位于 `boot` 的 `ramdisk` 部分被移动到了 `init_boot` 分区，这是 `Magisk` 和 `KernelSU LKM 模式` 修补的分区。
+   >
+   > 先根据管理器区分：
+   >
+   > APatch: `boot`
+   >
+   > Magisk: 
+   >  - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
+   >  - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
+   >
+   > KernelSU:
+   > - GKI 模式（目前已不推荐）：`boot`
+   > - LKM 模式：
+   >     - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
+   >     - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
+
+3.  选择 Root 实现并安装：
 
     ### 方法 1: Magisk / Alpha / Kitsune Mask
     - 下载并安装管理器：
@@ -189,12 +216,14 @@ adb --version
 
     ### 方法 3: APatch
 
-        这部分我不是很熟悉，等待补充。
+    - 下载并安装 APatch 管理器: [GitHub Releases](https://github.com/bmax121/APatch/releases)
+    - 
+
 
 > [!warning]
 > 就算没有深度刷机能力，到这一步你也可以备份用户数据了！详情参考[dd命令 - 从入门到精通](./dd_command.md)
 
-## **Step 3**: 玩机：基础必备模块
+## Step 3: 玩机：基础必备模块
 
 > [!note] 什么是模块？
 >
@@ -232,7 +261,7 @@ adb --version
 > [!tip]
 > Zygisk Next 自 1.3.0 版本起整合了 Shamiko 的绝大多数功能，对隐藏 Root 痕迹有所帮助。
 
-## **Step 4**: 玩机：Root 授权
+## Step 4: 玩机：Root 授权
 
 1. Magisk 及其分支会在用户开启需要 Root 权限的 APP 时弹出申请 Root 权限的提示框。这和更早期的 SuperSU ~~以及 KingRoot 等方案~~ 一致。
 
@@ -243,7 +272,7 @@ adb --version
 
    - KernelSU 及其分支还允许通过 APP Profile 精细控制应用的权限等级，详情参考[KernelSU - APP Profile](https://kernelsu.org/zh_CN/guide/app-profile.html)。
 
-## **Step 5**: 出问题了怎么办？
+## Step 5: 出问题了怎么办？
 
 0. **保命技**：强制重启， `电源键 + 音量下键` （仅在小新 Pad Pro GT 上测试过）
 
@@ -274,7 +303,7 @@ adb --version
 
    - 最好重新**全新刷机**，连用户数据都不一定能留了。
 
-## **Step 6**: 一些基本界面
+## Step 6: 一些基本界面
 
 可以使用 `音量键` 浏览 `BootLoader` / `Recovery` / `Fastbootd` 下提供的选项，按电源键确认选项。
 
