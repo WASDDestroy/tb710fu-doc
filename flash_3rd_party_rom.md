@@ -4,7 +4,7 @@
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
 
 > [!danger] 对于免解设备
-> 先跳转 [第三方 ROM 信息汇总](./appendix_3rd_party_roms.md) 查询你的系统版本是否受支持，对于 1.5.04.384 及以上版本的系统暂不支持免解锁刷入第三方 ROM。
+> 先跳转 [第三方 ROM 信息汇总](./appendix_3rd_party_roms.md) 查询你的系统版本是否受支持！
 
 无论是**刷第三方系统**、**回到原系统**或者**救砖**，均遵循以下步骤：
 
