@@ -1,7 +1,7 @@
 # 欲一键安装 LKM，先刷入 TWRP
 
 > [!warning]
-> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
+> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
 
 下面开始正式教程：
 

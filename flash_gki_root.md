@@ -3,7 +3,7 @@
 GKI Root 对于官方和第三方 ROM 都适用。
 
 > [!warning]
-> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
+> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
 
 > [!danger] 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。

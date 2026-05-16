@@ -150,7 +150,7 @@ _2026.01：KernelSU 3.0 起官方不再建议使用 GKI 镜像，但是和安全
 社区惯用说法，事实上常常指的是 `BootLoader` 模式。它管理后续启动流程的签名验证，并实现从设备底层引导跳转到启动 `Linux` 内核这一流程的各个操作步骤。在未解锁 `BootLoader` 的情况下，`BootLoader` 禁止刷写系统分区，如果强行通过其他手段刷入，将触发 `AVB2.0` 检测，系统会拒绝启动。
 
 > [!note]
-> 关于如何使用 AOSP 提供的 BootLoader，请参阅 [刷机必修一](./flash_unlocked_device.md)
+> 关于如何使用 AOSP 提供的 BootLoader，请参阅 [解锁 Bootloader 刷机](./flash_unlocked_device.md)
 
 ## 15. FastbootD
 用于实现对 `super` 分区内容的操作，需要解锁 `BootLoader` 才能刷写。
@@ -161,7 +161,7 @@ _2026.01：KernelSU 3.0 起官方不再建议使用 GKI 镜像，但是和安全
 联想使用的是 `AOSP` 的 `原生 Recovery` ，虽然不如 `TWRP` 等 `第三方 Recovery` 友好和强大，但是仍旧能够提供基础的功能。
 
 > [!note]
-> 关于如何使用 AOSP 提供的 Recovery，请参阅 [刷机必修一](./flash_unlocked_device.md)
+> 关于如何使用 AOSP 提供的 Recovery，请参阅 [解锁 Bootloader 刷机](./flash_unlocked_device.md)
 
 ## 17. 第一屏
 指的是含有 Powered by Android 字样和厂商 Logo 的页面，卡在这一步说明 `内核` 等文件有问题。

@@ -10,9 +10,6 @@
 >
 > 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。请参考 [Root 导航](./state_machine.md) 中使用 LKM 模式获取 Root 的教程获取 Root ，或者对于**已经使用 GKI 获取 Root 的用户**，先参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，然后使用 LKM 获取 Root 。
 
-> [!important] 迁移通知：在找 Root 实现对比吗？
-> 这部分已经迁移到 [刷机必修一](./flash_unlocked_device.md#step-2-刷写-root)中了。
-
 ## 方案解析 - GKI VS LKM
 
 1. GKI 模式：KernelSU 最原始的 Root 实现方式，直接替换内核镜像。

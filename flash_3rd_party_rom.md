@@ -3,7 +3,7 @@
 本篇文章主要针对免解锁刷机而写，如果你已经解锁了你的平板的 Bootloader ，可以忽略本文关于系统版本的警告。
 
 > [!warning]
-> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
+> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
 
 > [!danger] 对于免解设备
 > 先跳转 [第三方 ROM 信息汇总](./appendix_3rd_party_roms.md) 查询你的系统版本是否受支持！
