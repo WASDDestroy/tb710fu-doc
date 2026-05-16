@@ -1,36 +1,56 @@
-# 刷机必修一
+# 解锁 Bootloader 刷机
 
-> [!tip] 适用性说明
-> 如果你准备入门 Android 刷机，看看这篇文章也是极好的。如果有不明白的表达，建议配合 [术语表](./glossary.md) 获取更佳阅读体验。
+> [!warning] @soft_deprecation of “刷机必修一”
+> 我突然发现，与其写一篇 all-in-one 的文章，不如多多引用其他教程。
 >
-> 本篇的适用范围并不限制在某一台特定的 Android 设备。
+> 此外，直接告诉新手大致框架并不适合作为小白教程。相反，其他网站提供的手把手教程能更好的帮助小白迈出第一步。
+>
+> 因此本篇文章将只用作安装必要环境和联想解锁 Bootloader 的说明书。同时作为基本的风险告知书存在。
 
 ## Step 0: 了解刷机用途和风险
 
 ### 用途
 
-向设备安装第三方固件*（“固件”是个嵌入式开发中的概念，指的是运行在设备中的一些软件。）可能可以获得功能增强和不同的使用体验，例如使用不同厂商的操作系统（ROM）、通过系统级的广告过滤工具杜绝烦人的开屏广告、加载表现优异的第三方性能调度器来提高游戏帧速率、劫持 ART (Android RunTime) 来修改上层 APP （实现防撤回）等。
+刷机是向设备刷入非官方适配的底层软件，可能可以获得功能增强和不同的使用体验。例如：
 
-也有部分极客用户单纯将刷机和攻破 Android 安全机制的 *过程* 视为乐趣来源。
-
-*：这里的“固件”包括但不限于第三方 ROM、第三方 Bootloader 解锁工具/二进制文件、内核、模块、Root 实现等。为了方便起见，可以直接理解为向设备安装了不被设备生产商认可的软件。
+- 使用不同厂商的操作系统（ROM）
+- 通过系统级的广告过滤工具杜绝烦人的开屏广告
+- 加载表现优异的第三方性能调度器来提高游戏帧速率
+- 劫持 ART (Android RunTime) 来修改上层 APP （实现防撤回）
+- 其他非常多的用途...不管合法与否...
 
 ### 风险
+
+> [!danger] 刷机需谨慎
+> 刷机需谨慎，安全不能丢。风险并非源于“刷机”本身，而是来自**背景不明**的系统包、不可信的工具、不规范的流程以及**缺乏安全意识的操作**。广大民众在追求极致的玩机体验时，更应注意保护信息及数据安全。[查看原文 - 人民号](https://www.peopleapp.com/column/30052015045-500007482803)
 
 没有刷机操作是 100% 安全的，但是我们在此仍将“令所进行的操作尽可能稳定”作为目标。如果你认为这个观点是错误的，去本项目仓库[发起 Issue](https://gitee.com/WASDDestroy/tb710fu-doc/issues) ，然后直接跳转到 [Step 1](./flash_unlocked_device.md#step-1-准备必要环境)。
 
 为了达成这个目标，必须先了解刷机风险。
 
-1. 解锁 [Bootloader](./glossary.md#19-bootloader) 后方可进行刷机，而解锁 Bootloader 是个具有风险的操作，过程中无法保留你的数据，务必提前做好备份。
-   > [!danger]
-   > 解锁 `Bootloader` 时可能需要刷入来自第三方的破解程序帮助实现解锁，这些破解文件进行的很可能是不符合 Android 规范的、极度危险的操作，确保你获得的文件来自可信的来源且你理解操作流程后再动手。
+1. 解锁 [Bootloader](./glossary.md#_19-bootloader) 后方可进行刷机，此操作有风险，过程中无法保留你的数据，务必提前做好备份。
+   > [!tip]
+   > 对于部分有安全漏洞的设备可以不解锁 Bootloader 刷写经过处理的刷机包来实现刷机。早期的 Android 设备也可能可以直接刷机。
+   >
+   > 必须说明，使用这样的方法进行刷机是对安全漏洞的利用，且这个漏洞很可能不会被修复，请注意你的数据安全。
 2. 解锁 Bootloader 后，设备的多数安全防护措施将变得不可靠。如果设备遗失或者被尝试窥探信息的用户掌握，其中存储的数据将变得不安全，可能可以被随意读取、写入（和删除）。
 3. 解锁 Bootloader 之后设备绝大多数分区可以被自由刷写，很容易因为错误操作导致设备损坏（所谓的“变砖”）。
-4. 解锁 Bootloader 后可能无法正常安装系统更新（根据厂商策略而定）。
-5. 解锁 Bootloader 会导致你的设备被认为“不可信”（比如可以按照“用途”中的说法修改欺骗上层 APP），设备可能被部分互联网厂商拒绝提供部分或者全部服务，例如难以获得购物平台的大额优惠券、部分金融支付类软件的指纹快捷支付失效、游戏应用中容易被认为是使用外挂软件的用户等。对于三星等搭载了硬件安全模块的设备，解锁还可能会永久损坏这些安全模块，造成安全支付等功能不可用。
+4. 解锁 Bootloader 后可能无法正常安装系统更新。
+5. 解锁 Bootloader 会导致你的设备被认为“不可信”（比如可以按照“用途”中的说法修改欺骗上层 APP），设备可能被部分互联网厂商乃至制造商本身拒绝提供部分或者全部服务。例如：
+   - 难以获得购物平台的大额优惠券
+   - 部分金融支付类软件的指纹支付功能失效，例如微信、云闪付
+   - 游戏应用中容易被认为是使用外挂软件的用户，例如三角洲行动
+   - 临时或**永久损坏**设备级安全模块，造成安全支付等功能不可用，例如一加（刷入官方系统并锁定 Bootloader 后恢复）和三星（永久损毁）
+   - 无法使用便利功能，例如无法在小布建议中绑定国铁吉讯账号
 6. 解锁 Bootloader 后，根据不同厂商政策，你的保修可能失效。
-7. 刷写恶意或者未正确调整的第三方固件可能丢失重要的设备信息，例如 OPPO/一加/真我 设备的 `ocdt` 分区，造成设备无法启动。又例如联想设备存放在 `persist` 分区中的串号，造成设备无法启动、AI 服务无法使用、系统更新也可能故障。
-8. 第三方固件可能带来额外的 Bug ，例如平板的手写笔和键盘在第三方 ROM 下失效，影响使用体验。
+7. 刷写恶意或者未正确调整的第三方固件可能丢失重要的设备信息，例如：
+   - OPPO/一加/真我 设备的 `ocdt` 分区被格式化会造成设备无法启动，且售后无法修复
+   - 联想设备存放在 `persist` 分区中的串号丢失会造成 AI 服务无法使用、系统更新失效，如果 `persist` 被格式化将导致无法开机
+8. 第三方固件可能带来额外的 Bug ，例如：
+   - 平板的手写笔和键盘在第三方 ROM 下失效
+   - NFC 功能由于安全验证问题不可用
+   - 由于设备验证问题而不能使用厂商提供的强大定制相机
+   
    > [!important]
    > 设备制造商不对安装的第三方固件的安全、性能等指标做任何保障，且原则上不为这些设备提供保修。如刷写第三方固件，不要向官方渠道反馈你遇到的 Bug 。
 
@@ -41,15 +61,10 @@
 ## Step 1: 准备必要环境
 
 > [!warning] ！继续阅读前请注意
-> 部分文字明确标注了仅适用于/不适用于某个厂家出品的设备或者某个特定产品。
->
-> 针对本文**不适用**的操作（例如小米设备解锁 BootLoader）请自行查阅其他资料。
->
-> ---
 >
 > 所有以尖括号 `<>` 包裹起来的文字仅作为示范。
 >
-> 在你实际使用时，应当将**包含尖括号在内的所有文本** 替换成你实际使用的镜像。
+> 在你实际使用时，应当将**包含尖括号在内的所有文本** 替换成你实际需要的文本。
 >
 > 例如：
 >
@@ -57,17 +72,9 @@
 >
 > 而*你的* `sn.img` 存放在 `D盘根目录` ，也就是说你需要输入的命令是`fastboot flash unlock D:\sn.img`
 >
-> 如果不太确定这些命令中含有尖括号的部分应该怎么写，请参阅下面的网址：
->
-> [《你缺失的那门计算机课》 - 文件与文件管理](https://www.criwits.top/missing/file-and-file-management.html)
->
-> [《你缺失的那门计算机课》 - 一些约定与预备知识](https://www.criwits.top/missing/first-things-first.html)
->
-> 以及[此书](https://www.criwits.top/missing/)其他的基础篇内容。
->
-> 我发誓不是在给他们打广告。
+> 如果不太确定这些命令中含有尖括号的部分应该怎么写，推荐阅读这本书：[《你缺失的那门计算机课》](https://www.criwits.top/missing/)
 
-以联想设备为例。
+**以联想设备小新 Pad Pro GT 为例。**
 
 ### <a id="USB_Debugging"></a>打开 USB 调试：
 
@@ -93,19 +100,19 @@
 
 ### <a id="Install_ADB"></a>安装 ADB 工具：
 
-1. 在群文件夹 `搞机工具` 或者 [Android Developers](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn) 下载`platform-tools-latest-windows.zip`，这就是 ADB工具包 。
+1. 在 [Android Developers](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn) 下载`platform-tools-latest-windows.zip`，这就是 ADB工具包 。
 
-2. ADB 工具解压后应当得到`platform-tools`文件夹，打开能看到以下文件：
+2. ADB 工具解压后应当得到 `platform-tools` 文件夹，打开能看到以下文件：
 
 ![](./media/image13.webp)
 
-全选这些文件并复制，将它们粘贴到`Windows`文件夹下的`System32`**和**`SysWOW64`文件夹中，例如：Windows 安装在 C 盘，则应当复制到以下图片中所示的目录：
+全选这些文件并复制，将它们粘贴到`Windows`文件夹下的 `System32` **和** `SysWOW64` 文件夹中，例如：Windows 安装在 C 盘，则应当复制到以下图片中所示的目录：
 
 ![](./media/image14.webp)
 
 ![](./media/image15.webp)
 
-现在 ADB 工具应当已经完成安装，要测试是否正确安装，按`Win + X`或者直接用鼠标右键任务栏上的 `Windows 徽标` 打开超级菜单，然后选择`Windows Powershell`或者`命令提示符`或者`终端`，打开后输入以下命令：
+现在 ADB 工具应当已经完成安装，要测试是否正确安装，按 `Win + X` 或者直接用鼠标右键任务栏上的 `Windows 徽标` 打开超级菜单，然后选择 `Windows Powershell` 或者 `命令提示符` 或者 `终端` ，打开后输入以下命令：
 
 ```
 adb --version
@@ -117,160 +124,95 @@ adb --version
 
 这说明 ADB 工具已经正确安装。
 
-### <a id="Install_Driver"></a>安装9008驱动：
+### <a id="Install_Driver"></a>安装刷机驱动：
 
-对于可以解锁的设备来说这一步不强制。
+如果您相信本站提供的二进制文件的话，请直接使用此云盘链接：[蓝奏云 - 刷机驱动](https://wwapb.lanzout.com/it1WR3pkt04h)
+密码:gy8y
 
-- 方法1：下载群内**搞机工具**文件夹中的 `9008驱动_来自刷机匣.exe`，双击打开安装。
-
-- 方法2：下载群内**搞机工具**文件夹中的工具“匣”，打开软件主界面后安装9008刷机驱动。
+此外，一些刷机工具箱也提供驱动程序下载，`Windows Update` 也可能可以提供合适的驱动程序。
 
 ## Step 2: 申请解锁
 
-> [!warning]
-> 不建议尝试强行解锁 BootLoader 的行为。
-
 对于**联想**的可解锁设备：
 
-0. **备份所有用户数据**
+1. **备份所有用户数据**
 
-1. 访问[联想 BootLoader 解锁申请网站](https://www.zui.com/iunlock)，填写所需信息并提交申请。
+2. 访问[联想 BootLoader 解锁申请网站](https://www.zui.com/iunlock)，填写所需信息并提交申请。 **小新 Pad Pro GT 从 Y700 五代入口申请**。
 
-2. 在提供的邮箱中接收发送来的 `sn.img` 。
+3. 在提供的邮箱中接收发送来的 `sn.img` 。
 
-3. 电脑安装 `ADB` 工具，将设备重启到 `BootLoader` 模式。如果有USB调试，可以使用下面的命令:
+4. 电脑安装 `ADB` 工具，将设备重启到 `Bootloader` 模式。如果有USB调试，可以使用下面的命令:
 
-   ```shell
+   ```powershell
    adb reboot bootloader
    ```
 
-4. 输入下面的命令刷入 `sn.img` 并启动解锁流程：
+5. 输入下面的命令刷入 `sn.img` 并启动解锁流程：
 
-   ```shell
+   ```powershell
    fastboot flash unlock <your_sn.img>
    fastboot oem unlock-go
    ```
 
-5. 在平板端确认解锁，**确认解锁后所有用户数据会被清除**，并自动重启到系统。
+6. 在平板端用音量按键移动选项并用电源键选定 `UNLOCK THE BOOTLOADER` 确认解锁，**确认解锁后所有用户数据会被清除**，并自动重启到系统。
 
 > [!warning]
-> 如果有 9008 使用能力（对于 MTK 机型则是 BootROM 深刷），到这一步就可以开始备份 `底层数据` 了！推荐刷机匣。
+> 如果会使用 9008 ，到这一步就可以开始备份 `底层数据` 了！本设备的底层备份教程：[备份底层](./before_flashing.md)
 
 ## Step 3: 刷写 Root
 
-0. 比较几种 Root 实现：
-   
-   | \    | Magisk                                                         | KernelSU                                                                                              | KernelSU Next                                                                                   | SukiSU Ultra                                                                                                                | APatch                                                 |
-   |------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
-   | 优势 | - 兼容性好<br>- 内置 Zygisk 实现<br>- 弹窗申请 `su` ，操作直观 | -  `元模块` 提供强大的挂载能力<br>- 稳定性和安全性最佳<br>- 极好的隐藏性<br>- 允许控制用户 UID 和 GID | -  `元模块` 提供强大的挂载能力<br>- 极好的隐藏性<br>- 个性化管理器<br>- 允许控制用户 UID 和 GID | -  `元模块` 提供强大的挂载能力<br>- 极好的隐藏性<br>- 内置 SusFS 和 KPM 支持<br>- 个性化管理器<br>- 允许控制用户 UID 和 GID | - 极致隐藏<br>- 稳定的 KPM<br>- 超级密码保护 Root 安全 |
-   | 劣势 | - 需要在系统内完成修补，免解锁刷入更复杂。                     | - Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                             | - Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                       | - bug 较多<br>- Root 授权不如 Magisk 直观<br>- 稀疏文件影响存储空间统计                                                     | - 挂狗利器，谨防被各种检测手段误伤                     |
+   拥有 Root 权限相当于拥有了 Windows 的管理员账户，可以进行大多数关于系统底层的修改了。
 
-   *注：现在更推荐使用 KernelSU 的 LKM 模式来获取 Root，这个模式下也需要在 Android 系统中修补镜像*
+   如果您**完全没有了解过刷机**，可以考虑直接了解更现代的 `KernelSU`。如果您使用过 `SuperSU` ，可以尝试操作逻辑更接近的 `Magisk` ：
+      
+   | \    | Magisk                                    | KernelSU                                              | KernelSU Next                                             | SukiSU Ultra                                              | APatch                   |
+   |------|-------------------------------------------|-------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|--------------------------|
+   | 优势 | - 兼容性好<br>- 内置 Zygisk<br>- 授权直观 | -  `元模块`<br>- 稳定安全<br>- 隐匿性好<br>- 精细授权 | -  `元模块`<br>- 隐匿性好<br>- 个性化管理器<br>- 精细授权 | -  `元模块`<br>- 隐匿性好<br>- 个性化管理器<br>- 精细授权 | - 极致隐藏<br>- 内核模块 |
+   | 劣势 | - 易被检测                                | - 授权不直观                                          | - 授权不直观                                              | - bug 较多<br>- 授权不直观<br>                            | - 易被误伤               |
+   
+   *注：[kernelsu.org 对元模块的说明](https://kernelsu.org/zh_CN/guide/metamodule.html)*
+
+> [!danger]
+> 免解锁用户如果不了解 AVB 签名请跳过本步剩下的文本。你需要跟随本站的其他教程，用已经处理好的镜像通过 9008 刷机。
 
 1. 确定可用的 Root 实现：
    - 5.10 以下内核版本的设备：首选 `Magisk` 。
-   - 5.10 及以上内核版本的设备：`Magisk`, `KernelSU` 和 `APatch` 任君选择。
-2.  得到 `init_boot` 或 `boot` 镜像 ，通过救砖包或者 `Payload Dumper` 实现
-   > [!tip] 如何确定应该使用 `init_boot` 还是 `boot` ?
-   >
-   > 从出厂搭载 Android 13 的设备（内核版本 5.15）开始，原先位于 `boot` 的 `ramdisk` 部分被移动到了 `init_boot` 分区，这是 `Magisk` 和 `KernelSU LKM 模式` 修补的分区。
-   >
-   > 先根据管理器区分：
-   >
-   > APatch: `boot`
-   >
-   > Magisk: 
-   >  - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
-   >  - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
-   >
-   > KernelSU:
-   > - GKI 模式（目前已不推荐）：`boot`
-   > - LKM 模式：
-   >     - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
-   >     - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
-   >
-   > 关于确定内核和 `KMI` 版本，请参考 [KernelSU - 安装](https://kernelsu.org/zh_CN/guide/installation.html) 。
+   - 5.10 **及**以上内核版本的设备：`Magisk`, `KernelSU` 和 `APatch` 任君选择。
+   > [!tip]
+   > 关于确定内核版本，请参考 [KernelSU - 安装](https://kernelsu.org/zh_CN/guide/installation.html) 。
+2.  得到 `init_boot` 或 `boot` 镜像 ，通过下载系统包实现。
+
+   那么问题来了：如何确定应该使用 `init_boot` 还是 `boot` ?
+   
+   答：
+   - APatch: `boot`
+   - Magisk / KernelSU LKM 模式: 
+     - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
+     - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
+
+   下载系统包：
+   - https://rom.oppo.help/ （小米、OPPO、vivo）
+   - https://xiaomirom.com/ （小米）
+
+   卡刷和线刷：卡刷包可用于直接更新系统，线刷包用于电脑刷机。这里只提取我们需要的镜像，因此下载哪个都可以。
+
+   下载完系统包之后将系统包解压，找到你需要的 `boot.img` 或者 `init_boot.img` 提取出来即可。
+
+   > [!tip] 进阶玩法
+   > 还可以通过深度刷机模式和带有 Root 的 DSU 系统更新包获取需要的镜像。还有一个叫做 `Payload Dumper Compose` 的软件，它可以直接通过 `全量 OTA 链接` 读取我们需要的某个镜像，实现按需下载，节省流量和存储空间。
 
 3.  选择 Root 实现并安装：
 
-    ### 方法 1: Magisk / Alpha / Kitsune Mask
-    - 下载并安装管理器：
-      - 原版 Magisk: [GitHub Releases](https://github.com/topjohnwu/Magisk/releases)
-
-      - Alpha / Kitsune Mask: 暂无
-
-    - 将 `init_boot.img` 交给 `Magisk` 管理器修补，将修补得到的产物（一般在 Download 目录中）复制到电脑上
-
-    - 平板重启到 `BootLoader` ，在电脑上输入下面的命令：
-
-      ```shell
-      fastboot flash init_boot <your_init_boot.img>
-      fastboot reboot
-      ```
-
-    - 开机就能看到管理器提示正常工作了。
-
-    ### 方法 2: KernelSU / KernelSU Next / SukiSU Ultra
-    - 下载并安装管理器：
-      - 原版 KernelSU: [GitHub Releases](https://github.com/tiann/KernelSU/releases)
-
-      - KernelSU Next: [GitHub Releases](https://github.com/KernelSU-Next/KernelSU-Next/releases)
-
-      - SukiSU Ultra: [GitHub Releases](https://github.com/SukiSU-Ultra/SukiSU-Ultra/releases)
-
-      > [!tip]
-      > 想使用 `KernelSU 3.0.0` 或者更新版本**对应的分支**？
-      >
-      > 不建议，原版 KernelSU 更稳定，可以通过 `元模块` 实现分支版本的功能。
-
-    - 根据你想使用的模式进行操作：
-      - LKM: 将 `init_boot.img` 交给管理器修补，将修补后的文件复制到电脑上，然后将平板重启到 `BootLoader` ，并在电脑上执行下面的命令：
-
-        ```shell
-        fastboot flash init_boot <your_init_boot.img>
-        fastboot reboot
-        ```
-
-      - GKI: 下载适合你设备的 `boot.img`，然后将平板重启到 `BootLoader` ，在电脑上执行下面的命令：
-
-        ```shell
-        fastboot flash boot <your_boot.img>
-        fastboot reboot
-        ```
-
-      > [!tip]
-      >
-      > 怎样找到适合你设备的 `boot` 镜像？
-      >
-      > 去各大实现的 `文档站` 查找：
-      >
-      > [KernelSU](https://kernelsu.org/zh_CN/guide/installation.html)
-      >
-      > [SukiSU Ultra](https://sukisu.org/zh/guide/installation)
-      >
-      > KernelSU Next? 对不起，我找不到。
-
-    - 开机就能看到管理器提示正常工作了。
-
-    ### 方法 3: APatch
-
-    - 下载并安装 APatch 管理器: [GitHub Releases](https://github.com/bmax121/APatch/releases)
-    - 将 `boot` 镜像交给 APatch 管理器修补，设定一个容易记忆并具备强度的超级密码，并选择你需要的 KPM 进行嵌入
-    - 将修补后的镜像传输到电脑，将设备重启到 `Bootloader` 模式，使用 `fastboot` 刷入修补后的镜像：
-        ```shell
-        fastboot flash boot <your_boot.img>
-        fastboot reboot
-        ```
-    - 开机进入管理器，输入超级密码，就能看到管理器提示正常工作了。
-   
+   - 方法 1: Magisk / Alpha / Kitsune Mask: [Magisk 中文网](https://magiskcn.com/)
+   - 方法 2: KernelSU / KernelSU Next / SukiSU Ultra: [官方文档](https://kernelsu.org/zh_CN/guide/installation.html) 或者 [KernelSU 中文网](https://kernelsu.com/)
+   - 方法 3: APatch: [APatch 中文网](https://apatch.app/)
     > [!note] 需要更换新的 KPM 模块？
     > 这个步骤将重新修补 `boot` 并刷入。如果你的设备是免解锁刷入的 APatch，应当将这个镜像重新签名然后再刷入。
     >
     > 注意这里的签名和 APatch 圈子中常说的签名不一样。
 
-
 > [!warning]
-> 就算没有深度刷机能力，到这一步你也可以备份用户数据了！详情参考[dd命令 - 从入门到精通](./dd_command.md)
+> 就算没有深度刷机能力，到这一步你也可以备份用户数据了！详情参考[dd命令 - 从入门到精通](./dd_command.md)。你还可以利用 Shell 编写一个脚本实现分区备份的自动化。
 
 ## Step 4: 玩机：基础必备模块
 
@@ -301,13 +243,12 @@ adb --version
 
 对于 TB710FU 的具体建议：
 
-1. **小新 Pro GT 11.1 用户可以不看这条 ->** 如果 Magisk 版本低：神仙自动救砖 / 音量键自动救砖
-2. Zygisk Next: 一切需要 Zygisk 框架的模块的基石
-3. LSPosed: 基于 Zygisk 的现代 XPosed 实现， **需要 Zygisk 模块，例如 Zygisk Next!!!**
+1. Zygisk Next: 一切需要 Zygisk 框架的模块的基石
+2. LSPosed: 基于 Zygisk 的现代 XPosed 实现， **需要 Zygisk 模块，例如 Zygisk Next!!!**
    > [!important] 关于 LSPosed 2.0 的兼容性
    > LSPosed API 100 是个从来没有正式发布的版本，一些基于这个 API 等级开发的模块在 LSPosed 2.0 中将不受支持。如果需要 API 100 的支持，考虑使用 [Vector](https://github.com/JingMatrix/Vector/releases) 或者其他分支。
-4. 如果需要调度模块：[吟惋兮维护的最新 uperf 模块](https://www.coolapk.com/u/3795216)。
-5. 如果需要隐藏 Root 痕迹：
+3. 如果需要调度模块：[吟惋兮维护的最新 uperf 模块](https://www.coolapk.com/u/3795216)。
+4. 如果需要隐藏 Root 痕迹：
    - TEESimulator: 软件模拟 TEE 处理密钥认证方面的问题，下载：[GitHub Releases](https://github.com/JingMatrix/TEESimulator/releases)
    - TS Addon: 为 TEESimulator 提供方便的管理界面，下载：[GitHub Releases](https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases)
 
