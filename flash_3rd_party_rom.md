@@ -1,5 +1,7 @@
 # 刷入第三方 ROM、救砖包，和自己创建的备份
 
+本篇文章主要针对免解锁刷机而写，如果你已经解锁了你的平板的 Bootloader ，可以忽略本文关于系统版本的警告。
+
 > [!warning]
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [刷机必修一](./flash_unlocked_device.md)？
 
