@@ -53,10 +53,9 @@ export default defineConfig({
         text: "教程本篇",
         collapsed: false,
         items: [
-          { text: "术语表", link: "/glossary" },
           { text: "序言", link: "/before_we_start" },
           { text: "提问的智慧", link: "/how_to_ask" },
-          { text: "刷机必修一", link: "/flash_unlocked_device" },
+          { text: "解锁 Bootloader 刷机", link: "/flash_unlocked_device" },
           { text: "刷机工具教程——高通工具箱", link: "/qcom_toolbox" },
           { text: "刷机工具教程——匣", link: "/geekflashtool" },
           { text: "重要警告 ⭐", link: "/important_warns"},
@@ -86,13 +85,20 @@ export default defineConfig({
             text: "救砖",
             link: "/unbrick_device",
           },
-          { text: "常见问题速查 ⭐", link: "/faq" },
-          { text: "附录1：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
+        ],
+      },
+      {
+        text: "正篇附录",
+        collapsed: false,
+        items: [
+          { text: "附录1：常见问题速查", link: "/faq" },
+          { text: "附录2：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
+          { text: "附录3：术语表", link: "/glossary" },
         ],
       },
       {
         text: "扩展篇",
-        collapsed: false,
+        collapsed: true,
         items: [
           { text: "dd命令", link: "/dd_command" },
           { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
