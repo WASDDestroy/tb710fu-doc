@@ -42,6 +42,8 @@ export default defineConfig({
     nav: [
       { text: "主页", link: "/" },
       { text: "开始了解", link: "/before_we_start" },
+      { text: "Root相关", link: "/state_machine" },
+      { text: "第三方 ROM", link: "/appendix_3rd_party_roms"},
       { text: "更新日志", link: "/updatelog" },
     ],
     editLink: {

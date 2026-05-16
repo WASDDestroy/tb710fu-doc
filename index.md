@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“联想奇迹”"
-  tagline: --final_version?
+  tagline: fastboot flashing unlock-go
   image: /logo.jpg
   actions:
     - theme: brand
@@ -15,8 +15,8 @@ hero:
       text: 疑难解答
       link: /faq
     - theme: alt
-      text: Root相关
-      link: /state_machine
+      text: 讨论交流
+      link: https://qm.qq.com/q/Brp7R3bDK8
 
 features:
   - title: 免解锁 Root 设备
