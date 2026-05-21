@@ -136,25 +136,24 @@ adb --version
 对于**联想**的可解锁设备：
 
 1. **备份所有用户数据**
-
-2. 访问[联想 BootLoader 解锁申请网站](https://www.zui.com/iunlock)，填写所需信息并提交申请。 **小新 Pad Pro GT 从 Y700 五代入口申请**。
-
-3. 在提供的邮箱中接收发送来的 `sn.img` 。
-
-4. 电脑安装 `ADB` 工具，将设备重启到 `Bootloader` 模式。如果有USB调试，可以使用下面的命令:
-
+2. 获取所需信息（GSN 和 Bootloader SN）：使用命令 `adb reboot bootloader` 或者在关机时按住 `电源键` 和 `音量上键` 将平板启动到 Bootloader 模式。
+   - 屏幕上此时会显示一项 `Serial number` ，这个八位数的串号就是解锁网站第一个空格中要求的串号。
+   - 在电脑上输入 `fastboot getvar Bootloader_SN_Part1` 和 `fastboot getvar Bootloader_SN_Part2` 获取两段 Bootloader SN 并将它们拼接起来。
+   - 这样就获得了全部必须信息。
+   > [!info]
+   > 虽然 `fastboot getvar all` 是官网说明中提供的获取 Bootloader SN 的方式，但是这个方式在部分设备上会出现 "too many links" 的连接错误，因此并不推荐。
+3. 访问[联想 BootLoader 解锁申请网站](https://www.zui.com/iunlock)，填写所需信息并提交申请。 **小新 Pad Pro GT 从 Y700 五代入口申请**。
+4. 在提供的邮箱中接收发送来的 `sn.img` 。
+5. 电脑安装 `ADB` 工具，将设备重启到 `Bootloader` 模式。如果有USB调试，可以使用下面的命令:
    ```powershell
    adb reboot bootloader
    ```
-
-5. 输入下面的命令刷入 `sn.img` 并启动解锁流程：
-
+6. 输入下面的命令刷入 `sn.img` 并启动解锁流程：
    ```powershell
    fastboot flash unlock <your_sn.img>
    fastboot oem unlock-go
    ```
-
-6. 在平板端用音量按键移动选项并用电源键选定 `UNLOCK THE BOOTLOADER` 确认解锁，**确认解锁后所有用户数据会被清除**，并自动重启到系统。
+7. 在平板端用音量按键移动选项并用电源键选定 `UNLOCK THE BOOTLOADER` 确认解锁，**确认解锁后所有用户数据会被清除**，并自动重启到系统。
 
 > [!warning]
 > 如果会使用 9008 ，到这一步就可以开始备份 `底层数据` 了！本设备的底层备份教程：[备份底层](./before_flashing.md)
