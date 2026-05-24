@@ -9,16 +9,11 @@ output: word_document
 
 ## Step 0:
 
-自己下载群文件夹中合适的文件：
+下载下列文件：
 
-1. 刷机工具：位于 `搞机工具` 文件夹中的 `刷机匣`；
-2. 引导文件：位于 `神秘引导文件` 文件夹中的 `xbl_s_devprg_ns.melf`
-3. 签名工具：位于 `AVB2.0相关` 文件夹中的 `一键签名工具.rar`
-4. Root 管理器：位于 `管理器合集` 文件夹中，根据你准备使用的实现自行选择。推荐 `KernelSU`
-
-![需要的文件](./media/LKM_9008/file_required.png)
-
-确保电脑安装了 Python 3 环境，推荐 Python 3.13。如果没有，请前往这里下载：[Python 3, Windows 发行版下载](https://www.python.org/downloads/windows/)。
+1. 签名所需文件：[蓝奏云 - 签名工具和 Root 管理器](https://wwapb.lanzout.com/b004jdwk0f) 密码:69l9
+2. 刷机工具和 9008 引导文件：[蓝奏云 - 刷机工具和 9008 引导](https://wwapb.lanzout.com/b004jgeabg) 密码:azwr，建议选择刷机匣工具，后续教程均基于本工具开展。
+3. Python 3 运行时，推荐 Python 3.13。如果没有，请前往 python.org 下载：[Python 3, Windows 发行版下载](https://www.python.org/downloads/windows/)。
 
 ![](./media/LKM_9008/recommended_python.png)
 
@@ -96,7 +91,7 @@ output: word_document
     > [!warning]
     > 选择 `vbmeta` 时，不要错选成 `vbmeta_system` !
 
-2. 按工作界面右侧的 `回读` 按键从设备读出分区，记得选择容易记忆且有区分度的目录，例如选择将回读的文件存储在 `D:\LKM\Readback` 中。
+2. 按工作界面右侧的 `回读` 按键从设备读出分区，记得选择容易记忆且有区分度的目录，例如选择将回读的文件存储在 `D:\LKM_TB710FU` 中。
 
     ![](./media/LKM_9008/readback_button.png)
 
@@ -144,9 +139,9 @@ output: word_document
    
    ![](./media/LKM_9008/extract_sign_tool.png)
 
-2. 将刚刚**回读的**`vbmeta_<slot>.img` 重命名为 `vbmeta.img` ，放置到工具中含有 *非链式* 字样的 `.bat` 文件的目录中。
+2. 将刚刚**回读的**`vbmeta_a.img` 或者 `vbmeta_b.img` 重命名为 `vbmeta.img` ，放置到工具中含有 *非链式* 字样的 `.bat` 文件的目录中。
 
-3. 将**由你的 Root 管理器修补好的**`init_boot_<slot>.img` （现在它的名字应该类似于 `kernelsu_patched_20260407_035938.img`）重命名为 `init_boot.img`，放置到和上面的 `vbmeta.img` 相同的目录中。
+3. 将**由你的 Root 管理器修补好的**`init_boot.img` （现在它的名字应该类似于 `kernelsu_patched_20260407_035938.img`）重命名为 `init_boot.img`，放置到和上面的 `vbmeta.img` 相同的目录中。
    
 4. 完成上面两步之后签名工具所在的目录大概像这样：
    
