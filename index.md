@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“联想奇迹”"
-  tagline: fastboot flashing unlock-go
+  tagline: fastboot oem unlock-go
   image: /logo.jpg
   actions:
     - theme: brand
