@@ -3,3 +3,4 @@
 /.vitepress/theme/
 /.vitepress/dist/
 /pnpm-lock.yaml
+/*.docx
