@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 欲一键安装 LKM，先刷入 TWRP
 
 > [!warning]

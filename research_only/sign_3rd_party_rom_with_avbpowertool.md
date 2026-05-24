@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 使用 AVBPowerTool 签名系统镜像，以在更新了回滚指数的 ZUXOS 上使用免解锁 ROM 和 Root
 
 AVBOPowerTool 是一个设计用于签名完整 ROM 包的、基于配置的 AVB 签名工具 / 命令生成器。本教程指导你利用此工具读取原始系统包的数据并用于签名使用老 AVB 信息的“过时”第三方 ROM 镜像。

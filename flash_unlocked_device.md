@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 解锁 Bootloader 刷机
 
 > [!warning] @soft_deprecation of “刷机必修一”

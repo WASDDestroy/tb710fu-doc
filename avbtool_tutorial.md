@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # avbtool.py 使用说明
 
 > [!important]

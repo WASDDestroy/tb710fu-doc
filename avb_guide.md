@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # AVB (Android Verified Boot) 入门
 
 > [!warning] 免责声明 DISCLAIMER

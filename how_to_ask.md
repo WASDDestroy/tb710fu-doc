@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 提问的智慧
 
 > [!note] 另请参阅

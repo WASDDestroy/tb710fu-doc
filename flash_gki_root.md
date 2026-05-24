@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 刷写 GKI Root
 
 GKI Root 对于官方和第三方 ROM 都适用。

@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 刷写 LKM Root - 使用 TWRP 刷入 KernelSU LKM
 
 > 如同题目提示的一样，这个方法目前暂时只支持刷写 KernelSU LKM。

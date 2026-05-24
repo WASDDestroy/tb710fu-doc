@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 刷写 LKM Root - 使用 9008
 
 > [!warning]

@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # dd 命令教学 - 从入门到精通
 
 > [!warning]

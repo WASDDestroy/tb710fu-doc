@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # Root 前须知
 
 > [!warning]

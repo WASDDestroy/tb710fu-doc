@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # 修复 GSN
 
 > 关联关键词：修复 `Persist`、修复串号

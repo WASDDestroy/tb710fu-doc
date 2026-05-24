@@ -1,3 +1,7 @@
+---
+output: word_document
+---
+
 # Afterword | 已经不需要再战斗了
 
 ## Revision 4 是怎么来的
