@@ -7,6 +7,9 @@ output: word_document
 > [!warning]
 > 以下内容仅适用于 TB710FU。
 
+> [!important] 一个时代结束了...
+> [1.5.04.445 修复了免解锁漏洞](/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+
 > [!danger] GKI 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。
 >

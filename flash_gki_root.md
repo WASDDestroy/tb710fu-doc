@@ -9,6 +9,9 @@ GKI Root 对于官方和第三方 ROM 都适用。
 > [!warning]
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
 
+> [!important] 一个时代结束了...
+> [1.5.04.445 修复了免解锁漏洞](/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+
 > [!danger] 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。
 >
