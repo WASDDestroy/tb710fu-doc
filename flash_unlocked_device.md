@@ -2,337 +2,211 @@
 output: word_document
 ---
 
-# 解锁 Bootloader 刷机
+# 为您的联想小新 Pad Pro GT 解锁 Bootloader
 
-> [!warning] @soft_deprecation of “刷机必修一”
-> 我突然发现，与其写一篇 all-in-one 的文章，不如多多引用其他教程。
->
-> 此外，直接告诉新手大致框架并不适合作为小白教程。相反，其他网站提供的手把手教程能更好的帮助小白迈出第一步。
->
-> 因此本篇文章将只用作安装必要环境和联想解锁 Bootloader 的说明书。同时作为基本的风险告知书存在。
+![](/media/Unlock_Bootloader/header.jpg)
 
-## Step 0: 了解刷机用途和风险
+之前传出的高版本无法解锁 Bootloader ，到现在为止来看很可能是一个暂时的误传：以下“高版本”经过测试可以正常解锁 Bootloader ：1.5.04.414, 1.5.04.428, 1.5.04.445，但是不能排除后续版本封堵解锁的可能。
 
-### 用途
+此外，众所周知的，[1.5.04.445 修复了免解锁漏洞](/faq.md#注释-3-关于免解锁刷机)，解锁刷机会是我认为比较正式的途径。
 
-刷机是向设备刷入非官方适配的底层软件，可能可以获得功能增强和不同的使用体验。例如：
+怎么恢复免解锁和是否有必要以保修为代价解锁、解锁之后[保修政策](https://www.lenovocare.com.cn/ServicePolicy.aspx)到底怎样、回锁情况如何等，这些都不是本文讨论的话题，本文讨论的是用邪修方法解锁 Bootloader 喵~
 
-- 使用不同厂商的操作系统（ROM）
-- 通过系统级的广告过滤工具杜绝烦人的开屏广告
-- 加载表现优异的第三方性能调度器来提高游戏帧速率
-- 劫持 ART (Android RunTime) 来修改上层 APP （实现防撤回）
-- 其他非常多的用途...不管合法与否...
+## 准备
 
-### 风险
+1. 一台正常工作的 Windows 电脑，建议 Windows 11 ，并保证 USB 可靠
+2. 一条正常**传输数据**的可靠的 USB 电缆
+3. **保证头脑清醒和一定动手能力**
 
-> [!danger] 刷机需谨慎
-> 刷机需谨慎，安全不能丢。风险并非源于“刷机”本身，而是来自**背景不明**的系统包、不可信的工具、不规范的流程以及**缺乏安全意识的操作**。广大民众在追求极致的玩机体验时，更应注意保护信息及数据安全。[查看原文 - 人民号](https://www.peopleapp.com/column/30052015045-500007482803)
+## 打开 USB 调试
 
-没有刷机操作是 100% 安全的，但是我们在此仍将“令所进行的操作尽可能稳定”作为目标。如果你认为这个观点是错误的，去本项目仓库[发起 Issue](https://gitee.com/WASDDestroy/tb710fu-doc/issues) ，然后直接跳转到 [Step 1](./flash_unlocked_device.md#step-1-准备必要环境)。
+在平板上完成这些基本准备步骤：
 
-为了达成这个目标，必须先了解刷机风险。
+1. 打开设置，找到 **关于平板电脑**
+2. 滑动右侧页面找到 **ZUXOS 版本**，狂点直到系统提示 **您已处于开发者模式**
+3. 转到 **通用设置**
+4. 滑动右侧页面最下方找到 **开发者选项**
+5. 滑动右侧页面找到 **USB 调试**，打开这个选项。
+6. USB 调试选项需要在稍后再允许调试，按照下图来选择：
 
-1. 解锁 [Bootloader](./glossary.md#_19-bootloader) 后方可进行刷机，此操作有风险，过程中无法保留你的数据，务必提前做好备份。
-   > [!tip]
-   > 对于部分有安全漏洞的设备可以不解锁 Bootloader 刷写经过处理的刷机包来实现刷机。早期的 Android 设备也可能可以直接刷机。
-   >
-   > 必须说明，使用这样的方法进行刷机是对安全漏洞的利用，且这个漏洞很可能不会被修复，请注意你的数据安全。
-2. 解锁 Bootloader 后，设备的多数安全防护措施将变得不可靠。如果设备遗失或者被尝试窥探信息的用户掌握，其中存储的数据将变得不安全，可能可以被随意读取、写入（和删除）。
-3. 解锁 Bootloader 之后设备绝大多数分区可以被自由刷写，很容易因为错误操作导致设备损坏（所谓的“变砖”）。
-4. 解锁 Bootloader 后可能无法正常安装系统更新。
-5. 解锁 Bootloader 会导致你的设备被认为“不可信”（比如可以按照“用途”中的说法修改欺骗上层 APP），设备可能被部分互联网厂商乃至制造商本身拒绝提供部分或者全部服务。例如：
-   - 难以获得购物平台的大额优惠券
-   - 部分金融支付类软件的指纹支付功能失效，例如微信、云闪付
-   - 游戏应用中容易被认为是使用外挂软件的用户，例如三角洲行动
-   - 临时或**永久损坏**设备级安全模块，造成安全支付等功能不可用，例如一加（刷入官方系统并锁定 Bootloader 后恢复）和三星（永久损毁）
-   - 无法使用便利功能，例如无法在小布建议中绑定国铁吉讯账号
-6. 解锁 Bootloader 后，根据不同厂商政策，你的保修可能失效。
-7. 刷写恶意或者未正确调整的第三方固件可能丢失重要的设备信息，例如：
-   - OPPO/一加/真我 设备的 `ocdt` 分区被格式化会造成设备无法启动，且售后无法修复
-   - 联想设备存放在 `persist` 分区中的串号丢失会造成 AI 服务无法使用、系统更新失效，如果 `persist` 被格式化将导致无法开机
-8. 第三方固件可能带来额外的 Bug ，例如：
-   - 平板的手写笔和键盘在第三方 ROM 下失效
-   - NFC 功能由于安全验证问题不可用
-   - 由于设备验证问题而不能使用厂商提供的强大定制相机
-   
-   > [!important]
-   > 设备制造商不对安装的第三方固件的安全、性能等指标做任何保障，且原则上不为这些设备提供保修。如刷写第三方固件，不要向官方渠道反馈你遇到的 Bug 。
+![](/media/Unlock_Bootloader/allow_usb_debugging.webp)
 
-**什么，还要继续吗？**
+## 打开 OEM 解锁
 
-**那么请继续阅读本文的其余部分。**
+1. 在刚才一步的右侧界面中找到 **OEM 解锁**（在 USB 调试上面），打开这个开关
+2. 另一个效果一样的方法是 9008 回读 `frp` 分区，将分区的最后一位从十六进制 00 改成 01 后重新用 9008 刷回设备
 
-## Step 1: 准备必要环境
+## 安装刷机驱动
 
-> [!warning] ！继续阅读前请注意
->
-> 所有以尖括号 `<>` 包裹起来的文字仅作为示范。
->
-> 在你实际使用时，应当将**包含尖括号在内的所有文本** 替换成你实际需要的文本。
->
-> 例如：
->
-> *教程中*写的是 `fastboot flash unlock <your_sn.img>`
->
-> 而*你的* `sn.img` 存放在 `D盘根目录` ，也就是说你需要输入的命令是`fastboot flash unlock D:\sn.img`
->
-> 如果不太确定这些命令中含有尖括号的部分应该怎么写，推荐阅读这本书：[《你缺失的那门计算机课》](https://www.criwits.top/missing/)
+从别的地方找驱动也行，不一定要用我的，但是不保证正常工作。
 
-**以联想设备小新 Pad Pro GT 为例。**
+刷机驱动：[蓝奏云](https://wwapb.lanzout.com/it1WR3pkt04h) ，密码:gy8y
 
-### <a id="USB_Debugging"></a>打开 USB 调试：
+下载后双击打开有绿色 OPPO 标志的程序文件，一路下一步即可。最后不需要重启电脑。
 
-1. 打开设置；
+## 安装 ADB 工具
 
-2. 找到 `关于平板电脑`；
+这里可以用第三方工具箱替代，只是我个人更喜欢“原版”工具。。
 
-3. 滑动右侧页面，找到 `软件版本` 一项然后连续点击它，直到系统提示`您已处于开发者模式`；
+1. 下载 adb 工具包（其实这玩意叫做 platform-tools）：[Android Developers](https://googledownloads.cn/android/repository/platform-tools-latest-windows.zip)
+2. 解压 platform-tools-latest-windows.zip 得到 platform-tools 文件夹，先放到一个不容易记错的地方。
+3. （进阶）如果你会设置环境变量，可以把 platform-tools 文件夹放到一个你认为合适的地方后将 platform-tools 的路径添加到 `Path` 中。
+4. （标准）将 platform-tools 文件夹中的所有文件复制到系统文件夹（也就是 Windows 文件夹）下的 `System32` 和 `SysWOW64` 文件夹中，也就是路径形如 *C:\Windows\System32* 和 *C:\Windows\SysWOW64* 的文件夹中。
 
-4. 转到`通用设置`，滑动找到`开发者选项`；
+    ![](/media/Unlock_Bootloader/files_in_platform_tools_dir.webp)
 
-5. 在`开发者选项`中找到并打开`USB 调试`开关；
+    ![](/media/Unlock_Bootloader/system32_dir.webp)
 
-> [!important]
-> 联想设备可能需要将 USB 模式设置为 `仅充电` （或者叫做 `不用于数据传输` ）才能正常使用 USB 调试。
+    ![](/media/Unlock_Bootloader/syswow64_dir.webp)
 
-6. 弹出的`是否允许 USB 调试`对话框请选择确认，如果日后还需要在这台电脑上调试设备，可以勾选“一律允许使用这台计算机进行调试”。
+5. 完成工作后重新打开一个终端界面，可以使用快捷键 `Win + R` 打开运行对话框然后输入 `cmd` ，也可以按快捷键 `Win + X` 然后按 `I` 打开终端模拟器。
+6. 输入 `adb --version` ，这时应当能正常显示 adb 工具的版本和安装位置，你也可以用相同的方法测试一下 fastboot 能否正常被检测到，虽然检查 fastboot 没什么必要。
+   ![](/media/Unlock_Bootloader/successfully_installed_adb.webp)
+7. 别关命令行窗口，等会还有用。
 
-![](./media/image21.webp)
+## 申请解锁 Bootloader
 
-> [!note]
-> 对于其他设备，如果找不到“软件版本”字样，可能需要寻找诸如 `版本号` 、 `OS版本` 等字样并连续点击。
+登录联想解锁申请网站 [ZUI官网 - 解锁](https://www.zui.com/iunlock) ，在 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 的入口提交解锁申请。要提交解锁申请，需要下面的信息：
 
-### <a id="Install_ADB"></a>安装 ADB 工具：
+1. 8位设备串号，或者叫做 GSN
+2. Bootloader SN
+3. 一个有效的邮箱，建议网易 163 邮箱，成功率最高
+4. 一个尚有解锁次数剩余（理论上是一年三次）的联想账号
 
-1. 在 [Android Developers](https://developer.android.google.cn/tools/releases/platform-tools?hl=zh-cn) 下载`platform-tools-latest-windows.zip`，这就是 ADB工具包 。
+### 获取上述信息
 
-2. ADB 工具解压后应当得到 `platform-tools` 文件夹，打开能看到以下文件：
+1. 获取 GSN ，以下方法任选一种：
+   - 从平板的包装盒标签获得
+   - 从平板背面的标签获得
+    ![](/media/Unlock_Bootloader/get_gsn_from_tablet_tag.jpg)
+   - 从平板的设置中获得：设置 -> 关于平板电脑 -> 状态信息
+    ![](/media/Unlock_Bootloader/get_gsn_from_settings_app.png)
+   - 使用 adb shell 命令：`adb shell "getprop ro.odm.lenovo.devinfo.gsn"`
+    ![](/media/Unlock_Bootloader/get_gsn_by_adb.png)
+   - 从平板的 Bootloader 画面中获得： SERIAL NUMBER - 你的8位串号
+    ![](/media/Unlock_Bootloader/get_gsn_from_bootloader.jpg)
+2. 获取 Bootloader SN ，官网提供的方法不一定好用，按我这个来：
+   - 重启到 Bootloader 模式：`adb reboot bootloader` 或者在关机状态按住电源键和音量上键
+   - 依次输入下面两条命令，不要把减号也一起敲进去：
+     ```powershell
+     fastboot getvar Bootloader_SN_Part1
+     fastboot getvar Bootloader_SN_Part2
+     ```
+     ![](/media/Unlock_Bootloader/get_bootloader_sn.png)
+   - 把上面两条命令的结果拼接起来。例如第一条命令输出了 506D9326B25CAF7C7BB6E9844A9F2570 ，第二条输出了 8999FC067CED8136C71291A8E5CD6695 ，就应该把他们这样拼起来：*506D9326B25CAF7C7BB6E9844A9F25708999FC067CED8136C71291A8E5CD6695* ，总共 64 个英文字符，不确定的话可以复制进记事本或者 Word 检查下，如果不是这个数就拼错了。
+3. 获得邮箱和联想账号（略）
 
-![](./media/image13.webp)
+### 申请解锁
 
-全选这些文件并复制，将它们粘贴到`Windows`文件夹下的 `System32` **和** `SysWOW64` 文件夹中，例如：Windows 安装在 C 盘，则应当复制到以下图片中所示的目录：
+1. 访问联想解锁申请网站 [ZUI官网 - 解锁](https://www.zui.com/iunlock) 。这里需要注意：移动端访问会被重定向到 m.zui.com/iunlock ，这个网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，然后手动把网址的 m.zui.com 改成 www.zui.com 。
 
-![](./media/image14.webp)
+![](/media/Unlock_Bootloader/visit_unlock_website_with_mobile.jpg)
 
-![](./media/image15.webp)
+2. 选择入口 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 。
+3. 先登录联想账号，不然都是白填。
+4. 仔细填写信息：
+   - 第一空，填写刚刚获取到的 GSN
+   - 第二空，填写拼接完成的 Bootloader SN
+   - 第三空，填写一个最好是网易 163 的邮箱，其他邮箱极大概率收不到解锁文件
+   - 第四空，一个简单的验证码
+   - 勾选“我已了解...”旁的复选框
+    ![](/media/Unlock_Bootloader/fill_application_form.png)
+5. 点击“提交申请”，会得到提交成功的提示信息。如果是 Pro GT 的申请入口，会提示不支持解锁云云。
+    ![](/media/Unlock_Bootloader/successfully_submitted.png)
 
-现在 ADB 工具应当已经完成安装，要测试是否正确安装，按 `Win + X` 或者直接用鼠标右键任务栏上的 `Windows 徽标` 打开超级菜单，然后选择 `Windows Powershell` 或者 `命令提示符` 或者 `终端` ，打开后输入以下命令：
+## 获取解锁授权文件 sn.img
+
+一般来说申请解锁后的 10 分钟内解锁文件的获取邮件会发到你的邮箱。正确的解锁文件是一个大小只有 356 字节的小文件。
+
+如果没有的话，要么是解锁申请因为邮箱的原因没收到，要么是根本没生成解锁文件（真的，没开玩笑，最好还是用 163 吧，）。
+
+如果邮箱中没有收到邮件，不管具体原因怎样，试一下用下面的邪修办法：
+
+我们知道文件从网页链接 http://cdn.zui.lenovomm.com/developer/enhancedboot/<填入你的 bootloader_sn>/sn.img 获得，可以试试看填写 Bootloader SN 之后访问这个网址。
+
+比如我们刚刚获取到了 64 长度的 Bootloader SN 是 506D9326B25CAF7C7BB6E9844A9F25708999FC067CED8136C71291A8E5CD6695 ，那就应该写：
+
+http://cdn.zui.lenovomm.com/developer/enhancedboot/506D9326B25CAF7C7BB6E9844A9F25708999FC067CED8136C71291A8E5CD6695/sn.img
+
+- 假如文件已经生成了，那么这个链接会自动触发浏览器的下载功能。
+- 假如文件没有生成，会提示 404 。
+- 假如你发现错误码是 403 ，等待时间实在太短（少于 1 分钟）或者填错网址了！
+
+如果等了比较久的时间之后还是 404 ，建议换一个 163 邮箱重新申请。
+
+## 正式解锁
+
+将平板重启到 Bootloader 模式，可以用指令 `adb reboot bootloader` ，也可以在关机之后按住电源键和音量上键进入。
+
+### 刷入解锁文件
+
+命令原型：`fastboot flash unlock <sn.img>`
+
+这里的尖括号要这样填写：
+
+1. 先在命令行中敲 `fastboot flash unlock `，unlock 后面记得敲空格
+2. 将你的 `sn.img` 用鼠标拖到命令行窗口中
+3. 回车执行
+
+如果一切正常，会有类似下面的输出：
 
 ```
-adb --version
+PS C:\Users\USER> fastboot flash unlock F:\USER\TB710FU_critical\UBL_SN.img
+Warning: skip copying unlock image avb footer (unlock partition size: 0, unlock image size: 356).
+Sending 'unlock' (0 KB)                            OKAY [  0.001s]
+Writing 'unlock'                                   OKAY [  0.000s]
+Finished. Total time: 0.036s
 ```
 
-应当得到类似以下的输出：
+没刷进去？检查你的 sn.img 大小是不是 356 字节吧！
 
-![](./media/image16.webp)
+### 发送解锁命令
 
-这说明 ADB 工具已经正确安装。
+命令原型：`fastboot oem unlock-go`
 
-### <a id="Install_Driver"></a>安装刷机驱动：
+如果一切正常，会有类似下面的输出：
 
-如果您相信本站提供的二进制文件的话，请直接使用此云盘链接：[蓝奏云 - 刷机驱动](https://wwapb.lanzout.com/it1WR3pkt04h)
-密码:gy8y
+```
+PS C:\Users\USER> fastboot oem unlock-go
+OKAY [  0.033s]
+Finished. Total time: 0.033s
+```
 
-此外，一些刷机工具箱也提供驱动程序下载，`Windows Update` 也可能可以提供合适的驱动程序。
+故障排除：
 
-## Step 2: 申请解锁
-
-对于**联想**的可解锁设备：
+```
+PS C:\Users\USER> fastboot oem unlock-go
+FAILED (remote: 'oem unlock fail, VERIFY')
+fastboot: error: Command failed
+```
 
-1. **备份所有用户数据**
-2. 获取所需信息（GSN 和 Bootloader SN）：使用命令 `adb reboot bootloader` 或者在关机时按住 `电源键` 和 `音量上键` 将平板启动到 Bootloader 模式。
-   - 屏幕上此时会显示一项 `Serial number` ，这个八位数的串号就是解锁网站第一个空格中要求的串号。
-   - 在电脑上输入 `fastboot getvar Bootloader_SN_Part1` 和 `fastboot getvar Bootloader_SN_Part2` 获取两段 Bootloader SN 并将它们拼接起来。
-   - 这样就获得了全部必须信息。
-   > [!info]
-   > 虽然 `fastboot getvar all` 是官网说明中提供的获取 Bootloader SN 的方式，但是这个方式在部分设备上会出现 "too many links" 的连接错误，因此并不推荐。
-3. 访问[联想 BootLoader 解锁申请网站](https://www.zui.com/iunlock)，填写所需信息并提交申请。 **小新 Pad Pro GT 从 Y700 五代入口申请**。
-4. 在提供的邮箱中接收发送来的 `sn.img` 。
-5. 电脑安装 `ADB` 工具，将设备重启到 `Bootloader` 模式。如果有USB调试，可以使用下面的命令:
-   ```powershell
-   adb reboot bootloader
-   ```
-6. 输入下面的命令刷入 `sn.img` 并启动解锁流程：
-   ```powershell
-   fastboot flash unlock <your_sn.img>
-   fastboot oem unlock-go
-   ```
-7. 在平板端用音量按键移动选项并用电源键选定 `UNLOCK THE BOOTLOADER` 确认解锁，**确认解锁后所有用户数据会被清除**，并自动重启到系统。
-
-> [!warning]
-> 如果会使用 9008 ，到这一步就可以开始备份 `底层数据` 了！本设备的底层备份教程：[备份底层](./before_flashing.md)
-
-## Step 3: 刷写 Root
-
-   拥有 Root 权限相当于拥有了 Windows 的管理员账户，可以进行大多数关于系统底层的修改了。
-
-   如果您**完全没有了解过刷机**，可以考虑直接了解更现代的 `KernelSU`。如果您使用过 `SuperSU` ，可以尝试操作逻辑更接近的 `Magisk` ：
-      
-   | \    | Magisk                                    | KernelSU                                              | KernelSU Next                                             | SukiSU Ultra                                              | APatch                   |
-   |------|-------------------------------------------|-------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------|--------------------------|
-   | 优势 | - 兼容性好<br>- 内置 Zygisk<br>- 授权直观 | -  `元模块`<br>- 稳定安全<br>- 隐匿性好<br>- 精细授权 | -  `元模块`<br>- 隐匿性好<br>- 个性化管理器<br>- 精细授权 | -  `元模块`<br>- 隐匿性好<br>- 个性化管理器<br>- 精细授权 | - 极致隐藏<br>- 内核模块 |
-   | 劣势 | - 易被检测                                | - 授权不直观                                          | - 授权不直观                                              | - bug 较多<br>- 授权不直观<br>                            | - 易被误伤               |
-   
-   *注：[kernelsu.org 对元模块的说明](https://kernelsu.org/zh_CN/guide/metamodule.html)*
+刷入的 sn.img 文件无效！排查下面的原因：
+1. 文件不是来自官方解锁申请网站，例如使用了 lenovobl.neko.ink 生成的文件
+2. 文件生成有误，如果是早期通过人工审核分发 sn.img 的用户容易碰到这个问题。此外，注意检查你申请解锁时填写的表单是否有误
+3. 忘记了刷解锁文件，或者解锁文件没刷进去喵~
 
-> [!danger]
-> 免解锁用户如果不了解 AVB 签名请跳过本步剩下的文本。你需要跟随本站的其他教程，用已经处理好的镜像通过 9008 刷机。
+```
+PS C:\Users\USER> fastboot oem unlock-go
+FAILED (remote: 'Device dose not allow unlock')
+fastboot: error: Command failed
+```
 
-1. 确定可用的 Root 实现：
-   - 5.10 以下内核版本的设备：首选 `Magisk` 。
-   - 5.10 **及**以上内核版本的设备：`Magisk`, `KernelSU` 和 `APatch` 任君选择。
-   > [!tip]
-   > 关于确定内核版本，请参考 [KernelSU - 安装](https://kernelsu.org/zh_CN/guide/installation.html) 。
-2.  得到 `init_boot` 或 `boot` 镜像 ，通过下载系统包实现。
+忘记打开 OEM 解锁了！启动到系统打开 OEM 解锁后重试！
 
-   那么问题来了：如何确定应该使用 `init_boot` 还是 `boot` ?
-   
-   答：
-   - APatch: `boot`
-   - Magisk / KernelSU LKM 模式: 
-     - 出厂 Android 版本小于等于 `Android 12` ，或者内核版本前两位小于等于 `5.10`: `boot`；
-     - 出厂为 `Android 13` 及以上，或者内核版本前两位大于等于 `5.15`: `init_boot`。
+```
+PS C:\Users\USER> fastboot oem unlock-go
+FAILED (remote: 'unknow command')
+fastboot: error: Command failed
+```
 
-   下载系统包：
-   - https://rom.oppo.help/ （小米、OPPO、vivo）
-   - https://xiaomirom.com/ （小米）
+我去，联想终于封堵解锁了吗？何意味？
 
-   卡刷和线刷：卡刷包可用于直接更新系统，线刷包用于电脑刷机。这里只提取我们需要的镜像，因此下载哪个都可以。
+### 确认解锁
 
-   下载完系统包之后将系统包解压，找到你需要的 `boot.img` 或者 `init_boot.img` 提取出来即可。
+设备在上一步成功后会显示下面的画面：
 
-   > [!tip] 进阶玩法
-   > 还可以通过深度刷机模式和带有 Root 的 DSU 系统更新包获取需要的镜像。还有一个叫做 `Payload Dumper Compose` 的软件，它可以直接通过 `全量 OTA 链接` 读取我们需要的某个镜像，实现按需下载，节省流量和存储空间。
+![](/media/Unlock_Bootloader/triggered_unlock_flow.jpg)
 
-3.  选择 Root 实现并安装：
+现在尝试按音量键，会发现出现了蓝色的底色，用来指示目前某个选项正在被选中。将选项移动到 “UNLOCK THE BOOTLOADER” 后按电源键就可以解锁了。
 
-   - 方法 1: Magisk / Alpha / Kitsune Mask: [Magisk 中文网](https://magiskcn.com/)
-   - 方法 2: KernelSU / KernelSU Next / SukiSU Ultra: [官方文档](https://kernelsu.org/zh_CN/guide/installation.html) 或者 [KernelSU 中文网](https://kernelsu.com/)
-   - 方法 3: APatch: [APatch 中文网](https://apatch.app/)
-    > [!note] 需要更换新的 KPM 模块？
-    > 这个步骤将重新修补 `boot` 并刷入。如果你的设备是免解锁刷入的 APatch，应当将这个镜像重新签名然后再刷入。
-    >
-    > 注意这里的签名和 APatch 圈子中常说的签名不一样。
-
-> [!warning]
-> 就算没有深度刷机能力，到这一步你也可以备份用户数据了！详情参考[dd命令 - 从入门到精通](./dd_command.md)。你还可以利用 Shell 编写一个脚本实现分区备份的自动化。
-
-## Step 4: 玩机：基础必备模块
-
-模块是一个压缩包，可以被 `Magisk` 、 `KernelSU` 等管理器安装，并提供对系统的修改。
-
-为什么使用模块？
-
-与上古时期用户在 Root 后手动修改系统文件相比，模块提供了以下优点：
-
-1. 统一管理，便于维护：用户不需要记忆每个修改的文件，管理器会记录所有安装的模块，如果需要停用更改，管理器会帮你完成一切，而不需要手动到每个目录替换文件。
-2. 挂载修改，破坏性小：利用 `OverlayFS` 或者 `Magic OverlayFS` ，由模块提供的修改文件被覆盖到原始系统文件“上方”。
-   - 可以这样理解：原始系统是一张写有内容的稿纸。
-   - 不使用模块进行修改，那么就需要用铅笔直接在原始内容上进一步勾画；如果要停用更改，就要小心翼翼地用橡皮擦掉，且有时还会出现意外事故，比如把纸擦破了（永久破坏硬件）或者擦到了其他原始内容（破坏了系统文件）。
-   - 使用模块进行修改，相当于在纸上添加了一块玻璃板，所有更改通过马克笔等形式在玻璃板上完成。虽然原稿会因为存在一块玻璃呈现些许不清晰（部分文件无法通过模块修改），但是如果需要移除更改，只需要挪走玻璃板。纸上的二维生命不会察觉到多数更改（如果他们能感觉光照强度，可能会觉得太阳变暗了 -> 指某些较为先进的环境检测软件）
-3. 整合文件，便于分发：所有的更改被整合到一个 `zip` 文件中，不需要用户处理复杂的文件路径和权限。压缩后的文件体积更小，更适合网络分发。
-
-> [!danger] 模块的坏处？
->
-> 1. 细节被隐藏，不利后续维护：用户无法在出现问题后精确定位“更改哪个文件导致问题发生”，只能知道“刷了这个模块后问题出现了”。
-> 2. 模块间作用顺序不明确：可能出现“模块打架”（多个模块修改同一个文件，造成文件相关的行为不确定）
-> 3. 用户门槛降低，破坏用户设备变得更容易：用户只需要下载并刷入模块，潜在的消去了“下载并知道我所更改的每一个文件”的步骤，导致恶意代码容易藏身于模块中。且模块痕迹基本不残留在更改的文件中，导致作恶后难以追踪“幕后凶手”。[案例 - zygisk.apk 事件](https://www.coolapk.com/feed/67763977?s=MDEzNGI4OWYxMWM1ODUzZzY5Nzc2M2Rhega1590)
-
-> [!tip] 为了克服这些坏处，我们应该怎么做？
->
-> 1. 永远只从官方发布源下载模块，例如下载 Zygisk Next 应当访问他们的 GitHub Releases 页面（也就是[这里](https://github.com/Dr-TSNG/ZygiskNext/releases)）
-> 2. 不能确定模块的用途、适用环境和用法则不要刷入；
-> 3. 大道至简，少刷玄学模块，减少模块数量。
-
-对于 TB710FU 的具体建议：
-
-1. Zygisk Next: 一切需要 Zygisk 框架的模块的基石
-2. LSPosed: 基于 Zygisk 的现代 XPosed 实现， **需要 Zygisk 模块，例如 Zygisk Next!!!**
-   > [!important] 关于 LSPosed 2.0 的兼容性
-   > LSPosed API 100 是个从来没有正式发布的版本，一些基于这个 API 等级开发的模块在 LSPosed 2.0 中将不受支持。如果需要 API 100 的支持，考虑使用 [Vector](https://github.com/JingMatrix/Vector/releases) 或者其他分支。
-3. 如果需要调度模块：[吟惋兮维护的最新 uperf 模块](https://www.coolapk.com/u/3795216)。
-4. 如果需要隐藏 Root 痕迹：
-   - TEESimulator: 软件模拟 TEE 处理密钥认证方面的问题，下载：[GitHub Releases](https://github.com/JingMatrix/TEESimulator/releases)
-   - TS Addon: 为 TEESimulator 提供方便的管理界面，下载：[GitHub Releases](https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases)
-
-> [!tip]
-> Zygisk Next 自 1.3.0 版本起整合了 Shamiko （曾经常用的一个 Root 隐藏模块）的绝大多数功能，对隐藏 Root 痕迹有所帮助。
->
-> 如果是免解锁 Root 的设备可以不管隐藏 Root 痕迹一事。
-
-## Step 5: 玩机：Root 授权
-
-1. Magisk 及其分支会在用户开启需要 Root 权限的 APP 时弹出申请 Root 权限的提示框。这和更早期的 SuperSU ~~以及 KingRoot 等方案~~ 一致。
-
-2. KernelSU 及其分支**需要用户在 APP 中设置 Root 权限列表**。
-   - 如果要为新安装的 APP 申请 Root 权限，最好重启管理器。
-
-   - 如果为正在运行的 APP 授予 Root 权限，可能需要重启应用才能生效。
-
-   - KernelSU 及其分支还允许通过 APP Profile 精细控制应用的权限等级，详情参考[KernelSU - APP Profile](https://kernelsu.org/zh_CN/guide/app-profile.html)。
-   
-   > [!tip] 找不到需要授权的应用？
-   > 重启 Root 管理器一般可以解决问题。
-
-## Step 6: 出问题了怎么办？
-
-0. **保命技**：强制重启， `电源键 + 音量下键` （仅在小新 Pad Pro GT 上测试过）
-
-> [!tip]
-> 事实上，如果你不确定强制重启的快捷键，可以直接按住 `电源键 + 音量上键 + 音量下键` 不放，直到屏幕熄灭后立即松手。
->
-> 不过这么做有可能让你进入深度刷机模式。在深度刷机模式下屏幕也不会亮起，且需要特定的按键组合才能退出。因此不要盲目按住全部按键。
-
-1. 刷完模块不开机：
-   - KernelSU 系列用户：按3次音量下进入 KernelSU 提供的安全模式，进入系统后关闭刚刚刷入的问题模块
-
-   - 较新的 Magisk 管理器用户和 APatch 用户：查找安全模式的按键组合并使用按键组合进入安全模式
-
-   - 有救砖模块：等待救砖模块作用；如果是音量键救砖，按模块说明方法操作进行救砖。
-
-2. 刷完系统不开机：
-   - 尝试回滚更改：刷入之前备份的底层或者没问题的刷机包。
-
-   - 还是不行？抱歉，需要具体情况具体分析。
-
-3. 执行脚本后不开机：
-   - 重新刷写稳定系统镜像。
-
-   - 被*格机*了？抱歉，有可能需要编程器或者授权刷机。如果可以的话尝试寻找售后协助。
-
-4. 怀疑中 Root 相关的病毒了？
-   - 卸载 Root ，刷回版本正确的原厂镜像而非只卸载管理器。
-
-   - 最好重新**全新刷机**，连用户数据都不一定能留了。
-
-## Step 7: 一些基本界面
-
-可以使用 `音量键` 浏览 `BootLoader` / `Recovery` / `Fastbootd` 下提供的选项，按电源键确认选项。
-
-配图不是实拍，它们基于实拍图制作并添加了中文翻译。实际使用时， `Recovery` 和 `FastbootD` 中被选中的选项会被使用 `蓝底白字` 进行*高亮*。
-
-1. BootLoader (Fastboot)
-
-![](./media/image3.webp)
-
-2. FastbootD
-
-![](./media/image4.webp)
-
-3. Recovery (AOSP版本)
-
-![](./media/image5.webp)
-
-日志内容会出现在 `Recovery 界面的左下角`。
-
-有时候会看到下面的界面，这代表着 `/data` 分区出现了问题，只能格式化（恢复出厂）了。
-
-![](./media/image6.webp)
-
-## 还有什么需要知道的吗？
-
-1. 解锁是为了刷写未经认证的镜像。
-
-2. 获取 Root 的过程就是刷入一个经过第三方修改，可以和操作系统内应用程序交互的镜像。
-
-3. 解锁 BootLoader 或者想办法获得官方的签名，都能让修改过的镜像在设备上工作。
+如果不想解锁，将选项移动到“DO NOT UNLOCK THE BOOTLOADER” 后按电源键确认就可以终止解锁流程，正常启动操作系统。
