@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“联想奇迹”"
-  tagline: fastboot oem unlock-go
+  tagline: R.I.P. TB710FU-no-UBL 2025.08.06 - 2026.05.26
   image: /logo.jpg
   actions:
     - theme: brand
@@ -20,7 +20,7 @@ hero:
 
 features:
   - title: 免解锁 Root 设备
-    details: 使用一些简单有效的技巧刷入可启动的 Root 镜像
+    details: 针对部分版本系统使用一些简单有效的技巧刷入可启动的 Root 镜像
   - title: 刷入第三方 ROM
     details: “愿你刷机半生，归来仍是 ZUXOS”
   - title: 更多进阶内容
