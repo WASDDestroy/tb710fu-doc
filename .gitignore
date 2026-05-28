@@ -4,3 +4,4 @@
 /.vitepress/dist/
 /pnpm-lock.yaml
 /*.docx
+pnpm-workspace.yaml
