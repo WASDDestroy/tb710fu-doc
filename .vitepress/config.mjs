@@ -44,6 +44,7 @@ export default defineConfig({
       { text: "开始了解", link: "/before_we_start" },
       { text: "Root相关", link: "/state_machine" },
       { text: "第三方 ROM", link: "/appendix_3rd_party_roms"},
+      { text: "救砖", link: "/unbrick_device" },
       { text: "更新日志", link: "/updatelog" },
     ],
     editLink: {
@@ -57,7 +58,8 @@ export default defineConfig({
         items: [
           { text: "序言", link: "/before_we_start" },
           { text: "提问的智慧", link: "/how_to_ask" },
-          { text: "解锁 Bootloader 刷机", link: "/flash_unlocked_device" },
+          { text: "风险告知", link: "/generic_flashing_warns" },
+          { text: "解锁 Bootloader", link: "/flash_unlocked_device" },
           { text: "刷机工具教程——高通工具箱", link: "/qcom_toolbox" },
           { text: "刷机工具教程——匣", link: "/geekflashtool" },
           { text: "重要警告 ⭐", link: "/important_warns"},
