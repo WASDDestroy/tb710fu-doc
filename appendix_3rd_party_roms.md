@@ -15,6 +15,9 @@ output: word_document
 4. [全分区备份教程](./before_flashing.md)
 5. [第三方 ROM 刷写教程](./flash_3rd_party_rom.md)
 
+> [!important] 一个时代结束了...
+> [1.5.04.445 修复了免解锁漏洞](/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+
 ## 版本选择：
 
 由于防回滚机制存在，为不同版本的系统分别提供了免解锁系统包，请访问网盘链接获取你所需的 ROM（当然解锁也能刷）：
@@ -35,7 +38,7 @@ output: word_document
     | [天翼云盘](https://cloud.189.cn/t/uYjQjmN3IBVr)（访问码：2cr0） | [天翼云盘](https://cloud.189.cn/t/fUNZRjVfqmqe)（访问码：udi7） | [天翼云盘](https://cloud.189.cn/t/YriYRnn6RFve)（访问码：7mrj） | [天翼云盘](https://cloud.189.cn/t/FVNjuiY7vM7n)（访问码：agl2） |
 
 
-3. 384到 *2026.05.16为止的最新 ZUXOS 版本* ：
+3. 384到428：
    
     **强烈推荐**直接使用此整合链接：[天翼云盘](https://cloud.189.cn/t/nUzqQvmeaYnq)（访问码：3bnm）
 
