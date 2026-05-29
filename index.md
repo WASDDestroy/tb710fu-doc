@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "酷安Pad Pro GT 交流群 文档站"
   text: "“联想奇迹”"
-  tagline: R.I.P. TB710FU-no-UBL 2025.08.06 - 2026.05.26
+  tagline: 2025.08.06 - 2026.05.26 ，一个时代结束了
   image: /logo.jpg
   actions:
     - theme: brand
