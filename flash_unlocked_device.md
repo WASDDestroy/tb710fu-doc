@@ -210,3 +210,7 @@ fastboot: error: Command failed
 现在尝试按音量键，会发现出现了蓝色的底色，用来指示目前某个选项正在被选中。将选项移动到 “UNLOCK THE BOOTLOADER” 后按电源键就可以解锁了。
 
 如果不想解锁，将选项移动到“DO NOT UNLOCK THE BOOTLOADER” 后按电源键确认就可以终止解锁流程，正常启动操作系统。
+
+## 如何锁定 Bootloader ？
+
+参阅 [锁定 Bootloader](/lock_bootloader.md)

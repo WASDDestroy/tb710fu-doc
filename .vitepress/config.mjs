@@ -60,6 +60,7 @@ export default defineConfig({
           { text: "提问的智慧", link: "/how_to_ask" },
           { text: "风险告知", link: "/generic_flashing_warns" },
           { text: "解锁 Bootloader", link: "/flash_unlocked_device" },
+          { text: "锁定 Bootloader", link: "/lock_bootloader" },
           { text: "刷机工具教程——高通工具箱", link: "/qcom_toolbox" },
           { text: "刷机工具教程——匣", link: "/geekflashtool" },
           { text: "重要警告 ⭐", link: "/important_warns"},
