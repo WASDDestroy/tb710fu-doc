@@ -43,9 +43,8 @@ export default defineConfig({
       { text: "主页", link: "/" },
       { text: "开始了解", link: "/before_we_start" },
       { text: "Root相关", link: "/state_machine" },
-      { text: "第三方 ROM", link: "/appendix_3rd_party_roms"},
-      { text: "救砖", link: "/unbrick_device" },
       { text: "更新日志", link: "/updatelog" },
+      { text: "资源下载", link: "/resource_download"},
     ],
     editLink: {
       pattern: 'https://gitee.com/WASDDestroy/tb710fu-doc/blob/master/:path'
@@ -99,6 +98,7 @@ export default defineConfig({
           { text: "附录1：常见问题速查", link: "/faq" },
           { text: "附录2：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
           { text: "附录3：术语表", link: "/glossary" },
+          { text: "附录4：资源下载", link: "/resource_download"}
         ],
       },
       {
