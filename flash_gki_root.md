@@ -20,9 +20,10 @@ GKI Root 对于官方和第三方 ROM 都适用。
 > 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。请参考 [Root 导航](./state_machine.md) 中使用 LKM 模式获取 Root 的教程获取 Root ，或者对于**已经使用 GKI 获取 Root 的用户**，先参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，然后使用 LKM 获取 Root 。
 
 ## **Step 0**:
-自己下载群文件夹中合适的文件：
 
-1. 刷机工具：刷机匣，位于"搞机工具"文件夹中；
+从本站 [下载页](/resource_download.md) 下载下列文件：
+
+1. 刷机工具：刷机匣
 2. `boot` 镜像（`GKI` 内核）：建议选择 `KernelSU` 或者 `KernelSU Next` 文件夹中的镜像（单个镜像大小约为 `96MiB`）。
 3. Root 管理器：根据你使用的 `boot` 镜像自行选择匹配的分支 **和** 版本。
 
