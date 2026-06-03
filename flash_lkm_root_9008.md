@@ -12,18 +12,10 @@ output: word_document
 
 ## Step 0:
 
-下载下列文件：
+从本站 [下载页](/resource_download.md) 下载下列文件：
 
-1. 签名所需文件：[蓝奏云 - 签名工具和 Root 管理器](https://wwapb.lanzout.com/b004jdwk0f) 密码:69l9
-2. 刷机工具和 9008 引导文件：[蓝奏云 - 刷机工具和 9008 引导](https://wwapb.lanzout.com/b004jgeabg) 密码:azwr，建议选择刷机匣工具，后续教程均基于本工具开展。
-3. Python 3 运行时，推荐 Python 3.13。如果没有，请前往 python.org 下载：[Python 3, Windows 发行版下载](https://www.python.org/downloads/windows/)。
-
-![](./media/LKM_9008/recommended_python.png)
-
-> [!note]
-> 事实上可以使用 Microsoft Store 内提供的 Python ；如果在未安装 Python 的 Windows 电脑上打开终端并输入 Python ，它会自动打开这个商店页面：
->
-> ![](./media/LKM_9008/install_python_via_ms_store.png)
+1. 签名工具
+2. 刷机工具和 9008 引导文件
 
 ## Step 1:
 
