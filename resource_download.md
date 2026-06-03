@@ -36,10 +36,8 @@
    - KernelSU Next: [蓝奏云](https://wwapb.lanzout.com/b004jge9xc) 密码:2hq5
    - SukiSU Ultra: [蓝奏云](https://wwapb.lanzout.com/b004jgea6b) 密码:2by2
 2. LKM
-   - 全套工具：[蓝奏云](https://wwapb.lanzout.com/b004jhgapi
-密码:caiw)
-   - 管理器：[蓝奏云](https://wwapb.lanzout.com/b004jgeapa
-密码:eod7)
+   - 全套工具：[蓝奏云](https://wwapb.lanzout.com/b004jhgapi) 密码:caiw
+   - 管理器：[蓝奏云](https://wwapb.lanzout.com/b004jgeapa) 密码:eod7
 
 ## 第三方 ROM
 
