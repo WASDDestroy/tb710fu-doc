@@ -14,9 +14,6 @@ hero:
     - theme: alt
       text: 疑难解答
       link: /faq
-    - theme: alt
-      text: 讨论交流
-      link: https://qm.qq.com/q/Brp7R3bDK8
 
 features:
   - title: 免解锁 Root 设备
