@@ -16,6 +16,7 @@ output: word_document
 
 1. 签名工具
 2. 刷机工具和 9008 引导文件
+3. Root 管理器
 
 ## Step 1:
 
