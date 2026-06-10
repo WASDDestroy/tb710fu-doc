@@ -23,7 +23,7 @@ output: word_document
 
 1. [安装ADB工具](./flash_unlocked_device.md#Install_ADB)并打开平板的[USB调试](./flash_unlocked_device.md#USB_Debugging)。
 
-2. 从群文件夹**搞机工具**下载群内的 9008 工具"匣"；从群文件夹**神秘引导文件**下载 `xbl_s_devprg_ns.melf` 引导文件。解压到容易找到的非中文目录。
+2. 从下载页下载 9008 工具"匣"和 9008 引导 `xbl_s_devprg_ns.melf` 。解压到容易找到的非中文目录。
 
 3. 打开"刷机匣"主程序，启动后的主界面如下：
 

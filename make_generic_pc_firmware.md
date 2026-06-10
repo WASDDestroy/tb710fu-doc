@@ -1,5 +1,7 @@
 # 如何制作通用救砖包？
 
+**不要再看本篇教程了，作者已经受不了一些指责跑路了。**
+
 > [!danger]
 > 通用刷机包不能替代全分区回读！
 
@@ -48,53 +50,49 @@
 
 ## 添加 XML
 
-从 `群文件` 中下载 `patch_xml_官方297.zip` ，解压后放到备份镜像所在的文件夹。
+从官方刷机包提取 `patch.xml` 放到备份镜像所在的文件夹。
 
-删除原有的 `rawprogram0.xml` 到 `rawprogram5.xml` 。下载群内的 `rawprograms_xml.zip` 并解压到备份镜像所在的文件夹。
-
-> [!note]
-> 你可以自己修改回读的 XML ，具体来讲它应当指导刷入以下镜像：
->
-> - abl
-> - aop
-> - aop_config
-> - apdp / apdpb
-> - bluetooth
-> - boot
-> - cpucp
-> - cpucp_dtb
-> - ddr
-> - devcfg
-> - dsp
-> - dtbo
-> - featenabler
-> - hyp
-> - imagefv
-> - init_boot
-> - keymaster
-> - logfs
-> - modem
-> - multiimgoem
-> - multiimgqti
-> - pvmfw
-> - qupfw
-> - recovery
-> - secdata
-> - shrm
-> - spu_service
-> - storsec
-> - super
-> - toolsfv
-> - tz
-> - uefi
-> - uefisecapp
-> - vbmeta
-> - vbmeta_system
-> - vendor_boot
-> - xbl
-> - xbl_config
-> - xbl_ramdump
-> - 全部以 gpt 开头的文件
+自己修改回读的 XML ，具体来讲它应当指导刷入以下镜像：
+- abl
+- aop
+- aop_config
+- apdp / apdpb
+- bluetooth
+- boot
+- cpucp
+- cpucp_dtb
+- ddr
+- devcfg
+- dsp
+- dtbo
+- featenabler
+- hyp
+- imagefv
+- init_boot
+- keymaster
+- logfs
+- modem
+- multiimgoem
+- multiimgqti
+- pvmfw
+- qupfw
+- recovery
+- secdata
+- shrm
+- spu_service
+- storsec
+- super
+- toolsfv
+- tz
+- uefi
+- uefisecapp
+- vbmeta
+- vbmeta_system
+- vendor_boot
+- xbl
+- xbl_config
+- xbl_ramdump
+- 全部以 gpt 开头的文件
 
 ## 后处理
 

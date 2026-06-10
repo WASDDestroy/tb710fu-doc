@@ -39,7 +39,7 @@ output: word_document
     
     ![](./media/LKM_9008/selector_page.png)
 
-    - 在弹出的对话框选择从群文件夹 `神秘引导文件` 下载的 `xbl_s_devprg_ns.melf` 文件，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
+    - 在弹出的对话框选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
 
     ![](./media/LKM_9008/select_firehose_file.png)
 

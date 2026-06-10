@@ -74,7 +74,7 @@ output: word_document
 1. 点击 `选择设备/引导/配置` ：
    ![](./media/3285dae9-4fa4-4477-b59c-0575ff7c6953.webp)
 
-2. 点击红框处的按钮，在弹出的窗口选择从群文件 `神秘引导文件` 文件夹下载的 `xbl_s_devprg_ns.melf` ，点击确定。
+2. 点击红框处的按钮，在弹出的窗口选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，点击确定。
    ![](./media/10fcafd8-7a0d-40de-802c-00d442e508bb.webp)
 
 3. 回到主界面，选择 `读信息` ：
