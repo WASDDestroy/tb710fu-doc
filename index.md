@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "WASDDestroy的文档站"
+  name: "TB710FU Doc"
   text: "“联想奇迹”"
   tagline: 2025.08.06 - 2026.05.26 ，一个时代结束了
   image: /logo.jpg
