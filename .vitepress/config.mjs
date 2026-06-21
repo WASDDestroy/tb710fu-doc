@@ -41,7 +41,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "开始了解", link: "/before_we_start" },
       { text: "Root相关", link: "/state_machine" },
       { text: "更新日志", link: "/updatelog" },
       { text: "资源下载", link: "/resource_download"},
