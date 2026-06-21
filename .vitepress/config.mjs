@@ -56,7 +56,6 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "序言", link: "/before_we_start" },
-          { text: "提问的智慧", link: "/how_to_ask" },
           { text: "风险告知", link: "/generic_flashing_warns" },
           { text: "解锁 Bootloader", link: "/flash_unlocked_device" },
           { text: "锁定 Bootloader", link: "/lock_bootloader" },
@@ -111,6 +110,14 @@ export default defineConfig({
           { text: "AVB 机制入门", link: "/avb_guide" },
           { text: "avbtool.py 简易教程", link: "/avbtool_tutorial" },
           { text: "官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
+        ],
+      },
+      {
+        text: "通识",
+        collapsed: true,
+        items: [
+          { text: "提问的智慧", link: "/how_to_ask" },
+          { text: "命令行入门", link: "/basic_command_line_skills" },
         ],
       },
     ],
