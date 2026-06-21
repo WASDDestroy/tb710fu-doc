@@ -133,4 +133,10 @@ export default defineConfig({
         "Copyright © 2025 - 至今， 酷安 @WASD_Destroy 和 酷安 @fhh730 ，采用 CC BY-SA 4.0 许可",
     },
   },
+  locales: {
+    root: {
+      label: 'Simplified Chinese',
+      lang: 'zh'
+    },
+  }
 });
