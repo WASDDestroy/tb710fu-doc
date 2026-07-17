@@ -22,7 +22,7 @@ output: word_document
 先备份 persist 分区。
 
 1. 如果记得刷了哪些镜像并且能找到对应的备份：通过合适方式刷入对应分区的备份镜像即可
-2. 啥都不记得就直接覆盖救砖包：[救砖](/unbrick_device.md)
+2. 啥都不记得就直接覆盖救砖包：[救砖](./unbrick_device.md)
 
 ## 锁定 Bootloader
 

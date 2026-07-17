@@ -8,11 +8,11 @@ output: word_document
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
 
 > [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+> [1.5.04.445 修复了免解锁漏洞](./faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
 
 ## Step 0:
 
-从本站 [下载页](/resource_download.md) 下载下列文件：
+从本站 [下载页](./resource_download.md) 下载下列文件：
 
 1. 签名工具
 2. 刷机工具和 9008 引导文件

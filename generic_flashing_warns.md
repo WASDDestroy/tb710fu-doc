@@ -64,7 +64,7 @@ output: word_document
 
 ## Step 1: 准备环境并解锁 Bootloader
 
-这部分内容已经迁移。请转到 [解锁 Bootloader](/flash_unlocked_device.md) 继续阅读。
+这部分内容已经迁移。请转到 [解锁 Bootloader](./flash_unlocked_device.md) 继续阅读。
 
 ## Step 2: 刷写 Root
 
@@ -211,7 +211,7 @@ output: word_document
 
 ## Step 6: 一些基本界面
 
-这部分内容已经迁移。请转到 [术语表](/glossary.md) 继续阅读。
+这部分内容已经迁移。请转到 [术语表](./glossary.md) 继续阅读。
 
 ## 还有什么需要知道的吗？
 

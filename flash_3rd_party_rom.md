@@ -66,4 +66,4 @@ output: word_document
 
 2. 如果当中的任意一个处于未知状态，则进入 9008 模式刷入 `persist` 镜像备份，重启即可。
 
-3. 如果连 `persist` 备份都没有，参考 [GSN 修复教程](/fix_gsn.md)解决问题。
+3. 如果连 `persist` 备份都没有，参考 [GSN 修复教程](./fix_gsn.md)解决问题。

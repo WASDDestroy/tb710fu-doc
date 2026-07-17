@@ -92,8 +92,8 @@ _长按 adb 文件夹，弹出操作菜单_
    ![](./media/image58.webp)
 
 5. **点击“槽位功能”中的“重设当前槽位”**
-   ![](.//media/image59.webp)
+   ![](./media/image59.webp)
 
 6. 完成后重启设备至系统，确认 Root 管理器中工作状态变为 `未安装 ` 即完成恢复步骤
 
-   ![](.//media/image52.webp)
+   ![](./media/image52.webp)

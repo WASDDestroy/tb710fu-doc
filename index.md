@@ -6,12 +6,12 @@ hero:
   name: "TB710FU Doc"
   text: "“联想奇迹”"
   tagline: 2025.08.06 - 2026.05.26 ，一个时代结束了
-  image: /logo.jpg
+  image: ./logo.jpg
   actions:
     - theme: brand
       text: 从头阅读
-      link: /before_we_start
+      link: ./before_we_start
     - theme: alt
       text: 疑难解答
-      link: /faq
+      link: ./faq
 ---
