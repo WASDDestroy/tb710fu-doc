@@ -1,7 +1,7 @@
 # 保留 用户数据 和 Root 权限进行系统增量更新
 
 > [!warning]
-> 此为进阶玩法，不建议没有命令行基础的用户进行操作。推荐先阅读 [dd 命令教程](./dd_command.md)。
+> 此为进阶玩法，不建议没有命令行基础的用户进行操作。推荐先阅读 [dd 命令教程](../misc/dd_command.md)。
 >
 > 本玩法需要的原始镜像一般都可以在下载页找到，但是强烈建议自己在更新每个版本后都保留自己的 `boot` 镜像
 >
@@ -12,7 +12,7 @@
 >
 > 例如刷入了第三方 Recovery ，就需要还原当前活动插槽的 `recovery`  ；刷入了 `vendor_boot` 进行降压，就需要还原 `vendor_boot` 和 `vbmeta` 。
 >
-> 关于上面提及的 `vbmeta` ，请参考 [AVB 入门](./avb_guide.md) 。
+> 关于上面提及的 `vbmeta` ，请参考 [AVB 入门](../misc/avb_guide.md) 。
 
 ## GKI 模式
 

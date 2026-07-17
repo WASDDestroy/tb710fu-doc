@@ -18,7 +18,7 @@ output: word_document
 
 1. [重要警告 - 刷写任何镜像前必读](./important_warns.md)
 2. [驱动安装](./flash_unlocked_device.md)
-3. [9008 工具教程](./geekflashtool.md)
+3. [9008 工具教程](../generic_knowledge/geekflashtool.md)
 4. [全分区备份教程](./before_flashing.md)
 5. [第三方 ROM 刷写教程](./flash_3rd_party_rom.md)
 
