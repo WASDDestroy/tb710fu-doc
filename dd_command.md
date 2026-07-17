@@ -47,6 +47,17 @@ output: word_document
 
         - conv: 数据转换选项，如 ucase（小写转大写）、notrunc（不截断输出文件）。
 
+2. 命令输出：
+   指示读写的块数量。比如：
+   ```text
+    0+1 records in
+    0+1 records out
+    13 Bytes（13 B）copied，12.1558 s，0.0 KB/s 
+   ```
+   数字 0+1 的含义参考这里：[Stack Exchange](https://unix.stackexchange.com/questions/238482/what-does-the-two-numbers-mean-respectively-in-dds-ab-records-stats?noredirect=1&lq=1)，网页加载时间可能会比较久。
+
+   如果两个数字都是 0 ，说明没有数据被读写，你的读写操作被拒绝了。
+
 ## 那么......磁盘在哪儿？
 
 Android 系统的块设备可以在 `/dev/block` 目录（根目录下的 `dev` 文件夹当中的 `block` 文件夹）找到。
