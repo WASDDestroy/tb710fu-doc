@@ -91,8 +91,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "附录1：常见问题速查", link: "/faq" },
-          { text: "附录2：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
-          { text: "附录3：资源下载", link: "/resource_download"},
+          { text: "附录2：资源下载", link: "/resource_download"},
         ],
       },
       {
