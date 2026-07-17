@@ -41,7 +41,6 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "开始了解", link: "/before_we_start" },
       { text: "Root相关", link: "/state_machine" },
       { text: "更新日志", link: "/updatelog" },
       { text: "资源下载", link: "/resource_download"},
@@ -56,7 +55,6 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "序言", link: "/before_we_start" },
-          { text: "提问的智慧", link: "/how_to_ask" },
           { text: "风险告知", link: "/generic_flashing_warns" },
           { text: "解锁 Bootloader", link: "/flash_unlocked_device" },
           { text: "锁定 Bootloader", link: "/lock_bootloader" },
@@ -113,6 +111,14 @@ export default defineConfig({
           { text: "官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
         ],
       },
+      {
+        text: "通识",
+        collapsed: true,
+        items: [
+          { text: "提问的智慧", link: "/how_to_ask" },
+          { text: "命令行入门", link: "/basic_command_line_skills" },
+        ],
+      },
     ],
 
     socialLinks: [
@@ -126,4 +132,11 @@ export default defineConfig({
         "Copyright © 2025 - 至今， 酷安 @WASD_Destroy 和 酷安 @fhh730 ，采用 CC BY-SA 4.0 许可",
     },
   },
+  lang: "zh-CN",
+  locales: {
+    "/": {
+      label: 'Simplified Chinese',
+      lang: 'zh-CN'
+    },
+  }
 });
