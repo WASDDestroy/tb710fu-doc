@@ -55,11 +55,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: "序言", link: "/before_we_start" },
-          { text: "风险告知", link: "/generic_flashing_warns" },
           { text: "解锁 Bootloader", link: "/flash_unlocked_device" },
           { text: "锁定 Bootloader", link: "/lock_bootloader" },
-          { text: "刷机工具教程——高通工具箱", link: "/qcom_toolbox" },
-          { text: "刷机工具教程——匣", link: "/geekflashtool" },
           { text: "重要警告 ⭐", link: "/important_warns"},
           { text: "刷机前必做 ⭐", link: "/before_flashing" },
           { text: "Root 方案比较和须知事项", link: "/comparison_and_warn" },
@@ -95,8 +92,7 @@ export default defineConfig({
         items: [
           { text: "附录1：常见问题速查", link: "/faq" },
           { text: "附录2：第三方 ROM 信息汇总", link: "/appendix_3rd_party_roms" },
-          { text: "附录3：术语表", link: "/glossary" },
-          { text: "附录4：资源下载", link: "/resource_download"}
+          { text: "附录3：资源下载", link: "/resource_download"},
         ],
       },
       {
@@ -107,14 +103,6 @@ export default defineConfig({
           { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
           { text: "修复 GSN", link: "/fix_gsn" },
           { text: "官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
-        ],
-      },
-      {
-        text: "通识",
-        collapsed: true,
-        items: [
-          { text: "提问的智慧", link: "/how_to_ask" },
-          { text: "命令行入门", link: "/basic_command_line_skills" },
         ],
       },
     ],
