@@ -99,7 +99,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           { text: "修复 GSN", link: "/fix_gsn" },
-          { text: "官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
+          { text: "联想官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
         ],
       },
     ],
