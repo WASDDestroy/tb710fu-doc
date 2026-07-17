@@ -98,8 +98,6 @@ export default defineConfig({
         text: "扩展篇",
         collapsed: true,
         items: [
-          { text: "dd命令", link: "/dd_command" },
-          { text: "制作通用 9008 包", link: "/make_generic_pc_firmware" },
           { text: "修复 GSN", link: "/fix_gsn" },
           { text: "官方 9008 刷机包说明", link: "/notes_on_official_edl_roms" },
         ],
