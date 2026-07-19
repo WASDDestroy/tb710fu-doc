@@ -60,7 +60,12 @@ export default defineConfig({
             { text: "序言", link: "/generic/before_we_start" },
             { text: "解锁 Bootloader", link: "/generic/flash_unlocked_device" },
             { text: "锁定 Bootloader", link: "/generic/lock_bootloader" },
+            { text: "刷机前必做 ⭐", link: "/generic/before_flashing" },
             { text: "救砖", link: "/generic/unbrick_device" },
+            {
+              text: "保留用户数据和 Root 权限进行系统增量更新",
+              link: "/generic/update_while_keeping_root",
+            },
           ],
         },
         {
@@ -86,7 +91,6 @@ export default defineConfig({
           collapsed: false,
           items: [
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
-            { text: "刷机前必做 ⭐", link: "/without_unlock/before_flashing" },
             { text: "Root 方案比较和须知事项", link: "/without_unlock/comparison_and_warn" },
             { text: "Root 教程导航 ⭐", link: "/without_unlock/state_machine" },
             {
