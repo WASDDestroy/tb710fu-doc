@@ -10,7 +10,7 @@
 
 ## 9008 引导和刷机工具
 
-刷机工具推荐刷机匣，该工具的教程：[刷机工具教程 - 刷机匣](../generic_knowledge/geekflashtool.md)
+刷机工具推荐刷机匣，该工具的教程：[刷机工具教程 - 刷机匣](../../generic_knowledge/geekflashtool.md)
 
 下载：[蓝奏云](https://wwapb.lanzout.com/b004jgeabg) 密码:azwr
 

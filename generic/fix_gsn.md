@@ -58,4 +58,4 @@ output: word_document
 
 ## Step 5
 
-使用 9008 工具刷入修改好的 `generic_persist.img` 。刷机工具教程：[匣使用说明](../generic_knowledge/geekflashtool.md) ，可以参考本站的 Root 教程学习如何刷入分区。
+使用 9008 工具刷入修改好的 `generic_persist.img` 。刷机工具教程：[匣使用说明](../../generic_knowledge/geekflashtool.md) ，可以参考本站的 Root 教程学习如何刷入分区。
