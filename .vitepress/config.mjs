@@ -5,7 +5,7 @@ export default defineConfig({
   lastUpdated: true,
   title: "WASDDestroy 的个人文档站",
   description: "--no_clever_tagline_needed",
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: false,
   themeConfig: {
     search: {
       provider: "local",
