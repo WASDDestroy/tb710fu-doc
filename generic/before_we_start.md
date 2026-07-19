@@ -33,9 +33,9 @@ output: word_document
 
 - **会刷机但不懂 9008**？先看 [术语表](../generic_knowledge/glossary.md) 了解分区、EDL、Firehose 等概念。
 
-- **明白基本概念，准备上路实习**? 看 [刷机前准备](./before_flashing.md) 即可万事大吉。
+- **明白基本概念，准备上路实习**? 看 [刷机前准备](../without_unlock/before_flashing.md) 即可万事大吉。
 
-- **熟悉 9008**？直接跳转到 [Root 导航](./state_machine.md) 或 [第三方 ROM 刷写](./flash_3rd_party_rom.md)。
+- **熟悉 9008**？直接跳转到 [Root 导航](../without_unlock/state_machine.md) 或 [第三方 ROM 刷写](../without_unlock/flash_3rd_party_rom.md)。
 
 - **遇到问题**？先查 [FAQ](./faq.md)！
 

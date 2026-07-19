@@ -21,21 +21,21 @@ output: word_document
 
 使用 9008 模式可以读取设备几乎全部的分区，用于备份底层分区再合适不过。这里我们选择图形界面更加友好的匣作为备份工具。接下来是详细步骤：
 
-1. [安装ADB工具](./flash_unlocked_device.md#Install_ADB)并打开平板的[USB调试](./flash_unlocked_device.md#USB_Debugging)。
+1. [安装ADB工具](../generic/flash_unlocked_device.md#Install_ADB)并打开平板的[USB调试](../generic/flash_unlocked_device.md#USB_Debugging)。
 
 2. 从下载页下载 9008 工具"匣"和 9008 引导 `xbl_s_devprg_ns.melf` 。解压到容易找到的非中文目录。
 
 3. 打开"刷机匣"主程序，启动后的主界面如下：
 
-![](./media/image8.webp)
+![](../media/image8.webp)
 
 如果是第一次使用，先点击 1 箭头指向的按钮安装刷机驱动，否则，直接点击 2 箭头指向的`深度刷机`，打开如下页面。接下来，请按照图片箭头指示操作，直到文字提示再次出现。
 
-![](./media/image18.webp)
+![](../media/image18.webp)
 
 完成下一张图操作后回到本页面点击确定。
 
-![](./media/image20.webp)
+![](../media/image20.webp)
 
 4. 将设备重启到 9008：确保之前的步骤都已经完成，然后用 USB 线将平板连接到电脑，在电脑上打开终端，并输入以下命令：
 
@@ -50,17 +50,17 @@ adb reboot edl
 > 
 > 检查： 1. 数据线 2. 驱动 3. 尾插 4. USB 5. 电脑 6. 前面执行的操作
 
-![](./media/image21.webp)
+![](../media/image21.webp)
 
 允许后，平板应当在几秒钟后黑屏，此时打开电脑端的设备管理器，应当能看到以下画面：
 
-![](./media/image22.webp)
+![](../media/image22.webp)
 
 只要存在 9008 一项且没有感叹号，就证明电脑和平板的连接状态良好，驱动程序工作正常。否则，请根据 Windows 报错检查 Windows 端问题，或者自行排查其他原因。
 
 5. 在"匣"中点击**选择设备/引导/配置**按钮，选中刚刚下载的引导文件，然后点击`读信息`。完成后应当出现这样的窗口，日志中存在图中报错是正常的：
 
-![](./media/image23.webp)
+![](../media/image23.webp)
 
 6. 把日志页面收起，按照下面的要求选择配置：
 
@@ -70,13 +70,13 @@ adb reboot edl
 
 也就是下图所示。此时应该选择了 **120个** 分区。
 
-![](./media/image24.webp)
+![](../media/image24.webp)
 
 7. 点击`回读`按钮。
 
 8. 在弹出的窗口中选择适合的目录，用于保存读出的镜像文件，并`选择文件夹`。确认后就会自动开始回读。
 
-![](./media/image25.webp)
+![](../media/image25.webp)
 
 > [!tip]
 > 如果你的电脑 _有 USB3 端口_ 、手头 _有 USB3 电缆_ ，并且平板在使用 USB3 线和 USB3 端口时能和电脑正确连接和通信，那么建议使用 USB3 进行备份，速度会快很多。

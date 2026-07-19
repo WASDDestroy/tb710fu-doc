@@ -7,7 +7,7 @@ output: word_document
 ## 刷写前必读，非常重要！
 
 > [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](./faq.md#注释-3-关于免解锁刷机)。部分版本的免解锁 ROM 中可能没有包含应对这个问题的底包。
+> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#注释-3-关于免解锁刷机)。部分版本的免解锁 ROM 中可能没有包含应对这个问题的底包。
 >
 > 此外，重新签名免解锁 ROM 的工作其实可以由用户自行完成。相关的教程已经在路上。
 >
@@ -17,7 +17,7 @@ output: word_document
 > 大量用户因为没有查看这些教程导致设备变砖（甚至无法救砖）。
 
 1. [重要警告 - 刷写任何镜像前必读](./important_warns.md)
-2. [驱动安装](./flash_unlocked_device.md)
+2. [驱动安装](../generic/flash_unlocked_device.md)
 3. [9008 工具教程](../generic_knowledge/geekflashtool.md)
 4. [全分区备份教程](./before_flashing.md)
 5. [第三方 ROM 刷写教程](./flash_3rd_party_rom.md)
