@@ -26,7 +26,7 @@ output: word_document
 > [!note] Why so serious?
 > 我是说现在去酷安提问的话，回答的全是让你付费刷机的**（违背社区精神的渣滓）。
 
-4. 刷写任何分区镜像前请先备份 **完整** 底层！如何备份请移步[刷机前必做](./before_flashing.md)。
+4. 刷写任何分区镜像前请先备份 **完整** 底层！如何备份请移步[刷机前必做](../generic/before_flashing.md)。
    
    你的备份十分重要。
    

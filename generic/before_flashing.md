@@ -94,7 +94,7 @@ adb reboot edl
 
 - 6 个 XML文件，也就是 `rawprogram0.xml` 到 `rawprogram5.xml` 。
 
-确认上述文件都存在后，底层备份工作就完成了。要知道怎样使用备份，请跳转到 [刷入第三方ROM或者备份](./flash_3rd_party_rom.md)。
+确认上述文件都存在后，底层备份工作就完成了。要知道怎样使用备份，请跳转到 [刷入第三方ROM或者备份](../without_unlock/flash_3rd_party_rom.md)。
 
 ## （2）用户数据备份
 
