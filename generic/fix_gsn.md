@@ -28,33 +28,33 @@ output: word_document
 
 点击工具栏的 `搜索` 。
 
-![](./media/Fix_GSN/search_option_in_toolbar.png)
+![](../media/Fix_GSN/search_option_in_toolbar.png)
 
 找到并打开下拉菜单中的 `替换文本` 选项。
 
-![](./media/Fix_GSN/replace_text.png)
+![](../media/Fix_GSN/replace_text.png)
 
 ## Step 4
 
 在替换文本的对话框中有 `搜索` 和 `替换` 两个输入框，在 `搜索` 框填入 `HAYOURSN` ， `替换` 框输入你设备的 SN ，例如 `HA123456` ，然后点击确定。
 
-![](./media/Fix_GSN/fill_two_blanks.png)
+![](../media/Fix_GSN/fill_two_blanks.png)
 
 弹出的警告信息直接点击确定。
 
-![](./media/Fix_GSN/confirm_warn.png)
+![](../media/Fix_GSN/confirm_warn.png)
 
 成功对话框应当提示替换了 5 次。
 
-![](./media/Fix_GSN/complete_replace.png)
+![](../media/Fix_GSN/complete_replace.png)
 
 这样就完成了替换 SN 的操作，记得保存文件。
 
-![](./media/Fix_GSN/save_file.png)
+![](../media/Fix_GSN/save_file.png)
 
 弹出的对话框直接点击 `是` 。
 
-![](./media/Fix_GSN/confirm_update.png)
+![](../media/Fix_GSN/confirm_update.png)
 
 ## Step 5
 

@@ -5,10 +5,10 @@ output: word_document
 # 欲一键安装 LKM，先刷入 TWRP
 
 > [!warning]
-> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](./flash_unlocked_device.md)？
+> 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](../generic/flash_unlocked_device.md)？
 
 > [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](./faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
 
 下面开始正式教程：
 
@@ -72,16 +72,16 @@ output: word_document
 电脑打开刷机匣，执行刷写步骤：
 
 1. 点击 `选择设备/引导/配置` ：
-   ![](./media/3285dae9-4fa4-4477-b59c-0575ff7c6953.webp)
+   ![](../media/3285dae9-4fa4-4477-b59c-0575ff7c6953.webp)
 
 2. 点击红框处的按钮，在弹出的窗口选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，点击确定。
-   ![](./media/10fcafd8-7a0d-40de-802c-00d442e508bb.webp)
+   ![](../media/10fcafd8-7a0d-40de-802c-00d442e508bb.webp)
 
 3. 回到主界面，选择 `读信息` ：
-   ![](./media/f143a296-8cb1-429a-9517-0c3a0b8a6ac2.webp)
+   ![](../media/f143a296-8cb1-429a-9517-0c3a0b8a6ac2.webp)
 
 4. 观察输出的日志，确定活动槽位 **（见红框）**，稍后只需要向活动槽位的 `recovery` 分区刷入镜像即可：
-   ![](./media/a1a2892c-fbbe-46c8-b3c6-59b8899b863d.webp)
+   ![](../media/a1a2892c-fbbe-46c8-b3c6-59b8899b863d.webp)
    
    > [!note]
    > 提示“无法在 `super` 动态分区中找到 `system` 分区”、“读取 `LUN6` 的 `GPT`...失败”和“读取 `LUN7` 的 `GPT`...失败”是正常的，不需要理会。
@@ -91,20 +91,20 @@ output: word_document
    - `当前槽位：A`对应 `recovery_a` 分区，`当前槽位：B`对应 `recovery_b` 分区。
    
    - 在红框框出的搜索栏输入对应的分区名，例如对我来说应当输入 `recovery_b` ，系统会自动找到对应分区：
-     ![](./media/6f94a1fb-fec0-4c45-a244-6316178a3c79.webp)
+     ![](../media/6f94a1fb-fec0-4c45-a244-6316178a3c79.webp)
    
    - 点击“选择文件”，选择刚刚下载的 `TWRP` 镜像：
-     ![](./media/4aaef9c8-210f-47af-9105-13e228ef6106.webp)
+     ![](../media/4aaef9c8-210f-47af-9105-13e228ef6106.webp)
    
    - 文件选择完毕后，点击 `刷入`：
-     ![](./media/01c97d0e-056f-43a5-ac4c-6e83bb3b5795.webp)
+     ![](../media/01c97d0e-056f-43a5-ac4c-6e83bb3b5795.webp)
    
    - 刷入完成，将日志窗口折叠起来，然后点击 `槽位功能` 打开二级菜单，然后**点击“重设当前槽位”**：
-     ![](./media/f4b99686-bdd5-4c00-ab74-15f718b26474.webp)
-     ![](./media/9aa12dea-63da-47ab-99c2-acb980623115.webp)
+     ![](../media/f4b99686-bdd5-4c00-ab74-15f718b26474.webp)
+     ![](../media/9aa12dea-63da-47ab-99c2-acb980623115.webp)
    
    - 完成后点击 `重启` 打开二级菜单，重启到 `Recovery` 或者 `系统` 都行：
-     ![](./media/db75ff3c-be1e-4662-9378-1662bb0ee476.webp)
+     ![](../media/db75ff3c-be1e-4662-9378-1662bb0ee476.webp)
    
    - 至此 `TWRP` 刷入完毕。
      

@@ -9,9 +9,12 @@ hero:
   image: ./logo.jpg
   actions:
     - theme: brand
-      text: 从头阅读
-      link: ./before_we_start
+      text: 解锁刷机
+      link: ./generic/before_we_start
+    - theme: brand
+      text: 免解锁刷机
+      link: ./without_unlock/important_warns
     - theme: alt
       text: 疑难解答
-      link: ./faq
+      link: ./generic/faq
 ---

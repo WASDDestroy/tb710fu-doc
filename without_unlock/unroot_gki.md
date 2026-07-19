@@ -1,4 +1,4 @@
-# 为使用 LKM 方案进行 Root 的设备解除 Root 状态
+# 为使用 GKI 方案进行 Root 的设备解除 Root 状态
 
 ## **Step 1**: 清理 `/data` 分区
 
@@ -6,21 +6,21 @@
 
 1. 在 `KernelSU` 的模块页面关闭所有模块，然后重启一次平板。
 
-![](./media/image62.png)
+![](../media/image62.png)
 
 _例如上面这些模块全都要关掉_
 
 2. **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）** 重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
 
-![](./media/image63.jpeg)
+![](../media/image63.jpeg)
 
 _点击左上角的设置_
 
-![](./media/image64.jpeg)
+![](../media/image64.jpeg)
 
 _点击"最小化稀疏文件"_
 
-![](./media/image65.jpeg)
+![](../media/image65.jpeg)
 
 _点击确定，完成最小化稀疏文件_
 
@@ -34,7 +34,7 @@ _点击确定，完成最小化稀疏文件_
 
 3. 使用 `MT 管理器` 等能够读写 `/data` 的文件管理器访问下面的目录：
 
-![](./media/image66.webp)
+![](../media/image66.webp)
 
 _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹_
 
@@ -44,7 +44,7 @@ _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文�
 
 长按 `adb 文件夹`，弹出选项菜单，直接点击 **删除**。
 
-![](./media/image67.webp)
+![](../media/image67.webp)
 
 _长按 adb 文件夹，弹出操作菜单_
 
@@ -57,43 +57,41 @@ _长按 adb 文件夹，弹出操作菜单_
 1. 将设备重启到 9008 模式：关机， **按住** 音量加，并插入数据线，设备应当先显示充电符号，并在几秒钟后黑屏，且电脑发出插入设备的提示音。这时可以 **松开音量键** ，准备在电脑端发送引导。
 
 > [!tip]
-> 如果无法进入，将平板开机，[打开 USB 调试](./flash_unlocked_device.md#USB_Debugging)，电脑上[安装 ADB 工具](./flash_unlocked_device.md#Install_ADB)，然后在电脑上输入命令`adb reboot edl`即可进入 9008 模式。
+> 如果无法进入，将平板开机，[打开 USB 调试](../generic/flash_unlocked_device.md#USB_Debugging)，电脑上[安装 ADB 工具](../generic/flash_unlocked_device.md#Install_ADB)，然后在电脑上输入命令`adb reboot edl`即可进入 9008 模式。
 
 发送引导方式：
 
 - 点击 `选择设备/引导/配置`
 
-![](./media/image44.webp)
+![](../media/image44.webp)
 
-- 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮，并在弹出的对话框选择从下载页下载的 `xbl_s_devprg_ns.melf` ，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
+- 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮，并在弹出的对话框选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
 
-![](./media/image45.webp)
+![](../media/image45.webp)
 
-![](./media/image46.webp)
+![](../media/image46.webp)
 
 - 现在回到刷机匣的主界面，点击 `读信息` ，确认一下设备连接是否正常，如果正常，应当能够读取到分区信息。
 
-![](./media/image47.webp)
+![](../media/image47.webp)
 
-![](./media/image48.webp)
+![](../media/image48.webp)
 
 > [!note]
 > 日志内有上图所示的错误信息是正常的
 
 2. 使用工具箱的 `槽位功能 -> 查看槽位` 确认活动槽位，记住槽位号。
-   ![](./media/image49.webp)
+   ![](../media/image49.webp)
 
-3. 如果槽位为 A，找到`init_boot_a`分区和`vbmeta_a`分区，反之，找到`init_boot_b`分区和`vbmeta_b`分区，并勾选分区前的复选框，然后选择之前备份的原`init_boot`分区和`vbmeta`分区文件。
-   ![](./media/image50.webp)
+3. 如果槽位为 A，找到`boot_a`分区，反之，找到`boot_b`分区，并勾选分区前的复选框，然后选择之前备份的原`boot`分区文件，如果没有备份，可以尝试下载站提供的“快速取用镜像”链接中的文件，请同样注意槽位号
+   ![](../media/image50.webp)
 
-4. 现在，点击 `刷入` ，恢复原始 `init_boot` 镜像
-   ![](./media/image57.webp)
-
-   ![](./media/image58.webp)
+4. 现在，点击 `刷入` ，恢复原始 `boot` 镜像
+   ![](../media/image51.webp)
 
 5. **点击“槽位功能”中的“重设当前槽位”**
-   ![](./media/image59.webp)
+   ![](../media/image59.webp)
 
 6. 完成后重启设备至系统，确认 Root 管理器中工作状态变为 `未安装 ` 即完成恢复步骤
 
-   ![](./media/image52.webp)
+   ![](../media/image52.webp)
