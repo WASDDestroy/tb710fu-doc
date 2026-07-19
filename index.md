@@ -11,9 +11,6 @@ hero:
     - theme: brand
       text: 解锁刷机
       link: ./generic/before_we_start
-    - theme: brand
-      text: 免解锁刷机
-      link: ./without_unlock/important_warns
     - theme: alt
       text: 疑难解答
       link: ./generic/faq
