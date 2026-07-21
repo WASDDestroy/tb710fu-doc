@@ -16,14 +16,24 @@
 请依次参考下面的判据：
 
 1. 下载的压缩包文件名是否包含某些字样？如包含 `Tool` 字样，则它可能是官方救砖包；如果包含 `UNI` 字样，则它是本文档维护者创建的救砖包，文件名格式为 `TB710FU_ZUXOS_<versioncode>_UNI.7z` 。
+![](../media/unbrick_device/unbrick_rom_show.png)
 2. 压缩包是否有密码保护？如果有，且密码为 `FC(fv:SknR` ，则它是官方救砖包；如果没有密码保护或者使用的不是这个密码，则它可能不是官方救砖包。
-3. 压缩包内的文件是怎样组织的？如果包含文件 `运行我，刷机.bat` 和文件夹 `images`，且 `images` 文件夹中有文件 `contents.xml` 和 `rawprogram0_unsparsed_half.xml` ，则它是官方救砖包；如果没有上述文件结构，则它不是官方救砖包。
+3. 压缩包内的文件是怎样组织的？如果包含文件 `运行我，刷机.bat` 和文件夹 `images`
+      ![](../media/unbrick_device/unbrick_rom_detail.webp)
+4. 且 `images` 文件夹中有文件 `contents.xml` 和 `rawprogram0_unsparsed_half.xml` ，则它是官方救砖包
+    ![](../media/unbrick_device/unbrick_rom_contents.webp)
+    ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp)
+5. 如果没有上述文件结构，则它不是官方救砖包。
 
 
 ## 官方救砖包
 
 > [!important]
-> 如果您需要保留用户数据进行刷机，需要手动编辑 rawprogram0_unsparsed_half.xml 移除所有刷入 `metadata` 和 `userdata` 的行。或者配合刷机匣，移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。
+> 如果您需要<span style="color: red;">保留用户数据</span>进行刷机，需要手动编辑 rawprogram0_unsparsed_half.xml
+>     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
+> 移除所有刷入 `metadata` 和 `userdata` 的行。
+>      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
+> 或者配合刷机匣，移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。
 
 1. 使用上面提到的密码解压这个压缩包，请确保磁盘空间充足。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
