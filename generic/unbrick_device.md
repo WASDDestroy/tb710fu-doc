@@ -19,7 +19,7 @@
 2. 压缩包是否有密码保护？如果有，且密码为 `FC(fv:SknR` ，则它是官方救砖包；如果没有密码保护或者使用的不是这个密码，则它可能不是官方救砖包。
 3. 压缩包内的文件是怎样组织的？如果包含文件 `运行我，刷机.bat` 和文件夹 `images`
       ![](../media/unbrick_device/unbrick_rom_detail.webp)
-4. 且 `images` 文件夹中有文件 `contents.xml` 和 `rawprogram0_unsparsed_half.xml` ，则它是官方救砖包
+4. 且 `images` 文件夹中有文件 `contents.xml` 和 `rawprogram_unsparsed0-half.xml` ，则它是官方救砖包
     ![](../media/unbrick_device/unbrick_rom_contents.webp)
     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp)
 5. 如果没有上述文件结构，则它不是官方救砖包。
@@ -32,7 +32,7 @@
 >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
 > 移除所有刷入 `metadata` 和 `userdata` 的行。
 >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
-> 或者配合刷机匣，**删除 `rawprogram0_unsparsed.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
+> 或者配合刷机匣，**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 
 1. 使用上面提到的密码解压这个压缩包，请确保磁盘空间充足。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
@@ -43,7 +43,7 @@
 如果刷机失败，将设备重新启动到 9008 模式，使用 `刷机匣` 选择 `images` 文件夹中的引导文件和合适的 XML 文件后刷机：
 
 选择的 XML：
-- rawprogram0_unsparsed_half.xml （非常重要，此文件保证不会刷写 `persist` 分区，从而确保串号状态正常）
+- rawprogram_unsparsed0-half.xml （非常重要，此文件保证不会刷写 `persist` 分区，从而确保串号状态正常）
 - rawprogram1.xml 到 rawprogram5.xml
 - patch0.xml 到 patch5.xml
 
