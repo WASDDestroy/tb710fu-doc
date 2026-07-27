@@ -15,8 +15,7 @@
 
 请依次参考下面的判据：
 
-1. 下载的压缩包文件名是否包含某些字样？如包含 `Tool` 字样，则它可能是官方救砖包；如果包含 `UNI` 字样，则它是本文档维护者创建的救砖包，文件名格式为 `TB710FU_ZUXOS_<versioncode>_UNI.7z` 。
-![](../media/unbrick_device/unbrick_rom_show.png)
+1. 下载的压缩包文件名是否包含某些字样？如包含 `Tool` 字样，则它可能是官方救砖包。
 2. 压缩包是否有密码保护？如果有，且密码为 `FC(fv:SknR` ，则它是官方救砖包；如果没有密码保护或者使用的不是这个密码，则它可能不是官方救砖包。
 3. 压缩包内的文件是怎样组织的？如果包含文件 `运行我，刷机.bat` 和文件夹 `images`
       ![](../media/unbrick_device/unbrick_rom_detail.webp)
