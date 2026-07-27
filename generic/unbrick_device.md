@@ -30,7 +30,7 @@
 > [!important]
 > 如果您需要<span style="color: red;">保留用户数据</span>进行刷机，需要手动编辑 rawprogram0_unsparsed_half.xml
 >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
-> 移除所有刷入 `metadata` 和 `userdata` 的行。
+> 移除所有刷入 `metadata` 和 `userdata` 的**行**。
 >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
 > 或者配合刷机匣，**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 
