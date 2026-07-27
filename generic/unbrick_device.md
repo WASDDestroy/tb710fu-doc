@@ -32,7 +32,7 @@
 >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
 > 移除所有刷入 `metadata` 和 `userdata` 的行。
 >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
-> 或者配合刷机匣，移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。
+> 或者配合刷机匣，**删除 `rawprogram0_unsparsed.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 
 1. 使用上面提到的密码解压这个压缩包，请确保磁盘空间充足。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
