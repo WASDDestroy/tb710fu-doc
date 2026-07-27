@@ -27,25 +27,40 @@
 
 ## 官方救砖包
 
-> [!important]
-> 如果您需要<span style="color: red;">保留用户数据</span>进行刷机，需要手动编辑 rawprogram0_unsparsed_half.xml
->     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
-> 移除所有刷入 `metadata` 和 `userdata` 的**行**。
->      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
-> 或者配合刷机匣，**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
+
+### 使用救砖包
 
 1. 使用上面提到的密码解压这个压缩包，请确保磁盘空间充足。
+    > [!important]
+    > 如果您需要<span style="color: red;">保留用户数据</span>进行刷机，需要手动编辑 rawprogram_unsparsed0-half.xml
+    >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
+    > 移除所有刷入 `metadata` 和 `userdata` 的**行**。
+    >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
+    > 或者配合刷机匣，**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
 3. 将平板启动到 9008 模式，参考 [常见问题解答 - 启动到 9008 模式](./faq.md#问-1怎么进入-9008-模式)。
 4. 在设备管理器中确定 9008 设备的端口号，例如 `COM3`。
 5. 双击启动 `运行我，刷机.bat` ，按照指示输入 9008 端口号后开始自动刷机。
 
-如果刷机失败，将设备重新启动到 9008 模式，使用 `刷机匣` 选择 `images` 文件夹中的引导文件和合适的 XML 文件后刷机：
+### 处置刷机失败
+先将设备重新启动到 9008 模式：
+1. 长按 **电源 + 音量下**，直到设备管理器中的 9008 设备消失。
+2. 拔下平板端的数据线。
+3. 依据设备状况处理：
+  - 如果设备没有亮屏，则跳过这一步；
+  - 如果设备进入了 Fastboot/Bootloader 模式：按音量键移动选项，找到红色的 `Power off` 后按电源键确认关机；
+  - 如果设备进入了 Recovery 模式：按音量键移动选项到 `power off` 后按电源键确认关机；
+  - 如果设备进入了 FFBM 测试模式，按电源 + 音量下组合键再重启一次，当设备黑屏时立马松手，然后重新回到本步骤开头。
+4. 参照 [常见问题解答](./faq.md) 重新进入 9008 模式。
+
+然后重新尝试一次使用 `运行我，刷机.bat` 刷机。如果还是失败，使用 `刷机匣` 选择 `images` 文件夹中的引导文件和合适的 XML 文件后刷机：
 
 选择的 XML：
 - rawprogram_unsparsed0-half.xml （非常重要，此文件保证不会刷写 `persist` 分区，从而确保串号状态正常）
 - rawprogram1.xml 到 rawprogram5.xml
 - patch0.xml 到 patch5.xml
+
+<span style="color: red;">严禁选择 rawprogram_unsparsed0.xml </span>，这会导致你的 GSN 丢失，影响你申请和执行 Bootloader 解锁，并导致包括系统更新在内的联想在线服务不可用或不可靠。如果你已经使用这个文件指导刷机软件刷入了相关镜像，考虑参考 [修复 GSN](./fix_gsn.md) 这篇文章进行应急修复。
 
 选择的引导文件：
 - xbl_s_devprg_ns.melf
