@@ -186,12 +186,12 @@ ROM
 > 设备管理器中默认按照设备种类列出已经连接在你电脑上的设备。比如“处理器”和“图形适配器”。如果你的设备管理器已经展示了 `端口（COM 和 LPT）` 这个类别，请点击选项左侧的小三角展开它。如果没有，也不需要担心，按照下面的步骤继续操作即可。
 2. 平板彻底关机
 3. 按照下面的步骤进入 9008 模式：
+   ![](../media/flash_3rd_party_rom_yu/enter_edl_mode.webp)
    - 按住 `音量 +` 不放
    - 插入 USB 线，此时不应该松开 `音量 +`
    - 设备应当先亮起充电符号，然后灭屏，随即进入 9008 模式。电脑会发出提示音提示有新设备接入。你可以在设备管理器中观察到新增的 `端口（COM 和 LPT）` 类别；如果你展开了 `端口（COM 和 LPT）` 这个类别，就可以直接看到新的 9008 设备。此时可以松手了。
    - 9008 设备的名称：`Qualcomm HS-USB QDLoader 9008`。例如 `Qualcomm HS-USB QDLoader 9008 (COM3)` 。这个设备名称可以在点击 `端口（COM 和 LPT）` 这个类别左侧的小三角后看到。你的设备名称的括号中提示的 COM 号很可能不一样，请记住**你自己的**9008设备的 COM 号，稍后需要输入。
-
-![](../media/flash_3rd_party_rom_yu/enter_edl_mode.webp)
+   ![](../media/flash_3rd_party_rom_yu/devmgr_ports.png)
 
 > [!tip]
 > 如果设备开机了，重新按照上面的步骤尝试一次。如果还是失败，对于用户，你有下面的一些解决方案：
@@ -226,7 +226,9 @@ ROM
    请输入设备的 9008 端口号并回车 (例如 COM3 或者 COM18):
    ```
    此时请输入 9008 设备的 COM 号，例如我根据我设备管理器的显示输入 `COM3`，回车。
+   ![](../media/flash_3rd_party_rom_yu/type_com_number.png)
 4. 如果一切正常，刷入工具会每 2 秒在命令行刷新一条日志，日志内容包括刷机操作已消耗的时间、刷入文件字节数占总字节数的百分比、以及 USB 文件传输的速度（单位 `MBps`，不是网络术语中常用的 `Mbps`）。如果工具超过 10 秒没有刷新新的日志，说明 USB 连接中断，你需要参考下面的提示重新进入 9008 模式。
+   ![](../media/flash_3rd_party_rom_yu/flash_log.png)
    > [!important]
    > 如果刷机失败了，按照下面的提示重新进入 9008 模式：
    > 1. 按 `电源 + 音量下` 强制重启设备
@@ -292,7 +294,18 @@ ROM
    - 从命令提示符窗口复制文本时会出现奇怪的乱码
 4. 使用 `fastboot erase metadata` 和 `fastboot erase userdata`, 或者直接输入 `fastboot -w` 和 TWRP 中的格式化 data 分区是等效的。如果你用了这种方式，在执行完命令后启动到 TWRP 再格式化一次 data ，随后重启到系统即可正常开机。
 5. 如果使用第三方工具直接读 rawprogram.xml + patch.xml 刷入，要手动解压 `images` 目录中的 super 镜像压缩文件。
-6. 完整目录结构：
+6. 碰到此情况说明你在上次刷机失败后没有重启设备就再次尝试刷入，请按 `电源 + 音量下` 强制重启：
+   ```text
+   08.13.2026-00.42.51 : EVENT: 状态 <-- SAHARA_WAIT_HELLO(等待设备HELLO数据包)
+   08.13.2026-00.42.53 : WARNING: 函数: boot_usb_rx_data:195 从读取端口超时
+   [portstatus]firehose
+   08.13.2026-00.42.53 : ERROR: 函数: is_firehose:334 FIREHOSE MODE DETECTED.
+   08.13.2026-00.42.53 : EVENT: 检测到FIREHOSE模式，不支持FIREHOSE模式下通讯
+   08.13.2026-00.42.53 : ERROR: 函数: sahara_main:1140 Sahara protocol error
+   08.13.2026-00.42.53 : ERROR: 函数: main:395 通过Sahara协议上传镜像失败
+   [错误] 引导文件推送失败！请检查设备连接状态或端口是否被占用。
+   ```
+7. 完整目录结构：
 ```text
 ROM
 │  点我一键刷入.cmd
