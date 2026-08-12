@@ -66,6 +66,10 @@ export default defineConfig({
               text: "保留用户数据和 Root 权限进行系统增量更新",
               link: "/generic/update_while_keeping_root",
             },
+            {
+              text: "刷入第三方 ROM (兰微卡鱼版)",
+              link: "/generic/flash_yu_s_third_party_rom"
+            }
           ],
         },
         {
