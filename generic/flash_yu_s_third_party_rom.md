@@ -14,7 +14,7 @@
 1. 刷入前必读
 2. 材料准备
 3. 电脑端准备
-4. 平板端准备
+4. 平板端准备（可选）
 5. 正式刷入
 6. 后处理
 7. 备注
@@ -33,17 +33,19 @@
 ### 清单
 
 1. 一台配置不太差的电脑，推荐配置：
-   - 2013 年及以后的 Intel CPU 或者 2017 年以后的 AMD CPU
+   - 2013 年及以后的 Intel CPU 或者 2017 年以后的 AMD CPU，4 核心或更多
    - 配置固态硬盘（固态硬盘上的可用存储空间应不低于 20GB）
-   - 至少具备 8GB 内存
-   - 至少有一个可靠的 USB 插口
-   - 原版 Windows 10 或 11 操作系统，不得使用更低版本和第三方提供的 Windows 系统。由于使用低版本和第三方精简系统导致的各种问题，教程作者无法解决和修复。教程将基于微软官方提供的 Windows 11 25H2 编写。
+   - 8GB 内存
+   - 至少一个可靠的 USB 插口
+   - 原版 Windows 10 或 11 操作系统
+   > [!danger]
+   > 不得使用更低版本和第三方提供的 Windows 系统。由于使用低版本和第三方精简系统导致的各种问题，教程作者无法解决和修复。教程将基于微软官方提供的 Windows 11 25H2 编写。
    - 安装了至少一款可靠的压缩解压软件。
-     - 推荐：WinRAR, 7-Zip, BandiZip, NanaZip, PeaZip 等
+     - 推荐：[WinRAR](https://www.rarlab.com/download.htm), [7-Zip](https://7-zip.org/download.html), [BandiZip](https://www.bandisoft.com/bandizip/), [NanaZip](https://nanazip.org/), [PeaZip](https://peazip.github.io/) 等
      - 不推荐：2345 压缩、360 压缩、好压、快压、WPS 解压等
-2. 一条可靠的 USB 线，这条 USB 线可以不是原装的，但是必须保证平板可以和电脑保持可靠的连接。
-3. 保持头脑清醒、保证拥有基本的电脑知识。不推荐完全不懂电脑的用户和深夜阅读本文的用户立刻开始刷机。
-4. ROM 包链接合集。如果你需要中国移动云盘相关的下载提示，请看 `电脑端准备` 一节：
+1. 一条可靠的 USB 线，这条 USB 线可以不是原装的，但是必须保证平板可以和电脑保持可靠的连接。
+2. 保持头脑清醒、保证拥有基本的电脑知识。不推荐完全不懂电脑的用户和深夜阅读本文的用户立刻开始刷机。
+3. ROM 包链接合集。如果你需要中国移动云盘相关的下载提示，请看 `电脑端准备` 一节：
    - [ColorOS 16 介绍](https://www.coolapk.com/feed/72439864?s=MWNjMjBjMTExMWM1ODUzZzZhN2M2Nzdjega1603)
    - [HyperOS 3 介绍](https://www.coolapk.com/feed/72426511?s=ZDIzMDgxZjQxMWM1ODUzZzZhN2M2Nzliega1603)
    - [下载链接 - ROM 作者的置顶帖](https://www.coolapk.com/feed/70239826?s=ZGExNTBmMDExMWM1ODUzZzZhN2M2ODFmega1603)
@@ -161,7 +163,7 @@ ROM
 1. 按下快捷键 `Win + X`
 2. 选择 `设备管理器` 打开即可
 
-## 平板端准备
+## 平板端准备（可选）
 
 打开 USB 调试：
 
@@ -184,7 +186,7 @@ ROM
 1. 电脑端将设备管理器放在最顶端
 > [!tip]
 > 设备管理器中默认按照设备种类列出已经连接在你电脑上的设备。比如“处理器”和“图形适配器”。如果你的设备管理器已经展示了 `端口（COM 和 LPT）` 这个类别，请点击选项左侧的小三角展开它。如果没有，也不需要担心，按照下面的步骤继续操作即可。
-2. 平板彻底关机
+2. 平板彻底关机，**拔下 USB 线**
 3. 按照下面的步骤进入 9008 模式：
    ![](../media/flash_3rd_party_rom_yu/enter_edl_mode.webp)
    - 按住 `音量 +` 不放
@@ -194,7 +196,7 @@ ROM
    ![](../media/flash_3rd_party_rom_yu/devmgr_ports.png)
 
 > [!tip]
-> 如果设备开机了，重新按照上面的步骤尝试一次。如果还是失败，对于用户，你有下面的一些解决方案：
+> 如果设备开机了，重新按照上面的步骤尝试一次。如果还是失败，对于用户，请先按照“平板端准备”一节打开 USB 调试，然后，你有下面的一些解决方案：
 > 1. 换用 ADB 工具使用命令 `adb reboot edl` 。如果你需要针对安装本工具或者打开命令行的帮助，请看 [解锁教程](./flash_unlocked_device.md)
 > 2. 用 [紫罗兰工具箱](https://violettool.top/) 等 ADB 工具的“重启到 9008 模式”功能
 > 3. 购买高通二代工程线解决。本教程的疑难解答部分有使用工程线进入 9008 模式的用法说明。
