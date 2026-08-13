@@ -6,6 +6,31 @@ export default defineConfig({
   title: "WASDDestroy 的个人文档站",
   description: "--no_clever_tagline_needed",
   ignoreDeadLinks: false,
+
+  head: [
+    [
+      "meta",
+      {
+        name: "copyright",
+        content: "CC BY-NC-SA 4.0",
+      },
+    ],
+    [
+      "meta",
+      {
+        property: "og:license",
+        content: "CC BY-NC-SA 4.0",
+      },
+    ],
+    [
+      "link",
+      {
+        rel: "license",
+        href: "/legal/CC-BY-NC-SA-4.0.txt",
+      },
+    ],
+  ],
+
   themeConfig: {
     search: {
       provider: "local",
@@ -157,7 +182,7 @@ export default defineConfig({
       message:
         '<a href="http://beian.miit.gov.cn" target="_blank">浙ICP备2025219672号-1</a>',
       copyright:
-        "Copyright © 2025 - 至今， 酷安 @WASD_Destroy, 采用 CC BY-SA 4.0 许可",
+        'Copyright © 2025 - 至今， 酷安 @WASD_Destroy, 采用 <a href="/legal/CC-BY-NC-SA-4.0.txt" target="_blank">CC BY-NC-SA 4.0</a> 许可',
     },
   },
   lang: "zh-CN",
