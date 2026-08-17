@@ -35,14 +35,12 @@ output: word_document
 
 **懒人模式 ▲**：简单但是行之有效
 
-先备份：
-- 最小备份范围： `persist` 分区
-- 推荐： [全量备份](./before_flashing.md)
+先 [全量备份](./before_flashing.md) 。
 
 然后：
 - 直接按照教程使用刚才下载好的救砖包：[救砖](./unbrick_device.md)
 
-**进阶模式（不推荐）**：如果：
+**进阶模式（适合经验丰富的用户）**：如果：
 - 确定曾使用 Fastboot, FastbootD, 9008 或者系统内的 Root 刷写软件等 **任意刷写工具** 刷入过哪些分区镜像
 - 保留有对应的备份
 
