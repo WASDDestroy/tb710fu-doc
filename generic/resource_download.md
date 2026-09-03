@@ -39,9 +39,9 @@
    - 全套工具：[蓝奏云](https://wwapb.lanzout.com/b004jhgapi) 密码:caiw
    - 管理器：[蓝奏云](https://wwapb.lanzout.com/b004jgeapa) 密码:eod7
 
-## 第三方 ROM
+## 高版本免解锁 Root 资源
 
-**作者已经不属于某组织。因此在显式申请到作者的转载许可之前，本站不会托管任何第三方 ROM 的下载链接。未经授权转载是侵权行为。**
+1. 老版本 abl 镜像：[蓝奏云](https://wwapb.lanzout.com/iTUY145u51lc)
 
 ## DroidSpaces
 

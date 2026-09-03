@@ -123,8 +123,9 @@ export default defineConfig({
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
             { text: "Root 方案比较和须知事项", link: "/without_unlock/comparison_and_warn" },
             { text: "Root 教程导航 ⭐", link: "/without_unlock/state_machine" },
+            { text: "使用 Android 设备恢复高版本系统为 AOSP 信任链", link: "/without_unlock/restore_trust_chain_on_android"},
             {
-              text: "Root 相关教程",
+              text: "Root 相关教程（1.5.04.445 以下）",
               collapsed: false,
               items: [
                 { text: "刷写 GKI Root ❌", link: "/without_unlock/flash_gki_root" },
