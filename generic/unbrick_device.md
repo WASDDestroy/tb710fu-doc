@@ -25,11 +25,16 @@
 
 1. 使用上面提到的密码解压这个压缩包，请确保磁盘空间充足。
     > [!important]
-    > 如果您需要<span style="color: red;">保留用户数据</span>进行刷机，需要手动编辑 rawprogram_unsparsed0-half.xml
+    > 官方救砖包支持<span style="color: red;">保留用户数据</span>进行刷机。但是只有下面两种情况能保留数据，且情况 2 只推荐经验丰富的用户操作：
+    > 1. 用 9008 刷机包升级系统
+    > 2. 用 9008 刷机包救援变砖前处于 ZUXOS 的设备（只推荐经验丰富的用户操作，救砖操作如果再引入“修改救砖包”这一变量，将进一步阻碍排障。）
+    > 
+    > 要尝试保留用户数据请按照你使用的工具从下面两种方法二选一：
+    > 1. （官方刷机脚本等）手动编辑 rawprogram_unsparsed0-half.xml
     >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
     > 移除所有刷入 `metadata` 和 `userdata` 的**行，然后保存文件**。
     >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
-    > 或者配合刷机匣，**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
+    > 2. （刷机匣）**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
 3. 将平板启动到 9008 模式，参考 [常见问题解答 - 启动到 9008 模式](./faq.md#问-1怎么进入-9008-模式)。
 4. 在设备管理器中确定 9008 设备的端口号，例如 `COM3`。
