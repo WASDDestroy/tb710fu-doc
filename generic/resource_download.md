@@ -41,7 +41,8 @@
 
 ## 高版本免解锁 Root 资源
 
-1. 老版本 abl 镜像：[蓝奏云](https://wwapb.lanzout.com/iTUY145u51lc)
+1. 老版本 abl 镜像：[蓝奏云](https://wwapb.lanzout.com/iA6Fc46f8xwj)
+2. AVBDroid / AVBPowerTool2 配置文件：[蓝奏云](https://wwapb.lanzout.com/b004joje1i) 密码:duy8
 
 ## DroidSpaces
 
