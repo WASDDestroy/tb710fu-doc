@@ -4,6 +4,9 @@
 
 恢复 AOSP 信任链后，**ZUXOS 版本 1.5.04.445 及以上**的小新平板 Pro GT 设备可以重新使用本站的免解锁教程。
 
+> [!note]
+> 本教程使用的 Android 应用仍在迭代，教程不能 100% 反映最新版 APP 的 UI 布局。如果你发现教程和你使用的 APP 存在界面差异，请先检查是否有更新版本的应用，如没有，请反馈催促作者适配。
+
 ## 开始前须知
 
 1. 本教程适合 ZUXOS (官方系统) 和任何可在此设备上运作的第三方系统。
@@ -16,7 +19,7 @@
 你需要准备下面的文件：
 
 1. 一个老版本的 abl 分区镜像。你可以在本站资源下载页的 `高版本免解锁 Root 资源` 板块找到它
-2. AVBDroid 安卓 APP, 版本 2.0.0。可以在 [GitHub Releases](https://github.com/WASDDestroy/avbtool-android-compose/releases) 下载
+2. 最新版 AVBDroid 安卓 APP。可以在 [GitHub Releases](https://github.com/WASDDestroy/avbtool-android-compose/releases) 下载
 3. 签名配置文件，此文件应当匹配你当前使用的系统版本。可以在本站资源下载页的 `高版本免解锁 Root 资源` 板块找到它们。如果没有符合你系统版本的配置，你需要手动创建配置。
 4. 本机当前系统版本的以下镜像，可能是救砖包、第三方 ROM 中的镜像，或者可能需要你使用 9008 从设备中读出。你可以对这些镜像事先进行修补，例如替换一个第三方内核、进行降压超频、刷 LKM Root 等：
    - boot
