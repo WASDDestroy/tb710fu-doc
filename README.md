@@ -1,9 +1,12 @@
 # TB710FU Doc
 
-本仓库不太可能有人来 PR 的，我说的。有些高手宁可天天把自己的研究成果（哦对了，还是根本转化不出来的研究结果）发酷安或者发某群里也不肯 PR 一下，你明白我的绝望了吗？
+> [!warning]
+> 因现在本项目作为子模块使用，它引用了一些处于上级目录中的资源，不再能被单独构建。
+>
+> 请访问仓库 [我的文档总站](https://gitee.com/WASDDestroy/wasddestroy-docs) 进行构建。
 
 ## 预览、编辑和部署
-现已完成 vitepress 化，要使用 vitepress 预览网页，遵循下面的步骤：
+要使用 vitepress 预览网页，遵循下面的步骤：
 
 1. 安装 node.js
 
@@ -12,25 +15,25 @@
 npm install -g pnpm
 ```
 
-3. 克隆仓库并切换到它：
+1. 克隆仓库并切换到它：
 ```shell
 git clone https://gitee.com/WASDDestroy/tb710fu-doc.git
 cd tb710fu-doc
 ```
 
-4. 安装 vitepress：
+1. 安装 vitepress：
 ```shell
 pnpm install -D vitepress
 ```
 
-5. 将仓库中的文件复制到 vitepress 所在目录，如有冲突，选择覆盖。
+1. 将仓库中的文件复制到 vitepress 所在目录，如有冲突，选择覆盖。
 
-6. 在终端启动 vitepress 开发服务器：
+2. 在终端启动 vitepress 开发服务器：
 ```shell
 pnpm docs:dev
 ```
 
-7. 访问终端中给出的地址即可预览页面。直接打开目录下的 Markdown 文件就可以编辑。所有对文件的更改在保存后即刻生效，不需要重启服务器。
+1. 访问终端中给出的地址即可预览页面。直接打开目录下的 Markdown 文件就可以编辑。所有对文件的更改在保存后即刻生效，不需要重启服务器。
 
 > [!note]
 > 话虽如此，更改资源时还是有可能导致网页*暂时*出错的。不过解决也简单，*刷新*就好。
