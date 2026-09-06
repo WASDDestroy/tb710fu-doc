@@ -50,7 +50,7 @@
    <img src="../../media/create_profile_with_avb_droid/add_key_4096.jpg" height="1200" />
    <img src="../../media/create_profile_with_avb_droid/add_key_2048.jpg" height="1200" />
 
-2. 确保当前的默认密钥是 `testkey_rsa4096`, 如果不是，长按 testkey_rsa4096 这个条目后选择 `激活密钥`
+2. <span style="color: red;">（重要）</span>确保当前的默认密钥是 `testkey_rsa4096`, 如果不是，长按 testkey_rsa4096 这个条目后选择 `激活密钥`
 3. 长按 testkey_rsa4096 和 testkey_rsa2048, 分别复制下它们的 `公钥文件名`，稍后要用。
    <img src="../../media/create_profile_with_avb_droid/copy_pubkey_file_name_4096.jpg" height="1200" />
    <img src="../../media/create_profile_with_avb_droid/copy_pubkey_file_name_2048.jpg" height="1200" />
