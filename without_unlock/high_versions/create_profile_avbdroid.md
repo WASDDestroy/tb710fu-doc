@@ -105,7 +105,7 @@
 7. 展开 `vbmeta` 配置编辑对话框的高级配置并找到 `包含的分区` 一行。
 8. 点击 `包含的分区` 一行，像下面这样勾选分区，保证只有 `dtbo`, `init_boot`, `vendor_boot` 分区被勾选后点击确定：
    
-   <img src="../../media/create_profile_with_avb_droid/vbmeta_system_include_partitions.jpg" height="1200" />
+   <img src="../../media/create_profile_with_avb_droid/vbmeta_include_partitions.jpg" height="1200" />
 
 9. 找到 `链分区` 一行，点击打开对话框，看到现在三个链式分区都使用默认密钥进行匹配：
     
