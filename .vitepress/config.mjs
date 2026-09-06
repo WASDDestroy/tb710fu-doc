@@ -105,6 +105,7 @@ export default defineConfig({
           items: [
             { text: "常见问题速查", link: "/generic/faq" },
             { text: "资源下载", link: "/generic/resource_download" },
+            { text: "问题反馈与技术交流", link: "/generic/feedback" },
           ],
         },
         {
