@@ -68,9 +68,10 @@ export default defineConfig({
     nav: [
       { text: "主页", link: "/" },
       { text: "通用教程", link: "/generic/before_we_start" },
-      { text: "免解锁刷机", link: "/without_unlock/state_machine" },
+      { text: "免解锁刷机", link: "/without_unlock/important_warns" },
       { text: "更新日志", link: "/generic/updatelog" },
       { text: "资源下载", link: "/generic/resource_download"},
+      { text: "问题反馈与技术交流", link: "/generic/feedback" },
     ],
     editLink: {
       pattern: 'https://gitee.com/WASDDestroy/tb710fu-doc/blob/master/:path'
