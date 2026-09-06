@@ -6,7 +6,7 @@
 
 1. 最新版 AVBDroid APP: [GitHub Releases](https://github.com/WASDDestroy/avbtool-android-compose/releases/latest)
 2. AOSP 测试密钥对：[蓝奏云](https://wwapb.lanzout.com/iHszl46zv8xi)
-3. 原机 ROM 的下列镜像文件，需要保证**该 ROM 的版本大于等于你曾在你的设备上使用的最高系统版本**，你可以寻找救砖包或者使用 9008 从你的设备中读取活动分区镜像：
+3. 下列镜像文件，需要保证**该 ROM 的版本（或者其底包版本）大于等于你曾在你的设备上使用的最高系统版本，也就是这个 ROM 可以在你的未解锁设备上正常开机使用**，你可以寻找救砖包或者使用 9008 从你的设备中读取活动分区镜像：
    - boot
    - dtbo
    - init_boot
