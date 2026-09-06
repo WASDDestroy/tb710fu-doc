@@ -6,7 +6,7 @@
 
 1. 最新版 AVBDroid APP: [GitHub Releases](https://github.com/WASDDestroy/avbtool-android-compose/releases/latest)
 2. AOSP 测试密钥对：[蓝奏云](https://wwapb.lanzout.com/iHszl46zv8xi)
-3. 下列镜像文件，需要保证**该 ROM 的版本（或者其底包版本）大于等于你曾在你的设备上使用的最高系统版本，也就是这个 ROM 可以在你的未解锁设备上正常开机使用**，你可以寻找救砖包或者使用 9008 从你的设备中读取活动分区镜像：
+3. 下列镜像文件，需要保证**该 ROM 的版本（或者其底包版本）大于等于你曾在你的设备上使用的最高系统版本，也就是这个 ROM 可以在你的未解锁设备上正常开机使用**，你可以寻找救砖包或者使用 9008 从你的设备中读取**活动插槽的分区**的镜像：
    - boot
    - dtbo
    - init_boot
@@ -15,6 +15,9 @@
    - vendor_boot
    - vbmeta
    - vbmeta_system
+
+> [!tip]
+> 如果你用 9008 或者其它分区备份工具直接备份镜像，为了后续配置管理的方便，请将 A/B 分区后缀去掉，例如将 `boot_a.img` 改名为 `boot.img` 。
 
 ## 准备文件
 
