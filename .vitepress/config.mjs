@@ -120,9 +120,15 @@ export default defineConfig({
           collapsed: true,
           items: [
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
+            { text: "高版本用户必读",
+              collapsed: true,
+              items: [
+                { text: "现状概述", link: "/without_unlock/high_versions/overview" },
+                { text: "使用 Android 设备恢复高版本系统为 AOSP 信任链", link: "/without_unlock/high_versions/restore_trust_chain_on_android"},
+              ],
+            },
             { text: "Root 方案比较和须知事项", link: "/without_unlock/comparison_and_warn" },
             { text: "Root 教程导航 ⭐", link: "/without_unlock/state_machine" },
-            { text: "使用 Android 设备恢复高版本系统为 AOSP 信任链", link: "/without_unlock/restore_trust_chain_on_android"},
             {
               text: "Root 相关教程（1.5.04.445 以下）",
               collapsed: false,
