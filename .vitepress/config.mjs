@@ -68,7 +68,6 @@ export default defineConfig({
     nav: [
       { text: "主页", link: "/" },
       { text: "通用教程", link: "/generic/before_we_start" },
-      { text: "免解锁刷机", link: "/without_unlock/important_warns" },
       { text: "更新日志", link: "/generic/updatelog" },
       { text: "资源下载", link: "/generic/resource_download"},
       { text: "问题反馈与技术交流", link: "/generic/feedback" },
@@ -78,7 +77,7 @@ export default defineConfig({
     },
 
     sidebar: {
-      '/generic/': [
+      '/': [
         {
           text: "通用教程",
           collapsed: false,
@@ -116,11 +115,9 @@ export default defineConfig({
             { text: "联想官方 9008 刷机包说明", link: "/generic/notes_on_official_edl_roms" },
           ],
         },
-      ],
-      '/without_unlock/': [
         {
           text: "免解锁刷机",
-          collapsed: false,
+          collapsed: true,
           items: [
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
             { text: "Root 方案比较和须知事项", link: "/without_unlock/comparison_and_warn" },
@@ -148,31 +145,6 @@ export default defineConfig({
             },
             { text: "移除 Root", link: "/without_unlock/unroot" },
             { text: "附录：第三方ROM相关", link: "/without_unlock/appendix_3rd_party_roms" },
-          ],
-        },
-      ],
-      '/': [
-        {
-          text: "通用教程",
-          collapsed: false,
-          items: [
-            { text: "序言", link: "/generic/before_we_start" },
-            { text: "解锁 Bootloader", link: "/generic/flash_unlocked_device" },
-            { text: "锁定 Bootloader", link: "/generic/lock_bootloader" },
-            { text: "救砖", link: "/generic/unbrick_device" },
-            { text: "常见问题速查", link: "/generic/faq" },
-            { text: "资源下载", link: "/generic/resource_download" },
-          ],
-        },
-        {
-          text: "免解锁刷机",
-          collapsed: false,
-          items: [
-            { text: "Root 教程导航 ⭐", link: "/without_unlock/state_machine" },
-            { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
-            { text: "刷机前必做 ⭐", link: "/without_unlock/before_flashing" },
-            { text: "Root 方案比较和须知事项", link: "/without_unlock/comparison_and_warn" },
-            { text: "刷入第三方 ROM 和自己创建的备份", link: "/without_unlock/flash_3rd_party_rom" },
           ],
         },
       ],
