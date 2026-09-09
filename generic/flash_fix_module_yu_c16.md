@@ -31,7 +31,7 @@ output: word_document
 
 由于修复套件包含需要使用电脑刷入的内核映像和在平板上安装的模块两种组件，推荐在电脑上下载，下载完毕后复制一份到平板上。
 
-- 源站：[GitHub Releases](https://github.com/ACLaniakea/coloros-pad-fixes/releases)
+- 源站：[GitHub Releases](https://github.com/ACLaniakea/coloros-pad-fixes/releases/latest)
 - 网盘：[移动云盘](https://yun.139.com/shareweb/#/w/i/2xG3scdDv13pe) 提取码: `a65b`
 
 ## 文件对照
