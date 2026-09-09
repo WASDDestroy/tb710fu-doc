@@ -98,7 +98,7 @@ export default defineConfig({
             },
             {
               text: "刷入兰微卡鱼 ColorOS 专用修复模块",
-              link: "/generic/color_os_16_fix_for_yu_tutorial"
+              link: "/generic/flash_fix_module_yu_c16"
             }
           ],
         },
