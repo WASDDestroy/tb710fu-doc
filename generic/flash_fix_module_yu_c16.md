@@ -114,6 +114,7 @@ output: word_document
    - 无线设置 (com.oplus.wirelesssettings)
    - 系统服务 (com.oplus.exsystemservice)
    - 智能外设 (com.oplus.ipemanager)
+
 如果没有勾选：
 - 点击界面右上角的 `...` 图标打开下拉菜单
   <img src="../media/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_open_dropdown.jpg" height="1000" />
@@ -122,7 +123,7 @@ output: word_document
 
 完成安装后：
 1. **重启一次平板**
-2. 将手写笔吸附到磁吸充电位置
+2. 将手写笔吸附到磁吸充电位置（如手写笔支持磁吸充电，磁吸位置位于平板上边缘偏右侧，当手写笔靠近时将会被自动吸引到位）
 3. 打开蓝牙并连接手写笔
    <img src="../media/flash_fix_module_yu_c16/stylus_bridging/system_settings_page_connect_stylus.jpg" height="1000" />
 4. 看到手写笔弹窗后即可使用全部 ColorOS 手写笔功能
@@ -211,6 +212,7 @@ output: word_document
    - AONService (com.aiunit.aon)
    - OpenID (com.heytap.openid)
    - StdSP Core (com.oplus.stdsp)
+
 如果没有勾选：
 - 点击界面右上角的 `...` 图标打开下拉菜单:
   <img src="../media/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_open_dropdown.jpg" height="1000" />
@@ -243,6 +245,7 @@ output: word_document
    <img src="../media/flash_fix_module_yu_c16/camera/lsposed_scope_page_enabled.jpg" height="1000" />
 8.  这时候管理器应该自动勾选了下列作用域：
    - 相机 (com.zui.camera)
+
 如果没有勾选：
 - 点击界面右上角的 `...` 图标打开下拉菜单：
   <img src="../media/flash_fix_module_yu_c16/camera/lsposed_scope_page_dropdown.jpg" height="1000" />
