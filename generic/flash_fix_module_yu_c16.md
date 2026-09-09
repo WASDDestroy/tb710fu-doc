@@ -6,7 +6,7 @@ output: word_document
 > [!danger]
 > 此修复模块仅适配酷安 [@兰微卡鱼](https://www.coolapk.com/u/22567520) 为 TB710FU （小新平板 Pro GT）制作的 ROM!
 
-修复模块由酷安 [@ACLaniakea](https://www.coolapk.com/u/34574766) 制作，遵循 GPL-3.0 协议（`kernel-compat/` 下的内核模块源码为 GPL-2.0）开源免费发布。模块尚在高速迭代中，本教程可能不能代表当前最新模块版本的使用方法。
+修复模块（修复套件）由酷安 [@ACLaniakea](https://www.coolapk.com/u/34574766) 制作，遵循 GPL-3.0 协议（`kernel-compat/` 下的内核模块源码为 GPL-2.0）开源免费发布。项目尚在高速迭代中，本教程以版本 `v4.0.1` 为例说明此修复套件的刷入方法。
 
 ## 基础准备
 1. 平板已经刷入兰微卡鱼版 ColorOS 16
@@ -25,7 +25,7 @@ output: word_document
    >   - vendor_boot   (替换成修复模块提供的镜像)
    >   - vbmeta        (签名时生成，不需要提取原始镜像)
    >   - vbmeta_system (签名时生成，不需要提取原始镜像)
-4. 了解如何刷入和删除模块，并知道怎么打开模块 WebUI 或者模块内置管理器入口
+4. 了解如何刷入和删除模块，并知道怎么打开模块 WebUI 和 LSPosed 管理器
 
 ## 下载修复模块套件
 
@@ -34,7 +34,7 @@ output: word_document
 - 源站：[GitHub Releases](https://github.com/ACLaniakea/coloros-pad-fixes/releases)
 - 网盘：[移动云盘](https://yun.139.com/shareweb/#/w/i/2xG3scdDv13pe) 提取码: `a65b`
 
-## 文件对照（以 v4.0.1 为例）
+## 文件对照
 
 以下五个部分互不干扰，可以独立刷入。
 
@@ -78,6 +78,7 @@ output: word_document
 - Zygisk Next 提示 `[√ Zygote, Root: √ KernelSU (32601), ZL]`
   > [!note]
   > 1. "Root" 后跟着的是你的 Root 实现。如果你用的是 Magisk 或者不同版本、不同分支的 KernelSU ，这里显示的内容将会多少有些不一样。
+  > 2. 如果 Zygisk Next 提示 `[× Stop zygisk due to crash, Root: √ KernelSU (32601), ZL]` 但是 LSPosed 管理器可以正常打开，则这个报错可以暂时忽略。
 
 <img src="../media/flash_fix_module_yu_c16/common/kernelsu_module_page_infrastructure_ready.jpg" height="1000" />
 
