@@ -95,6 +95,10 @@ export default defineConfig({
             {
               text: "刷入第三方 ROM (兰微卡鱼版)",
               link: "/generic/flash_yu_s_third_party_rom"
+            },
+            {
+              text: "刷入兰微卡鱼 ColorOS 专用修复模块",
+              link: "/generic/color_os_16_fix_for_yu_tutorial"
             }
           ],
         },
