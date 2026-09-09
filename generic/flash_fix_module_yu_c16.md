@@ -68,10 +68,13 @@
 安装后按照下面的检查点确保模块正常工作：
 
 - Hybrid Mount 提示 `运行中喵~`
+- LSPosed: 点击 `执行`, 能够打开 LSPosed 管理器界面。
 - Zygisk Next 提示 `[√ Zygote, Root: √ KernelSU (32601), ZL]`
   > [!note]
-  > "Root" 后跟着的是你的 Root 实现。如果你用的是 Magisk 或者不同版本、不同分支的 KernelSU ，这里显示的内容将会多少有些不一样。
-- LSPosed: 点击 `执行`, 能够打开 LSPosed 管理器界面。
+  > 1. "Root" 后跟着的是你的 Root 实现。如果你用的是 Magisk 或者不同版本、不同分支的 KernelSU ，这里显示的内容将会多少有些不一样。
+  > 2. 有些时候，Zygisk 会提示 `[× Stop zygisk due to crash, Root: √ KernelSU (32601), ZL]` 这样的错误，但是打开 WebUI 会发现只有 zygote_secondary 和 Zygote 监视器出错，最重要的 zygote(64) 还是被正常注入了，这种情况，如果你的 LSPosed 还能正常打开，则无影响。
+
+<img src="../media/flash_fix_module_yu_c16/common/kernelsu_module_page_infrastructure_ready.jpg" height="1000" />
 
 如果以上三个模块全部正常工作，就可以继续。否则卸载并重新安装模块。
 
@@ -100,7 +103,7 @@
    - 智能外设 (com.oplus.ipemanager)
 如果没有勾选，就点击界面右上角的 `...` 图标打开下拉菜单，选择 `勾选推荐` 后确定选择推荐的应用即可。
 
-完成后**重启一次平板**，将手写笔吸附到磁吸充电位置，打开蓝牙并连接手写笔即可使用。
+完成后**重启一次平板**，将手写笔吸附到磁吸充电位置，打开蓝牙并连接手写笔，看到手写笔弹窗后即可使用全部 ColorOS 手写笔功能。
 
 如果你的手写笔已经吸附在充电位置，但是还没有被识别，请拿起并重新吸附一次。
 
@@ -135,7 +138,7 @@
 按照上一小节完成内核刷入后，在管理器内刷入内核模块 `OplusBSP-Modules-v4.0.1.zip`，重启即可使用。
 
 ## 安装定制调度器
-1. 安装应用 [Scene](https://omarea.com/#/) ，授予其 Root 权限，并确保当前设备处于试用期或者已经登陆了完成付费购买的账号。
+1. 安装应用 [Scene](https://omarea.com/#/) ，授予其 Root 权限并使用 Root 模式，并确保当前设备处于试用期或者已经登陆了完成付费购买的账号。
 2. 在管理器内刷入模块 `SM8650Q-Scene-Scheduler-v4.0.1.zip`
 3. 重启平板即可在 Scene 的 `调节` 选项卡下使用调度模块。
 
