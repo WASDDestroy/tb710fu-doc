@@ -131,4 +131,17 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 1. 平板开机后打开 KernelSU, 发现其显示 `工作中` 则 Root 成功：
    <img src="../media/generic/unlock_lkm/kernelsu_working.jpg" height=1000>
 
-教程到此结束。
+教程正文到此结束。
+
+## 备注
+
+1. 如果你的设备内核版本为 `5.10` 或者更早，则需要获取 `boot` 镜像、修补 `boot` 镜像、将 `boot` 镜像刷入 `boot` 分区。
+2. KernelSU 会利用 Android SDK 读取内核版本，进而在修补页面提示你建议选择什么分区的镜像。本例中建议就是修补 `init_boot` 分区镜像。
+3. 如果能找到全量包下载链接，就可以直接在 KernelSU 中流式下载镜像并自动修补。
+4. 有的时候 MTP 可以自动刷新文件目录，这个时候点进 Download 文件夹能直接找到修补好的镜像，可以不重新插拔 USB 线。
+5. 将 `boot` 镜像刷入 `init_boot` 时，Fastboot 软件会校验分区大小拒绝刷入，反之则不会拒绝。如果是这样，设备会在重启后直接进入 Bootloader 模式。要解决这种问题，看下一条：
+6. 上一条的对策：获取你当前系统版本的 `boot` 分区镜像后用 `fastboot` 刷入到你设备的 `boot` 分区，然后按照下面的操作重新激活插槽：
+   - 输入命令 `fastboot getvar current-slot` 获取当前活动插槽
+   - 若活动插槽是 a, 输入命令 `fastboot set_active a`；若活动插槽是 b,  `fastboot set_active b`
+   - 重启即可重新开机
+7. Bootloader 是一个模式，Fastboot 是 Android 实现的 Bootloader 软件，fastboot 是 Android SDK 的一部分。
