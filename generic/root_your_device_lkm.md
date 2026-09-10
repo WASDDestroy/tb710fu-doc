@@ -87,7 +87,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    <img src="../media/generic/unlock_lkm/windows_copy_file_to_tablet.jpeg" height=1000>
 3. 安装 KernelSU 并打开，会看到此时 KernelSU 提示未安装：
    <img src="../media/generic/unlock_lkm/kernelsu_not_installed.jpg" height=1000>
-4. 点击 `未安装` 打开镜像修补页面，选择 `修补一个文件` 后在你的文件管理器中找到刚刚传输到平板的 `init_boot` 镜像：
+4. 点击 `未安装` 打开镜像修补页面，选择 `选择一个文件并修补` 后在你的文件管理器中找到刚刚传输到平板的 `init_boot` 镜像：
    <img src="../media/generic/unlock_lkm/kernelsu_select_a_file.jpg" height=1000>
 5. 现在应该回到镜像修补页面，由于我们保证当前镜像就是原厂镜像，可以勾选 `备份为原厂镜像` 方便在增量系统更新时还原镜像：
    <img src="../media/generic/unlock_lkm/kernelsu_backup_as_stock_image.jpg" height=1000>
@@ -104,7 +104,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 ## 刷入修补后的镜像
 1. 将平板重启到 Bootloader 模式，有下面两种方法，根据你的情况选一种即可：
    - （需授权 USB 调试） 使用命令 `adb reboot bootloader`
-   -  拔掉 USB 线（如连接），将平板彻底关机。按住平板的 `电源` 和 `音量上` 不放。看到平板屏幕亮起绿色的 `START` 文字，就可以松手了。
+   - （需要手法）拔掉 USB 线（如连接），将平板彻底关机。按住平板的 `电源` 和 `音量上` 不放。看到平板屏幕亮起绿色的 `START` 文字，就可以松手了。
    
    > [!tip]
    > 使用第二种办法进入 Bootloader 模式后，建议先松开按住电源键的手指，再松开按住音量键的手指，以防误触让平板重新开机。
@@ -113,15 +113,19 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    <img src="../media/generic/unlock_lkm/open_context_menu.png" height=1000>
 3. 选择 `在此处打开 PowerShell 窗口` 打开一个命令提示符窗口：
 4. 要用命令 `fastboot flash init_boot <文件名>` 来刷入镜像：
-   - 命令中的 `<文件名>` 等会要被替换成你修补的镜像文件的实际名称：
-       - 可以将镜像文件直接拖进命令行窗口
-       - 可以复制镜像文件的文件名并粘贴进命令行窗口，注意命令行中粘贴用的是鼠标右键
-       - 也可以手动输入文件名......但是真的不会偶然敲错吗？
+   - 命令中的 `<文件名>` 等会要被替换成你修补的镜像文件的实际名称，三种方法选其一：
+       - （最优）可以将镜像文件直接拖进命令行窗口
+       - （也不是不行）可以复制镜像文件的文件名并粘贴进命令行窗口，注意命令行中粘贴用的是鼠标右键
+       - （万不得已不要选）也可以手动输入文件名......但是真的不会偶然敲错吗？
        
        > [!warning]
        > 如果复制了镜像文件的名称或者手动输入了文件名，且文件名不是以 `.img` 结尾，你需要手动加上这个结尾！
    - 完成输入后回车刷入。
 5. 刷完之后输入 `fastboot reboot` 或者 `fastboot continue` ，回车，平板将自动开机。
+
+这里提供所有命令运行后的参考：
+
+<img src="../media/generic/unlock_lkm/windows_command_overview.jpg" height=1000>
 
 ## 确认 KernelSU 正常工作
 1. 平板开机后打开 KernelSU, 发现其显示 `工作中` 则 Root 成功：
