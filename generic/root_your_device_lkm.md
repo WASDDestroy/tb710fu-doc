@@ -144,4 +144,5 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    - 输入命令 `fastboot getvar current-slot` 获取当前活动插槽
    - 若活动插槽是 a, 输入命令 `fastboot set_active a`；若活动插槽是 b,  `fastboot set_active b`
    - 重启即可重新开机
-7. Bootloader 是一个模式，Fastboot 是 Android 实现的 Bootloader 软件，fastboot 是 Android SDK 的一部分。
+7. 由于会显示解锁状态提示，`fastboot continue` 在你不做任何干预的情况下会耗时 10 秒钟左右。如果你希望跳过解锁警告，按两次电源键即可。
+8. Bootloader 是一个模式，Fastboot 是 Android 实现的 Bootloader 软件，fastboot 是 Android SDK 的一部分。
