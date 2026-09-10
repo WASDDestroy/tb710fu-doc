@@ -86,7 +86,8 @@ export default defineConfig({
             { text: "设备参数", link: "/generic/specs"},
             { text: "解锁 Bootloader", link: "/generic/flash_unlocked_device" },
             { text: "锁定 Bootloader", link: "/generic/lock_bootloader" },
-            { text: "刷机前必做 ⭐", link: "/generic/before_flashing" },
+            { text: "全量备份 (必做) ⭐", link: "/generic/before_flashing" },
+            { text: "刷 Root (Ramdisk)", link: "/generic/root_your_device_lkm" },
             { text: "救砖", link: "/generic/unbrick_device" },
             {
               text: "保留用户数据和 Root 权限进行系统增量更新",
