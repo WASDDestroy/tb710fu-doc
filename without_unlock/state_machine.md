@@ -4,7 +4,7 @@
 > 如果是初次 Root，请先看[Root 方案分析和对比](./comparison_and_warn.md)，然后按照下面的提示查找对应教程。
 
 > [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
 
 > [!danger] GKI 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。

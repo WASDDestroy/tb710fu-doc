@@ -17,7 +17,7 @@ output: word_document
 > 要使用本方法必须先 [刷入TWRP](./flash_twrp.md) 。
 
 > [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#注释-3-关于免解锁刷机)，如果可能，请解锁刷机。
+> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
 
 > [!warning]
 > 如果你希望从 GKI 模式 转到 LKM 模式 ，先还原 `boot` 分区，然后再使用此方法。
@@ -43,7 +43,7 @@ output: word_document
 >
 > 不过在本教程中，你可以直接选择 `Cancel` 跳过解密 `/data` 的流程。
 
-![](../media/TWRP_Homepage.webp)
+![](../media/without_unlock/TWRP_Homepage.webp)
 
 ## **Step 3**:
 

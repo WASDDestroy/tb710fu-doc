@@ -12,9 +12,9 @@ LKM 模式会修补设备的 `ramdisk`。刷 Root 的步骤如下：
 
 ## 确定内核版本并推断必要信息
 1. 打开平板上的设置应用，找到 *关于平板电脑* 选项：
-<img src="../media/unlock_lkm_root/android_about_page.jpg" height=1000>
+<img src="../media/generic/unlock_lkm_root/android_about_page.jpg" height=1000>
 2. 在 *关于平板电脑* 屏幕内找到 *软件版本* 一行并点击进入：
-<img src="../media/unlock_lkm_root/android_about_page.jpg" height=1000>
+<img src="../media/generic/unlock_lkm_root/android_about_page.jpg" height=1000>
 3. 现在来看内核版本号，比如我这里是 `6.1.157-android14-11-g82d681c9b06b-ab14634535`, 对应可以解析出下面的信息：
     - 内核 KMI 为 `6.1-android14-11`
     - 内核版本为 `6.1`, 大于 `5.15`, 则 `ramdisk` 镜像位于 `init_boot` 分区

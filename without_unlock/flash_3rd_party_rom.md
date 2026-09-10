@@ -15,19 +15,19 @@ output: word_document
 ## Step 2
 在匣的主页面，找到 `选择 XML` 按钮。点击打开二级页面。
 
-![](../media/image68.webp)
+![](../media/without_unlock/image68.webp)
 
 ## Step 3
 在打开的二级页面中，找到你解压刷机包的目录，里面应当存在 `rawprogram.xml` 。将它们**全部选中**，并点击打开：
 
-![](../media/image69.webp)
+![](../media/without_unlock/image69.webp)
 
 > [!note]
 > 如果有 patch.xml，则应一起选中。
 
 打开之后检查匣是否正确加载了镜像文件，正确的情况就像 *下面* 这样：
 
-![](../media/image70.webp)
+![](../media/without_unlock/image70.webp)
 
 如果镜像文件路径不正确，用 `选择 XML` 按钮右侧的 `选择镜像目录` 手动指定镜像的存储位置
 
@@ -49,7 +49,7 @@ output: word_document
 ### Step 1
 最后，点击 **恢复出厂设置** 中的 **通用**，平板会自动重启到 `Recovery` 模式。
 
-![](../media/image71.webp)
+![](../media/without_unlock/image71.webp)
 
 ### Step 2
 在 `Recovery` 模式中，点击 `Wipe` 按钮（中文界面中的"清除"），然后点击 `Format data`（中文界面中的 `格式化 data 分区`），最后用键盘输入 `yes`，点击右下角的 `√ 按钮`，即可顺利清除分区，重启到系统。

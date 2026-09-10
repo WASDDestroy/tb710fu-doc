@@ -6,7 +6,7 @@
 
 在 `KernelSU` 的模块页面关闭所有模块，然后重启一次平板。
 
-![](../media/image62.png)
+![](../media/without_unlock/image62.png)
 
 _例如上面这些模块全都要关掉_
 
@@ -14,15 +14,15 @@ _例如上面这些模块全都要关掉_
 
 **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）**重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
 
-![](../media/image63.jpeg)
+![](../media/without_unlock/image63.jpeg)
 
 _点击左上角的设置_
 
-![](../media/image64.jpeg)
+![](../media/without_unlock/image64.jpeg)
 
 _点击"最小化稀疏文件"_
 
-![](../media/image65.jpeg)
+![](../media/without_unlock/image65.jpeg)
 
 _点击确定，完成最小化稀疏文件_
 
@@ -38,7 +38,7 @@ _点击确定，完成最小化稀疏文件_
 
 使用 `MT 管理器` 等能够读写 `/data` 的文件管理器访问下面的目录：
 
-![](../media/image66.webp)
+![](../media/without_unlock/image66.webp)
 
 _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹_
 
@@ -48,7 +48,7 @@ _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文�
 
 长按 `adb 文件夹`，弹出选项菜单，如果你 _不需要_ 备份模块、Root 挂载名单和 APP Profile，直接点击 **删除** ；反之，点击 **移动** 将文件夹 **剪切－粘贴** 到 `内置存储空间`。
 
-![](../media/image67.webp)
+![](../media/without_unlock/image67.webp)
 
 _长按 adb 文件夹，弹出操作菜单_
 

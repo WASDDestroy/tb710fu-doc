@@ -4,7 +4,7 @@ output: word_document
 
 # 为您的联想小新 Pad Pro GT 解锁 Bootloader
 
-![](../media/Unlock_Bootloader/header.jpg)
+![](../media/generic/unlock_bootloader/header.jpg)
 
 > [!important] 约定
 > 1. 你知道终端、命令提示符、命令行指的是在 Windows 电脑上的 `cmd` 或者类似物。就是输入文字命令，例如 `fastboot --version` 能得到文字结果的一个软件。
@@ -19,7 +19,7 @@ output: word_document
 
 但是，仍旧不能排除后续版本封堵解锁的可能。
 
-此外，众所周知的，[1.5.04.445 修复了免解锁漏洞](./faq.md#注释-3-关于免解锁刷机)，解锁刷机会是我认为比较正式的途径。
+此外，众所周知的，[1.5.04.445 修复了免解锁漏洞](./faq.md#faq-no-unlock-note)，解锁刷机会是我认为比较正式的途径。
 
 怎么恢复免解锁和是否有必要以保修为代价解锁、解锁之后[保修政策](https://www.lenovocare.com.cn/ServicePolicy.aspx)到底怎样、回锁情况如何等，这些都不是本文讨论的话题，本文讨论的是用邪修方法解锁 Bootloader 喵~
 
@@ -31,6 +31,8 @@ output: word_document
 
 ## 打开 USB 调试
 
+<a id="unlock-usb-debugging"></a>
+
 在平板上完成这些基本准备步骤：
 
 1. 打开设置，找到 **关于平板电脑**
@@ -40,7 +42,7 @@ output: word_document
 5. 滑动右侧页面找到 **USB 调试**，打开这个选项。
 6. USB 调试选项需要在稍后再允许调试，按照下图来选择：
 
-![](../media/Unlock_Bootloader/allow_usb_debugging.webp)
+![](../media/generic/unlock_bootloader/allow_usb_debugging.webp)
 
 ## 打开 OEM 解锁
 
@@ -51,6 +53,8 @@ output: word_document
 
 ## 安装刷机驱动
 
+<a id="unlock-install-driver"></a>
+
 从别的地方找驱动也行，不一定要用我的，但是不保证正常工作。
 
 刷机驱动：[蓝奏云](https://wwapb.lanzout.com/it1WR3pkt04h) ，密码:gy8y
@@ -59,6 +63,8 @@ output: word_document
 
 ## 安装 ADB 工具
 
+<a id="unlock-install-adb"></a>
+
 > [!note]
 > 你当然可以用任何你喜欢的带命令行功能的第三方工具箱来代替 adb 工具，比如紫罗兰工具箱和搞机助手。如果你打算这么做，可以跳过本步。不过，我无法对你使用的工具箱负责，无法解答你因为使用工具箱提出的问题。
 
@@ -66,11 +72,11 @@ output: word_document
 2. 解压 platform-tools-latest-windows.zip 得到 platform-tools 文件夹，先放到一个不容易记错的地方。
 3. 将 platform-tools 文件夹中的所有文件复制到系统文件夹（也就是 Windows 文件夹）下的 `System32` 和 `SysWOW64` 文件夹中，也就是路径形如 `C:\Windows\System32` 和 `C:\Windows\SysWOW64` 的文件夹中。
 
-    ![](../media/Unlock_Bootloader/files_in_platform_tools_dir.webp)
+    ![](../media/generic/unlock_bootloader/files_in_platform_tools_dir.webp)
 
-    ![](../media/Unlock_Bootloader/system32_dir.webp)
+    ![](../media/generic/unlock_bootloader/system32_dir.webp)
 
-    ![](../media/Unlock_Bootloader/syswow64_dir.webp)
+    ![](../media/generic/unlock_bootloader/syswow64_dir.webp)
 
     > [!tip]
     > 如果你会设置环境变量，一个很好的办法是把 platform-tools 文件夹放到一个你认为合适的地方后将 platform-tools 的路径添加到 `Path` 中。这样就可以在不污染系统保护目录的情况下使用 adb 工具了。
@@ -79,7 +85,7 @@ output: word_document
 
 4. 打开一个终端界面，可以使用快捷键 `Win + R` 打开运行对话框然后输入 `cmd` ，也可以按快捷键 `Win + X` 然后按 `I` 打开。
 5. 输入 `adb --version` ，如果能正常显示 adb 工具的版本和安装位置就说明工具安装成功了。就像下图这样：
-   ![](../media/Unlock_Bootloader/successfully_installed_adb.webp)
+   ![](../media/generic/unlock_bootloader/successfully_installed_adb.webp)
 6. 别关命令行窗口，等会解锁还有用。
 
 ## 申请解锁 Bootloader
@@ -96,17 +102,17 @@ output: word_document
 1. 获取 GSN ，以下方法任选一种：
    - 从平板的包装盒标签获得
    - 从平板背面的标签获得
-    ![](../media/Unlock_Bootloader/get_gsn_from_tablet_tag.jpg)
+    ![](../media/generic/unlock_bootloader/get_gsn_from_tablet_tag.jpg)
    - 从平板的设置中获得：设置 -> 关于平板电脑 -> 状态信息
-    ![](../media/Unlock_Bootloader/get_gsn_from_settings_app.png)
+    ![](../media/generic/unlock_bootloader/get_gsn_from_settings_app.png)
    - 使用 adb shell 命令：
      ```batch
      adb shell "getprop ro.odm.lenovo.devinfo.gsn"
      ```
      会呈现如下图的结果，`HA2899VJ` 就是我的 GSN。
-    ![](../media/Unlock_Bootloader/get_gsn_by_adb.png)
+    ![](../media/generic/unlock_bootloader/get_gsn_by_adb.png)
    - 从平板的 Bootloader 画面中获得： SERIAL NUMBER - 你的8位串号
-    ![](../media/Unlock_Bootloader/get_gsn_from_bootloader.jpg)
+    ![](../media/generic/unlock_bootloader/get_gsn_from_bootloader.jpg)
 2. 获取 Bootloader SN ，官网提供的方法不一定好用，按我这个来：
    - 重启到 Bootloader 模式：`adb reboot bootloader` 或者在关机状态按住电源键和音量上键
    - 依次输入下面两条命令，不要把减号也一起敲进去：
@@ -114,7 +120,7 @@ output: word_document
      fastboot getvar Bootloader_SN_Part1
      fastboot getvar Bootloader_SN_Part2
      ```
-     ![](../media/Unlock_Bootloader/get_bootloader_sn.png)
+     ![](../media/generic/unlock_bootloader/get_bootloader_sn.png)
    - 把上面两条命令的结果拼接起来。例如：
      - 第一条命令输出了 *506D9326B25CAF7C7BB6E9844A9F2570*
      - 第二条输出了 *8999FC067CED8136C71291A8E5CD6695*
@@ -128,7 +134,7 @@ output: word_document
 
 > [!tip] 移动端访问
 > 移动端访问解锁申请站点会被重定向到 m.zui.com/iunlock ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，然后手动把网址的 m.zui.com 改成 www.zui.com 。
-> ![](../media/Unlock_Bootloader/visit_unlock_website_with_mobile.jpg)
+> ![](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.jpg)
 
 1. 选择入口 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 。
 2. 先登录联想账号，不然都是白填。
@@ -138,9 +144,9 @@ output: word_document
    - 第三空，填写一个网易 163.com 或者 126.com 的邮箱，其他邮箱极大概率收不到解锁文件
    - 第四空，填写一个简单的验证码
    - 勾选“我已了解...”旁的复选框
-    ![](../media/Unlock_Bootloader/fill_application_form.png)
+    ![](../media/generic/unlock_bootloader/fill_application_form.png)
 4. 点击“提交申请”，会得到提交成功的提示信息。
-    ![](../media/Unlock_Bootloader/successfully_submitted.png)
+    ![](../media/generic/unlock_bootloader/successfully_submitted.png)
 
 > [!note]
 > 如果你不慎使用 Pro GT 的申请入口填写和提交了申请，在点击提交按钮后会被提示“您的爱机版本暂不支持解锁”等搪塞字样。
@@ -264,7 +270,7 @@ Finished. Total time: 0.033s
 
 设备在上一步如果成功触发了解锁流程，电脑命令行上会显示 `[OKAY]` 字样。平板上会显示下面的画面：
 
-![](../media/Unlock_Bootloader/triggered_unlock_flow.jpg)
+![](../media/generic/unlock_bootloader/triggered_unlock_flow.jpg)
 
 现在尝试按音量键，会发现屏幕上出现了蓝色的底色，用来指示目前某个选项正在被选中。用音量键将蓝色底色移动到 `UNLOCK THE BOOTLOADER` 后按电源键就可以解锁了。
 

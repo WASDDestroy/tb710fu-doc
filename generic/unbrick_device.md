@@ -11,10 +11,10 @@
 1. 下载的压缩包文件名是否包含某些字样？如包含 `Tool` 字样，则它可能是官方救砖包。
 2. 压缩包是否有密码保护？如果有，且密码为 `FC(fv:SknR` ，则它是官方救砖包；如果没有密码保护或者使用的不是这个密码，则它可能不是官方救砖包。
 3. 压缩包内的文件是怎样组织的？如果包含文件 `运行我，刷机.bat` 和文件夹 `images`
-      ![](../media/unbrick_device/unbrick_rom_detail.webp)
+      ![](../media/generic/unbrick_device/unbrick_rom_detail.webp)
 4. 且 `images` 文件夹中有文件 `contents.xml` 和 `rawprogram_unsparsed0-half.xml` ，则它是官方救砖包
-    ![](../media/unbrick_device/unbrick_rom_contents.webp)
-    ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp)
+    ![](../media/generic/unbrick_device/unbrick_rom_contents.webp)
+    ![](../media/generic/unbrick_device/unbrick_rom_rawp_unsp_half.webp)
 5. 如果没有上述文件结构，则它不是官方救砖包。
 
 
@@ -31,12 +31,12 @@
     > 
     > 要尝试保留用户数据请按照你使用的工具从下面两种方法二选一：
     > 1. （官方刷机脚本等）手动编辑 rawprogram_unsparsed0-half.xml
-    >     ![](../media/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
+    >     ![](../media/generic/unbrick_device/unbrick_rom_rawp_unsp_half.webp) 
     > 移除所有刷入 `metadata` 和 `userdata` 的**行，然后保存文件**。
-    >      ![](../media/unbrick_device/unbrick_rom_user_data.webp) 
+    >      ![](../media/generic/unbrick_device/unbrick_rom_user_data.webp) 
     > 2. （刷机匣）**删除 `rawprogram_unsparsed0.xml`** 并移除 `images` 文件夹中所有名字带有 `metadata` 和 `userdata` 的镜像后刷机。如果你需要使用刷机匣，请参考下面段落中的指导。
 2. 在下载页提供的链接中下载 9008 驱动并安装。
-3. 将平板启动到 9008 模式，参考 [常见问题解答 - 启动到 9008 模式](./faq.md#问-1怎么进入-9008-模式)。
+3. 将平板启动到 9008 模式，参考 [常见问题解答 - 启动到 9008 模式](./faq.md#faq-enter-9008)。
 4. 在设备管理器中确定 9008 设备的端口号，例如 `COM3`。
 5. 双击启动 `运行我，刷机.bat` ，按照指示输入 9008 端口号后开始自动刷机。
 

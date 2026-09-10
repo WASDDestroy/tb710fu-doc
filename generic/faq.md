@@ -6,12 +6,14 @@ output: word_document
 
 ## 问：怎么进入 9008 模式？
 
+<a id="faq-enter-9008"></a>
+
 答：共有以下几种办法：
 
 1. 使用 adb 命令重启至 9008 模式，需保证设备能正常启动至操作系统，并保证 USB 调试状态正常。具体的命令为 `adb reboot edl`；
 2. **关机**状态下使用按键：确保设备**完全关机**，然后按住 `音量+` 不放，随后插入 USB 线，设备应当先亮起充电符号，然后灭屏，随即进入 9008 模式。此时电脑上应当能够检测到 9008 端口，这时可以松开按键了；
 
-![](../media/image72.webp)
+![](../media/generic/image72.webp)
 
 _图注：来自国际版刷机包的 9008 进入方法说明_
 
@@ -26,13 +28,13 @@ _所有方法已测试可用，如果仍旧遇到问题请继续读下一问_
 答：请依次检查以下项目：
 
 1. 驱动程序是否已正确安装？如果已经正确安装，并且设备管理器中的"端口（COM 和 LPT）"一项中曾存在*带感叹号*的 9008 设备，且详细信息如下图，就要关闭电脑的"驱动程序强制签名"[_[注释 1]_](#Appendix1Note1)。
-   ![](../media/image73.webp)
+   ![](../media/generic/image73.webp)
    _图注：Windows 驱动程序签名异常的报错_
 
 > [!tip]
 > 建议使用刷机匣提供的驱动，它不会产生签名问题。
 >
-> 如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#Install_Driver) 进行学习。
+> 如果你不会安装，跳转到 [安装驱动](./flash_unlocked_device.md#unlock-install-driver) 进行学习。
 
 2. 设备是否已经完全关机？请使用组合键**电源+音量减**强制重启设备。
 
@@ -40,11 +42,15 @@ _所有方法已测试可用，如果仍旧遇到问题请继续读下一问_
 
 ## 问: “与 Sahara 模式握手失败，重置设备状态”，这是什么情况？
 
-![](../media/image74.webp)
+<a id="faq-sahara-handshake"></a>
+
+![](../media/generic/image74.webp)
 
 答: 忘记发送引导了，参考下一问来修正这个问题。
 
 ## 问：9008 刷机出错后（例如忘记发送引导），如何强制重启到其他操作模式，如 fastboot？
+
+<a id="faq-force-reboot"></a>
 
 答：无需断开和电脑的连接，请按住 `电源键` 和 `音量 -` 键，即可强制重启，令设备退出 9008 模式。 9008 设备从电脑断开后立刻按住组合键进入 `Fastboot`, `Recovery` 或系统。
 
@@ -104,9 +110,9 @@ _所有方法已测试可用，如果仍旧遇到问题请继续读下一问_
 
 ## 问：欸，怎么我 ADB 命令全报错了？怎么执行了之后没反应？
 
-先看看 `ADB` 和 `fastboot` 工具是不是没装上，[这里](./flash_unlocked_device.md#Install_ADB)有详细的 `ADB` 安装步骤。
+先看看 `ADB` 和 `fastboot` 工具是不是没装上，[这里](./flash_unlocked_device.md#unlock-install-adb)有详细的 `ADB` 安装步骤。
 
-如果 `ADB` 已正确安装，检查一下命令是否错误，再看看 USB 连接是否正常， [USB 调试](./flash_unlocked_device.md#USB_Debugging) 是否开启。
+如果 `ADB` 已正确安装，检查一下命令是否错误，再看看 USB 连接是否正常， [USB 调试](./flash_unlocked_device.md#unlock-usb-debugging) 是否开启。
 
 ## 问：为什么刷机之后卡第一屏了？
 
@@ -126,6 +132,8 @@ Windows 11: 打开设置，进入"Windows 更新 -> 高级选项 -> 恢复 -> �
 0 宽字符提权是一个在 2025 年 12 月底暴露到公共互联网的漏洞（在此之前早被各路需要环境检测的 APP 使用），通过在路径`/sdcard/Android/data`的"/"和"data"之间加上一个`Unicode零宽连接符(Unicode \u200d)`([这是什么？](https://symbl.cc/cn/200D/))，可以绕过 Android 对这一目录的访问限制，进而不使用 `Root 权限 或者 ADB 权限` 就可以遍历得到 data 文件夹中所包含的文件夹的名称（事实上这些文件夹的名称也就是 `应用包名`，例如`com.qimian233.ztool`），间接实现查询应用列表。这是春秋检测 APP“试图隐藏应用”词条的一个成因。<a id="Appendix1Note2"></a>
 
 ## 注释 3：关于免解锁刷机
+
+<a id="faq-no-unlock-note"></a>
 
 免解锁 BootLoader 并 Root 依赖于联想使用的 AOSP 签名密钥对。密钥对是一对匹配的“公钥 + 私钥”，签名镜像时使用公钥，`abl` 中存储私钥。只要更新 `abl` ，就能更新所使用的密钥对，让 AOSP 测试公钥签名的镜像无法通过验证。
 

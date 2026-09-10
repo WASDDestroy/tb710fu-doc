@@ -97,9 +97,9 @@
    4. 在打开的菜单中找到 `7-Zip` 或者 `Nanazip`
    5. 将鼠标停在 `7-Zip` 或者 `Nanazip` 一行的上方，会打开下图所示的二级菜单：
    6. 点击二级菜单中的 `SHA256` ：
-      ![](../media/flash_3rd_party_rom_yu/sha256_file_nanazip.png)
+      ![](../media/generic/flash_3rd_party_rom_yu/sha256_file_nanazip.png)
    7. 程序会自动计算压缩文件的 SHA256 摘要值，计算完毕后自行将计算得到的 SHA256 后六位和压缩文件提供的 6 位摘要对比即可。
-      ![](../media/flash_3rd_party_rom_yu/sha256_result.png)
+      ![](../media/generic/flash_3rd_party_rom_yu/sha256_result.png)
 
 **方法 2：** 使用 Windows `CertUtil` （Windows 证书综合工具）。
    1. 启动终端。启动方法多种多样，推荐这么做：
@@ -174,7 +174,7 @@ ROM
 5. 滑动右侧页面找到 **USB 调试**，打开这个选项。
 6. USB 调试选项需要在稍后再允许调试，按照下图来选择：
 
-![](../media/flash_3rd_party_rom_yu/allow_usb_debugging.webp)
+![](../media/generic/flash_3rd_party_rom_yu/allow_usb_debugging.webp)
 
 ## 正式刷入
 
@@ -188,12 +188,12 @@ ROM
 > 设备管理器中默认按照设备种类列出已经连接在你电脑上的设备。比如“处理器”和“图形适配器”。如果你的设备管理器已经展示了 `端口（COM 和 LPT）` 这个类别，请点击选项左侧的小三角展开它。如果没有，也不需要担心，按照下面的步骤继续操作即可。
 2. 平板彻底关机，**拔下 USB 线**
 3. 按照下面的步骤进入 9008 模式：
-   ![](../media/flash_3rd_party_rom_yu/enter_edl_mode.webp)
+   ![](../media/generic/flash_3rd_party_rom_yu/enter_edl_mode.webp)
    - 按住 `音量 +` 不放
    - 插入 USB 线，此时不应该松开 `音量 +`
    - 设备应当先亮起充电符号，然后灭屏，随即进入 9008 模式。电脑会发出提示音提示有新设备接入。你可以在设备管理器中观察到新增的 `端口（COM 和 LPT）` 类别；如果你展开了 `端口（COM 和 LPT）` 这个类别，就可以直接看到新的 9008 设备。此时可以松手了。
    - 9008 设备的名称：`Qualcomm HS-USB QDLoader 9008`。例如 `Qualcomm HS-USB QDLoader 9008 (COM3)` 。这个设备名称可以在点击 `端口（COM 和 LPT）` 这个类别左侧的小三角后看到。你的设备名称的括号中提示的 COM 号很可能不一样，请记住**你自己的**9008设备的 COM 号，稍后需要输入。
-   ![](../media/flash_3rd_party_rom_yu/devmgr_ports.png)
+   ![](../media/generic/flash_3rd_party_rom_yu/devmgr_ports.png)
 
 > [!tip]
 > 如果设备开机了，重新按照上面的步骤尝试一次。如果还是失败，对于用户，请先按照“平板端准备”一节打开 USB 调试，然后，你有下面的一些解决方案：
@@ -228,9 +228,9 @@ ROM
    请输入设备的 9008 端口号并回车 (例如 COM3 或者 COM18):
    ```
    此时请输入 9008 设备的 COM 号，例如我根据我设备管理器的显示输入 `COM3`，回车。
-   ![](../media/flash_3rd_party_rom_yu/type_com_number.png)
+   ![](../media/generic/flash_3rd_party_rom_yu/type_com_number.png)
 4. 如果一切正常，刷入工具会每 2 秒在命令行刷新一条日志，日志内容包括刷机操作已消耗的时间、刷入文件字节数占总字节数的百分比、以及 USB 文件传输的速度。如果工具超过 10 秒没有刷新新的日志，说明 USB 连接中断，你需要参考下面的提示重新进入 9008 模式。
-   ![](../media/flash_3rd_party_rom_yu/flash_log.png)
+   ![](../media/generic/flash_3rd_party_rom_yu/flash_log.png)
    > [!important]
    > 如果刷机失败了，按照下面的提示重新进入 9008 模式：
    > 1. 按 `电源 + 音量下` 强制重启设备

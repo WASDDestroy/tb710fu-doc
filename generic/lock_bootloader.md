@@ -52,9 +52,9 @@ output: word_document
 
 使用 ZUXOS 系统自带的系统更新功能升级到最新版本：
 1. 打开设置 APP ，找到 **关于平板电脑** 并点击，这会打开系统概述页：
-   ![](../media/lock_bootloader/settings_page.png)
+   ![](../media/generic/lock_bootloader/settings_page.png)
 2. 点击上一张图中的 **系统更新** 按钮，进入系统更新页面，确保它提示 `当前为最新版本` 。如果提示有系统更新可用，必须安装，直到系统更新页面提示 `当前为最新版本` 。
-   ![](../media/lock_bootloader/update_page.png)
+   ![](../media/generic/lock_bootloader/update_page.png)
    > [!danger]
    > 如果是刷完系统后初次开机，系统更新软件可能检测不到更新，这个时候重启一次平板再按照步骤 1 和 2 依次尝试。如果重启后系统更新页面依旧提示版本为最新，说明确实没有可用的新版本，可以安全回锁了。
 
@@ -63,7 +63,7 @@ output: word_document
 1. 在电脑端安装好 adb 工具和驱动。
 2. 平板重启到 Bootloader(有些教程会称这个模式为 Fastboot ，这里我们统一称它为 Bootloader) 模式：
    - 方法 1: 平板拔线关机，同时按住电源键和音量上键即可进入包含绿色 `START` 字样的 Bootloader 界面。
-   - 方法 2: 平板处于开机状态，保证 [USB 调试打开](./flash_unlocked_device.md#打开-usb-调试)，电脑能检测到 USB 调试设备，在电脑打开命令提示符(Win + R, 输入 cmd)后再输入 `adb reboot bootloader` 即可进入，无需其他操作。
+   - 方法 2: 平板处于开机状态，保证 [USB 调试打开](./flash_unlocked_device.md#unlock-usb-debugging)，电脑能检测到 USB 调试设备，在电脑打开命令提示符(Win + R, 输入 cmd)后再输入 `adb reboot bootloader` 即可进入，无需其他操作。
    - 方法 3: 平板处于开机状态，保证 USB 调试打开，电脑能检测到 USB 调试设备，用工具箱（比如 [紫罗兰工具箱](https://violettool.top/)）的“重启到 Bootloader 模式”功能即可进入，无需其他操作。
 3. 确保平板进入了 Bootloader 模式（屏幕显示有绿色的 `START` 字样）
 4. 确保电脑能检测到 Bootloader 模式下的平板。以下凭据多选一即可：

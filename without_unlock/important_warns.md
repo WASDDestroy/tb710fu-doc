@@ -37,7 +37,7 @@ output: word_document
 
 5. 教程使用的工具统一为 `刷机匣`（如下图片 1），**非常不建议**使用其他工具——如 `搞机助手`（如下图片 2），使用其他工具出问题者我们不会提供相关帮助（如救砖），届时请自己解决。工具教程 [请看这里](../../generic_knowledge/geekflashtool.md) 。
 
-| ![](../media/image26.webp) | ![](../media/image27.webp) |
+| ![](../media/without_unlock/image26.webp) | ![](../media/without_unlock/image27.webp) |
 |---------------------------|---------------------------|
 | 图片 1 刷机匣             | 图片 2 搞机助手           |
 
