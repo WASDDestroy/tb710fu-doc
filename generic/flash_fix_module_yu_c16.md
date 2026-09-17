@@ -138,6 +138,13 @@ output: word_document
 
 ## 安装内核和配套内核模块
 
+### 刷入内核模块
+在管理器内刷入内核模块 `OplusBSP-Modules-v4.0.1.zip`:
+
+<img src="../media/generic/flash_fix_module_yu_c16/kernel/kernelsu_module_install_page_oplus_bsp.jpg" height="1000" />
+
+安装完毕后，必须同步刷入第三方内核，否则会卡开机。
+
 ### 刷入内核
 1. 在电脑上 [安装 ADB 工具](./flash_unlocked_device.md#unlock-install-adb)、[Fastboot 驱动](./flash_unlocked_device.md#unlock-install-driver)，并 [打开平板的 USB 调试](./flash_unlocked_device.md#unlock-usb-debugging)
 2. 将平板使用 USB 线连接到电脑
@@ -162,13 +169,6 @@ output: word_document
 完整的命令操作流程请见下图：
 
 <img src="../media/generic/flash_fix_module_yu_c16/kernel/command_screen.png" height="1000" />
-
-### 刷入内核模块
-按照上一小节完成内核刷入后，在管理器内刷入内核模块 `OplusBSP-Modules-v4.0.1.zip`:
-
-<img src="../media/generic/flash_fix_module_yu_c16/kernel/kernelsu_module_install_page_oplus_bsp.jpg" height="1000" />
-
-安装完毕后，重启即可使用 tango 转译器等 ColorOS 内核级功能。
 
 ## 安装定制调度器
 > [!note]
