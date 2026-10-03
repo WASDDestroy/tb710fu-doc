@@ -124,6 +124,8 @@ export default defineConfig({
           text: "免解锁刷机",
           collapsed: true,
           items: [
+            { text: "开始免解锁刷机之前", link: "/without_unlock/before_we_start"},
+            { text: "防回滚相关知识", link: "/without_unlock/dangerous_things"},
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
             { text: "高版本用户必读",
               collapsed: false,
