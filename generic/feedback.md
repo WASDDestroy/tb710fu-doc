@@ -5,4 +5,4 @@
 
 - QQ 群：[酷安 Pad Pro GT 交流群](https://qm.qq.com/q/WxZzIwShI4)
 - 作者酷安（需使用酷安 APP 打开）：[WASD_Destroy](https://www.coolapk.com/u/18634835)
-- 作者邮箱：wdxgII@163.com
+- 作者邮箱：[网易 163](mailto://wdxgII@163.com)
