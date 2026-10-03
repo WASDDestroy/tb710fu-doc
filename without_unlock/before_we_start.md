@@ -7,3 +7,4 @@
    - 这是你第一次刷机，请遵循 [通用教程](../generic/before_we_start.md) 以熟悉基础操作。
    - 你已经很多年没接触 Android 刷机，也请先快速阅读通用教程了解新动向。
    - 你不熟悉电脑操作，请关闭本网站并跳转到 [《你缺失的那门计算机课》](https://www.criwits.top/missing/) 。
+5. 动手操作前请阅读 [重要操作警告](./important_warns.md)
