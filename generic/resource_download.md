@@ -18,7 +18,11 @@
 
 救砖前必须阅读 [救砖教程](./unbrick_device.md) 。因不阅读教程造成的不开机和**串号丢失**等问题本教程作者概不负责。
 
-仅官方包：[123 云盘](https://1825453598.share.123pan.cn/123pan/ViFWjv-Bn7Nh)
+仅官方包：
+
+- [移动云盘](https://yun.139.com/shareweb/#/w/i/2xTrKWkqyCqsw) (主要更新渠道)
+- [夸克云盘](https://pan.quark.cn/s/3fd1e2a7ad25) (非作者本人维护，无法保证实时更新)
+- [123 云盘](https://1825453598.share.123pan.cn/123pan/ViFWjv-Bn7Nh) (因供应商问题弃用，本渠道无法保证持续更新)
 
 > [!note]
 > 密码：
