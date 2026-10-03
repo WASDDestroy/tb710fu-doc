@@ -126,7 +126,7 @@ export default defineConfig({
           items: [
             { text: "重要警告 ⭐", link: "/without_unlock/important_warns" },
             { text: "高版本用户必读",
-              collapsed: true,
+              collapsed: false,
               items: [
                 { text: "现状概述", link: "/without_unlock/high_versions/overview" },
                 { text: "使用 Android 设备恢复高版本系统为 AOSP 信任链", link: "/without_unlock/high_versions/restore_trust_chain_on_android"},
