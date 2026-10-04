@@ -84,6 +84,7 @@ export default defineConfig({
           items: [
             { text: "序言", link: "/generic/before_we_start" },
             { text: "设备参数", link: "/generic/specs"},
+            { text: "版本目录", link: "/generic/versions"},
             { text: "解锁 Bootloader", link: "/generic/flash_unlocked_device" },
             { text: "锁定 Bootloader", link: "/generic/lock_bootloader" },
             { text: "全量备份 (必做) ⭐", link: "/generic/before_flashing" },
