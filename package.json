@@ -8,6 +8,6 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "pnpm": "^10.33.0"
+    "pnpm": "^10.34.5"
   }
 }
