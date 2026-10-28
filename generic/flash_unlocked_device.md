@@ -7,8 +7,9 @@ output: word_document
 ![](../media/generic/unlock_bootloader/header.jpg)
 
 > [!important] 约定
+>
 > 1. 你知道终端、命令提示符、命令行指的是在 Windows 电脑上的 `cmd` 或者类似物。就是输入文字命令，例如 `fastboot --version` 能得到文字结果的一个软件。
-> 
+>
 > 2. 你能保证按照顺序阅读本教程，懂得使用页面内的快速跳转（手机点右上角展开，电脑上就展示在浏览器窗口当中的右侧）
 >
 > 3. 文本中的尖括号<>的意思是“你需要把尖括号里面的文字连同这一对尖括号替换成实际需要的东西”，比如将 fastboot flash unlock <path_to_your_sn.img> 替换成 fastboot flash unlock D:\sn.img
@@ -104,9 +105,11 @@ output: word_document
    - 从平板的设置中获得：设置 -> 关于平板电脑 -> 状态信息
     ![](../media/generic/unlock_bootloader/get_gsn_from_settings_app.png)
    - 使用 adb shell 命令：
+
      ```batch
      adb shell "getprop ro.odm.lenovo.devinfo.gsn"
      ```
+
      会呈现如下图的结果，`HA2899VJ` 就是我的 GSN。
     ![](../media/generic/unlock_bootloader/get_gsn_by_adb.png)
    - 从平板的 Bootloader 画面中获得： SERIAL NUMBER - 你的8位串号
@@ -114,10 +117,12 @@ output: word_document
 2. 获取 Bootloader SN ，官网提供的方法不一定好用，按我这个来：
    - 重启到 Bootloader 模式：`adb reboot bootloader` 或者在关机状态按住电源键和音量上键
    - 依次输入下面两条命令，不要把减号也一起敲进去：
+
      ```batch
      fastboot getvar Bootloader_SN_Part1
      fastboot getvar Bootloader_SN_Part2
      ```
+
      ![](../media/generic/unlock_bootloader/get_bootloader_sn.png)
    - 把上面两条命令的结果拼接起来。例如：
      - 第一条命令输出了 *506D9326B25CAF7C7BB6E9844A9F2570*
@@ -131,7 +136,7 @@ output: word_document
 1. 访问联想解锁申请网站 [ZUI官网 - 解锁](https://www.zui.com/iunlock) 。
 
 > [!tip] 移动端访问
-> 移动端访问解锁申请站点会被重定向到 m.zui.com/iunlock ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，然后手动把网址的 m.zui.com 改成 www.zui.com 。
+> 移动端访问解锁申请站点会被重定向到 m.zui.com/iunlock ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，然后手动把网址的 m.zui.com 改成 <www.zui.com> 。
 > ![](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.jpg)
 
 1. 选择入口 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 。
@@ -160,9 +165,10 @@ output: word_document
 
 一般来说申请解锁后的 10 分钟内解锁文件的获取邮件会发到你的邮箱。在邮箱中找到来自 `devworld@lenovo.com` 的邮件，点击邮件中的链接就可以下载到 sn.img 了。
 
-### 如果没收到这封邮件...
+### 如果没收到这封邮件
 
 如果没有收到这封邮件，可能有下面的原因：
+
 1. 解锁申请因为邮箱问题没收到（被放到垃圾邮件文件夹、使用了外区邮箱、QQ 邮箱等）
 2. 根本没生成解锁文件（真的，没开玩笑，最好还是用 163 邮箱吧，成功率最高）。
 
@@ -183,6 +189,7 @@ http://cdn.zui.lenovomm.com/developer/enhancedboot/506D9326B25CAF7C7BB6E9844A9F2
 ```
 
 把填写好的链接复制到浏览器的地址栏中回车：
+
 - 假如文件已经生成了，那么这个链接会自动触发浏览器的下载功能。
 - 假如文件没有生成，会提示 404 。
 - 假如你发现错误码是 403 ，说明等待时间实在太短（少于 1 分钟）或者填错网址了！
@@ -199,10 +206,12 @@ http://cdn.zui.lenovomm.com/developer/enhancedboot/506D9326B25CAF7C7BB6E9844A9F2
 
 不知道怎么写 sn.img 的路径该怎办呢？请看下面：
 
-1. 先在命令行中敲 `fastboot flash unlock `，unlock 后面记得敲空格。或者复制下面的命令（同样不要忘了最后的空格）：
+1. 先在命令行中敲 `fastboot flash unlock`，unlock 后面记得敲空格。或者复制下面的命令（同样不要忘了最后的空格）：
+
    ```batch
    fastboot flash unlock 
    ```
+
 2. 将你的 `sn.img` 用鼠标拖到命令行窗口中
 3. 回车执行
 
@@ -221,6 +230,7 @@ Finished. Total time: 0.036s
 ### 发送解锁命令
 
 在命令行输入下面的命令：
+
 ```batch
 fastboot oem unlock-go
 ```
@@ -234,35 +244,40 @@ Finished. Total time: 0.033s
 ```
 
 > [!note] 故障排除
+>
 > 1. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'oem unlock fail, VERIFY')
->  fastboot: error: Command failed
->  ```
-> 
->  分析：刷入的 sn.img 文件无效！排查下面的原因：
->    - 文件不是来自官方解锁申请网站，例如使用了 lenovobl.neko.ink 生成的文件
->    - 文件生成有误，如果是早期通过人工审核分发 sn.img 的用户容易碰到这个问题。此外，注意检查你申请解锁时填写的表单是否有误
->    - 忘记了刷解锁文件，或者解锁文件没刷进去喵~
-> 
-> 2. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'Device dose not allow unlock')
->  fastboot: error: Command failed
->  ```
-> 
->  分析：忘记打开 OEM 解锁了！重启到系统，然后遵循步骤[打开 OEM 解锁](./flash_unlocked_device.md#打开-oem-解锁)后重试！
 >
-> 3. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'unknow command')
->  fastboot: error: Command failed
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'oem unlock fail, VERIFY')
+> fastboot: error: Command failed
 >  ```
 >
->  分析：联想封堵解锁了，需要降级 abl 。
+> 分析：刷入的 sn.img 文件无效！排查下面的原因：
+>
+> - 文件不是来自官方解锁申请网站，例如使用了 lenovobl.neko.ink 生成的文件
+> - 文件生成有误，如果是早期通过人工审核分发 sn.img 的用户容易碰到这个问题。此外，注意检查你申请解锁时填写的表单是否有误
+> - 忘记了刷解锁文件，或者解锁文件没刷进去喵~
+>
+> 1. 终端输出如下：
+>
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'Device dose not allow unlock')
+> fastboot: error: Command failed
+>  ```
+>
+> 分析：忘记打开 OEM 解锁了！重启到系统，然后遵循步骤[打开 OEM 解锁](./flash_unlocked_device.md#打开-oem-解锁)后重试！
+>
+> 1. 终端输出如下：
+>
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'unknow command')
+> fastboot: error: Command failed
+>  ```
+>
+> 分析：联想封堵解锁了，需要降级 abl 。
 
 ### 确认解锁
 

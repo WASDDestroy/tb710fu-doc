@@ -23,7 +23,7 @@
 
 <a id="LKM_Root_Steps"></a>
 
-2. 无 Root 到 LKM Root：有两种解决方案。
+1. 无 Root 到 LKM Root：有两种解决方案。
 
 - 使用 9008 刷写镜像：[点击跳转 - 使用 9008 刷写 LKM Root](./flash_lkm_root_9008.md)
 
@@ -40,7 +40,7 @@
 
 <a id="GKI_To_LKM"></a>
 
-1.  GKI Root 到 LKM Root：
+1. GKI Root 到 LKM Root：
 
 第一步：[点击跳转 - 解除 Root ：GKI Version](./unroot_gki.md)
 
@@ -48,7 +48,7 @@
 
 <a id="LKM_To_GKI"></a>
 
-2.  LKM Root 到 GKI Root：
+1. LKM Root 到 GKI Root：
 
 第一步：[点击跳转 - 解除 Root ：LKM Version](./unroot_lkm.md)
 

@@ -8,6 +8,7 @@
 Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二进制实现 Root。本教程以 KernelSU LKM 模式为例说明小新平板 Pro GT 刷 Root 的流程。
 
 刷 Root 的步骤如下：
+
 1. 确定内核版本，从内核版本推断出 `KMI` 版本和 `ramdisk` 位置；
 2. 获取存放了 `ramdisk` 的分区镜像；
 3. 根据 `KMI` 修补 `ramdisk` 分区镜像；
@@ -16,23 +17,26 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 为了保证增量 OTA 顺利，要修补对应当前系统版本的 `ramdisk` 所在分区镜像。如果你不需要增量 OTA ，可以尝试修补相近版本的镜像。
 
 在 Android 系统内，`ramdisk` 位于：
+
 - 如果你的内核版本为 5.10 或者更早，则 `ramdisk` 位于 `boot` 分区内；
 - 如果你的内核版本为 5.15 或者更高，则 `ramdisk` 位于 `init_boot` 分区内。
 
 ## 确定内核版本并推断必要信息
+
 1. 打开平板上的设置应用，找到 *关于平板电脑* 选项：
 <img src="../media/generic/unlock_lkm/android_about_page.jpg" height=1000>
 
 2. 在 *关于平板电脑* 屏幕内找到 *软件版本* 一行并点击进入：
 <img src="../media/generic/unlock_lkm/android_kernel_version.jpg" height=1000>
 
-1. 现在来看内核版本号，比如我这里是 `6.1.157-android14-11-g82d681c9b06b-ab14634535`, 对应可以解析出下面的信息：
+3. 现在来看内核版本号，比如我这里是 `6.1.157-android14-11-g82d681c9b06b-ab14634535`, 对应可以解析出下面的信息：
     - 内核 KMI 为 `6.1-android14-11`
     - 内核版本为 `6.1`, 大于 `5.15`, 则 `ramdisk` 镜像位于 `init_boot` 分区
 
 确定完内核版本号之后就可以开始正式流程了。
 
 ## 必要准备
+
 在电脑上按照 [解锁教程](./flash_unlocked_device.md) 指引安装刷机驱动和 ADB 工具，并在平板端打开 USB 调试。
 
 如果你还没有解锁 Bootloader, 跟随解锁教程操作即可。
@@ -41,14 +45,18 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 > USB 调试在平板每次开机后接收来自电脑的第一条 ADB 指令时都需要你授权，因此你要留意平板上的授权弹窗。如果你在第一次授权的时候勾选了 `始终允许此计算机进行 USB 调试` 则后续不需要再行授权。
 
 ## 获得 ramdisk 所在的分区镜像
+
 上一节提到本设备需要提取 `init_boot` 镜像，主流的提取方法有下面三种：
+
 1. 获取设备对应版本的**全量卡刷包**下载链接，用 Payload Dumper 等工具在线流式提取 `payload.bin` 中的 `init_boot` 分区镜像；
 2. 获取设备对应版本的全量卡刷包或者线刷包（含 9008 救砖包）下载链接，下载到本地后解压压缩文件，找到 `init_boot` 分区镜像；
 3. 从设备提取 `init_boot` 分区镜像，主要是使用 9008 。
+
 > [!tip]
 > 还可以在提权后使用 dd 或者 cat 命令提取镜像。此外，部分设备支持 fastboot fetch 读取镜像。
 
 对于小新平板 Pro GT:
+
 - 官方极少放出全量卡刷包，第一条路行不通
 - 官方 9008 救砖包通常晚大规模发版几天，有的时候延后非常严重，第二条路也不一定总是行得通’
 - 官方提供了自由读写的 9008 引导
@@ -71,9 +79,9 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    <img src="../media/generic/unlock_lkm/gft_click_read_info.jpg" height=1000>
 7. 等待信息读取完成会看到这样的页面，记住这里的活动槽位：
    <img src="../media/generic/unlock_lkm/gft_current_slot.jpg" height=1000>
-8.  在搜索框输入 `init_boot`, 软件自动过滤出 A 和 B 插槽的两个 init_boot 分区：
+8. 在搜索框输入 `init_boot`, 软件自动过滤出 A 和 B 插槽的两个 init_boot 分区：
    <img src="../media/generic/unlock_lkm/gft_search_init_boot.jpg" height=1000>
-9.  本例中插槽为 A ,因此勾选 `init_boot_a` 分区：
+9. 本例中插槽为 A ,因此勾选 `init_boot_a` 分区：
     <img src="../media/generic/unlock_lkm/gft_select_partition.jpg" height=1000>
 10. 勾选完毕后点击 `回读`，选择一个保存位置后确定：
     <img src="../media/generic/unlock_lkm/gft_select_readback_directory.jpg" height=1000>
@@ -81,6 +89,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
     <img src="../media/generic/unlock_lkm/gft_reboot_to_system.jpg" height=1000>
 
 ## 修补分区镜像
+
 1. 回读镜像在你选择的目录下以 `GeekFlashTool` 开头的文件夹中：
    <img src="../media/generic/unlock_lkm/windows_readback_file_at.jpeg" height=1000>
 2. 将分区镜像放到你的平板的存储中：
@@ -97,15 +106,17 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    <img src="../media/generic/unlock_lkm/kernelsu_patch_log.jpg" height=1000>
 
 ## 复制镜像到电脑
+
 1. 重新插拔一次 USB 线，让平板重新握手 MTP 刷新文件列表；
 2. 从平板的 `Download` 目录复制文件名开头为 `kernelsu_patched_` 的镜像到电脑存储：
    <img src="../media/generic/unlock_lkm/windows_patched_file_at.jpeg" height=1000>
 
 ## 刷入修补后的镜像
+
 1. 将平板重启到 Bootloader 模式，有下面两种方法，根据你的情况选一种即可：
    - （需授权 USB 调试） 使用命令 `adb reboot bootloader`
    - （需要手法）拔掉 USB 线（如连接），将平板彻底关机。按住平板的 `电源` 和 `音量上` 不放。看到平板屏幕亮起绿色的 `START` 文字，就可以松手了。
-   
+
    > [!tip]
    > 使用第二种办法进入 Bootloader 模式后，建议先松开按住电源键的手指，再松开按住音量键的手指，以防误触让平板重新开机。
 
@@ -117,7 +128,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
        - （最优）可以将镜像文件直接拖进命令行窗口
        - （也不是不行）可以复制镜像文件的文件名并粘贴进命令行窗口，注意命令行中粘贴用的是鼠标右键
        - （万不得已不要选）也可以手动输入文件名......但是真的不会偶然敲错吗？
-       
+
        > [!warning]
        > 如果复制了镜像文件的名称或者手动输入了文件名，且文件名不是以 `.img` 结尾，你需要手动加上这个结尾！
    - 完成输入后回车刷入。
@@ -128,6 +139,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 <img src="../media/generic/unlock_lkm/windows_command_overview.jpg" height=1000>
 
 ## 确认 KernelSU 正常工作
+
 1. 平板开机后打开 KernelSU, 发现其显示 `工作中` 则 Root 成功：
    <img src="../media/generic/unlock_lkm/kernelsu_working.jpg" height=1000>
 

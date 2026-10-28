@@ -38,9 +38,11 @@ output: word_document
 先 [全量备份](./before_flashing.md) 。
 
 然后：
+
 - 直接按照教程使用刚才下载好的救砖包：[救砖](./unbrick_device.md)
 
 **进阶模式（适合经验丰富的用户）**：如果：
+
 - 确定曾使用 Fastboot, FastbootD, 9008 或者系统内的 Root 刷写软件等 **任意刷写工具** 刷入过哪些分区镜像
 - 保留有对应的备份
 
@@ -51,6 +53,7 @@ output: word_document
 ## 确保系统版本可以回锁 ▲
 
 使用 ZUXOS 系统自带的系统更新功能升级到最新版本：
+
 1. 打开设置 APP ，找到 **关于平板电脑** 并点击，这会打开系统概述页：
    ![](../media/generic/lock_bootloader/settings_page.png)
 2. 点击上一张图中的 **系统更新** 按钮，进入系统更新页面，确保它提示 `当前为最新版本` 。如果提示有系统更新可用，必须安装，直到系统更新页面提示 `当前为最新版本` 。
@@ -80,6 +83,7 @@ output: word_document
 5. 输入命令 `fastboot flashing lock` 。
 6. 在平板上使用音量键选中 **LOCK THE BOOTLOADER** 后按电源键确认即可。
 7. 平板会自动重启清除用户数据。重启后 Bootloader 已经成功回锁。你可以运行下面两个命令中的任意一条来确认状况：
+
    ```powershell
    adb shell "getprop ro.boot.vbmeta.device_state" # 开机且连接到 USB 调试的情况下使用。应当返回 locked
    fastboot getvar unlocked # 处于 Bootloader 下使用，应当返回 no

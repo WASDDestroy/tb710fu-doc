@@ -4,7 +4,7 @@ output: word_document
 
 # 第三方移植 ROM 相关重要信息
 
-## 刷写前必读，非常重要！
+## 刷写前必读，非常重要
 
 > [!important] 一个时代结束了...
 > [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)。部分版本的免解锁 ROM 中可能没有包含应对这个问题的底包。
@@ -22,7 +22,7 @@ output: word_document
 4. [全分区备份教程](../generic/before_flashing.md)
 5. [第三方 ROM 刷写教程](./flash_3rd_party_rom.md)
 
-## 版本选择：
+## 版本选择
 
 由于防回滚机制存在，为不同版本的系统分别提供了免解锁系统包，请访问网盘链接获取你所需的 ROM（当然解锁也能刷）：
 
@@ -44,14 +44,14 @@ output: word_document
 
 > [!tip]
 > HyperOS 如何修复返回手势不灵敏？
-> 
+>
 > 在拥有Root的终端模拟器执行下面的命令：
-> 
+>
 > ``` shell
 > su -c wm size 2000x3199
 > ```
 
-2. HyperOS 3
+1. HyperOS 3
 
 - 语音唤醒
 - 扬声器（四扬变双扬 返回手势破音）
@@ -64,14 +64,14 @@ output: word_document
 
 > [!tip]
 > HyperOS 如何修复返回手势不灵敏？
-> 
+>
 > 在拥有Root的终端模拟器执行下面的命令：
-> 
+>
 > ``` shell
 > su -c wm size 2000x3199
 > ```
 
-3. ColorOS 15
+1. ColorOS 15
 
 - 所有通信共享功能不可用（注意：屏幕接力是可用的）
 - 原四扬声器只有双扬工作
@@ -79,7 +79,7 @@ output: word_document
 - 磁吸键盘无法使用
 - 内存扩展无法启用
 
-4. ColorOS 16
+1. ColorOS 16
 
 > [!important]
 > 可能会卡一！

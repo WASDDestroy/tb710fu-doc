@@ -10,7 +10,7 @@ output: word_document
 > [!important] 一个时代结束了...
 > [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
 
-## Step 0:
+## Step 0
 
 从本站 [下载页](../generic/resource_download.md) 下载下列文件：
 
@@ -18,7 +18,7 @@ output: word_document
 2. 刷机工具和 9008 引导文件
 3. Root 管理器
 
-## Step 1:
+## Step 1
 
 将设备重启到 9008 模式并准备好读写。
 
@@ -26,17 +26,17 @@ output: word_document
 2. **按住** 音量加，并插入数据线。设备应当先显示充电符号，并在几秒钟后黑屏，且电脑发出插入设备的提示音。这时可以 **松开音量键** ，准备在电脑端发送引导。
 
     ![](../media/without_unlock/without_unlock_lkm/press_vol_up.webp)
-   
+
    > [!tip]
    > 如果无法进入，参考 [常见问题解答 - 进入 9008](../generic/faq.md#faq-enter-9008) 中提供的操作逐个尝试即可。
 
 3. 发送引导：
    - 点击 `选择设备/引导/配置`
-    
+
     ![](../media/without_unlock/without_unlock_lkm/select_config_button.png)
-    
+
     - 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮。
-    
+
     ![](../media/without_unlock/without_unlock_lkm/selector_page.png)
 
     - 在弹出的对话框选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
@@ -56,7 +56,7 @@ output: word_document
     ![](../media/without_unlock/without_unlock_lkm/read_info_success.png)
 
     > [!important]
-    > 
+    >
     > 日志内有下图所示的的错误信息是正常的：
     >
     > ![](../media/without_unlock/without_unlock_lkm/normal_errors.png)
@@ -69,12 +69,12 @@ output: word_document
 
 7. 如果以上任何步骤出现问题，请参考 [常见问题解答 - 进入 9008](../generic/faq.md#faq-enter-9008) 、 [常见问题解答 - 忘记选择引导](../generic/faq.md#faq-sahara-handshake) 以及 [常见问题解答 - 从 9008 模式强制重启](../generic/faq.md#faq-force-reboot)
 
-## Step 2:
+## Step 2
 
 读取活动插槽的 `vbmeta` 和 `init_boot` 。
 
 1. 在刷机匣的操作页面搜索并勾选**和刚才看到的槽位对应**的 `init_boot` 和 `vbmeta` 两个分区。
-   
+
    > [!note]
    > 活动插槽为 A ，则选择 `init_boot_a` 和 `vbmeta_a` ;
    >
@@ -97,7 +97,7 @@ output: word_document
 
     ![](../media/without_unlock/without_unlock_lkm/reboot_to_system.png)
 
-## Step 3:
+## Step 3
 
 安装 Root 管理器，修补 `init_boot` 。
 
@@ -110,41 +110,41 @@ output: word_document
     ![](../media/without_unlock/without_unlock_lkm/tap_not_installed.png)
 
 3. 点击“选择一个文件”。
-   
+
    ![](../media/without_unlock/without_unlock_lkm/tap_select_a_file.png)
 
 4. 找到并点击刚刚传输到平板的镜像。使用文件选择界面左上角的“三横线”按钮可以选择使用其他文件管理器，或者导航到不同的存储位置。
 
 5. 点击管理器的“下一步”，管理器会自动进行修补。
-   
+
     > [!tip]
     > 如果管理器提示选择 KMI ，则应选择 `android14-6.1` 。
 
 6. 留意修补日志：修补完成的镜像会被重命名并存储到平板内置存储中的 `Download` 文件夹中。在电脑上导航到 `Download` 文件夹，找到这个文件并传输到电脑上。（此文件的名字通常包含 `kernelsu_patched` 或者 `magisk_patched` 等字样，以 `.img` 扩展名结尾）。
-   
+
     ![](../media/without_unlock/without_unlock_lkm/patch_log.png)
 
     > [!tip]
     > 如果在电脑上找不到 `Download` 文件夹中对应的 `.img` 文件，重新连接一次平板一般可以解决（~~So \*\*\*\* you, MTP~~）。
 
-## Step 4:
+## Step 4
 
 签名 `init_boot` 并重建 `vbmeta` 。
 
 1. 解压一键签名工具。
-   
+
    ![](../media/without_unlock/without_unlock_lkm/extract_sign_tool.png)
 
 2. 将刚刚**回读的**`vbmeta_a.img` 或者 `vbmeta_b.img` 重命名为 `vbmeta.img` ，放置到工具中含有 *非链式* 字样的 `.bat` 文件的目录中。
 
 3. 将**由你的 Root 管理器修补好的**`init_boot.img` （现在它的名字应该类似于 `kernelsu_patched_20260407_035938.img`）重命名为 `init_boot.img`，放置到和上面的 `vbmeta.img` 相同的目录中。
-   
+
 4. 完成上面两步之后签名工具所在的目录大概像这样：
-   
+
     ![](../media/without_unlock/without_unlock_lkm/rename_and_move_images.png)
 
 5. 双击 `非链式.bat` ，等待工具自动操作。刚刚放置到 `.bat` 文件相同目录下的两个镜像文件（就是你刚刚移动过来的镜像）现在已经签名完毕。
-   
+
     ![](../media/without_unlock/without_unlock_lkm/run_sign_tool.png)
 
     > [!important]
@@ -163,7 +163,7 @@ output: word_document
     >
     > 如果不保存你的备份，我们无法提供任何和系统更新以及救砖相关的帮助。
 
-## Step 5:
+## Step 5
 
 刷入 `init_boot` 和 `vbmeta` 。
 
@@ -177,7 +177,7 @@ output: word_document
 
 3. 点按 `刷入` 按钮，等待工具自动完成操作。
 
-## Step 6 （非常重要）:
+## Step 6 （非常重要）
 
 > [!danger]
 > 不做这步，只能卡在 `BootLoader` 模式！最坏情况甚至可能只能通过工程线进入 9008 救砖！
@@ -190,19 +190,19 @@ output: word_document
 
     ![](../media/without_unlock/without_unlock_lkm/reboot_to_system_with_function_btn.png)
 
-## Step 7:
+## Step 7
 
 1. 设备应当正确启动。启动后应当看到管理器中显示工作中\<LKM>，如下图所示：
 
     ![](../media/without_unlock/without_unlock_lkm/lkm_working.png)
 
-## Step 8:
+## Step 8
 
 1. 确认管理器处于工作中后请关闭管理器中的 `检查更新` 选项~~以防忍不住点了直接安装~~。
 
     ![](../media/without_unlock/without_unlock_lkm/disable_check_upd.png)
 
-## 注意事项:
+## 注意事项
 
 > [!danger]
 > 严禁使用管理器的 `直接安装` 和 `安装到另一个槽位` 功能。管理器不知道设备没有解锁，不会重建 `vbmeta` 结构。这么做会导致**设备AVB校验不通过，无法开机**，表现为提示红色感叹号，后续启动时只能卡在 `BootLoader模式` 。

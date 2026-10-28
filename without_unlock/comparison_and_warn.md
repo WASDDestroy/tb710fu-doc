@@ -44,7 +44,7 @@ output: word_document
 >
 > 既然 Bootloader 仍旧处于锁定状态， TEE 工作正常，平板也不需要运行银行类等检测严格的 APP ，那么为何需要纠结隐藏？
 
-## 特别注意：Root之后...
+## 特别注意：Root之后
 
 1. 失去以较低劳动成本更新到高版本系统的可能。如有需要，具体参考[解除Root](./unroot.md)和[保留 用户数据 和 Root权限 进行系统增量更新](./update_while_keeping_root.md)
 2. 不能使用需要刷写含有AVB页脚的分区的软件，例如 `Konabess` ，除非你知道如何使用 `avbtool.py` 对产出的镜像进行签名。

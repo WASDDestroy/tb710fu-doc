@@ -26,11 +26,11 @@
 >
 > 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。建议您尽快参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，如有需要，再使用 LKM 获取 Root 。
 
-### Step 1:
+### Step 1
 
 关闭所有模块，重启设备。
 
-### Step 2:
+### Step 2
 
 重启后在内置存储根目录放置原始 `boot` 镜像 `original.img` 和拥有 Root 的镜像（以 `KernelSU` 为例） `ksu.img` 。确认自己设备的槽位：
 
@@ -54,11 +54,11 @@ su -c dd if=/sdcard/original.img of=/dev/block/by-name/boot_b
 
 **现在不要重启设备！**
 
-### Step 3:
+### Step 3
 
 正常更新系统。如成功，转到 [步骤5](#update_while_keeping_root_step5) ，如失败，转到 [步骤4](#update_while_keeping_root_step4)。
 
-### Step 4:
+### Step 4
 
 如果更新进度条没走完就提示 _当前已是最新版本_ 并收到 _安装更新失败_ 的通知，说明本方法不适合，用 `dd` 命令刷回你原来的镜像：<a id="update_while_keeping_root_step4"></a>
 
@@ -74,7 +74,7 @@ su -c dd if=/sdcard/original.img of=/dev/block/by-name/boot_b
   su -c dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_b
   ```
 
-### Step 5:
+### Step 5
 
 在提示 _重启设备以完成更新_ 时，回到终端模拟器 _依次键入_ 下面的命令：<a id="update_while_keeping_root_step5"></a>
 
@@ -98,7 +98,7 @@ dd if=/sdcard/ksu.img of=/dev/block/by-name/boot_a
 blockdev --setro /dev/block/by-name/boot_a
 ```
 
-### Step 6:
+### Step 6
 
 重启设备，完成系统更新。现在应当仍旧拥有 Root 权限。
 
@@ -115,6 +115,7 @@ blockdev --setro /dev/block/by-name/boot_a
 3. 还原当前版本系统的原厂镜像到**目前活动的插槽**，包括 `init_boot` 和 `vbmeta`：
    - 先查看当前插槽：`su -c getprop ro.boot.slot_suffix`。`_a`:：A 插槽；`_b`：B 插槽。
    - 刷写镜像：
+
       ```shell
       # 当前为 A 插槽
       su
@@ -130,9 +131,10 @@ blockdev --setro /dev/block/by-name/boot_a
       dd if=/sdcard/original_vbmeta.img of=/dev/block/by-name/vbmeta_b
       exit
       ```
+
 4. 进行系统更新。
 5. 完成系统更新后使用 Termux 版 / MT 版一键签名工具提取**新系统**的 `init_boot` 和 `vbmeta` 镜像并备份。
-   
+
    ```shell
    # 当前为 A 插槽，重启后为 B 插槽
    su
@@ -148,6 +150,7 @@ blockdev --setro /dev/block/by-name/boot_a
    dd if=/dev/block/by-name/vbmeta_b of=/sdcard/next_version_vbmeta.img
    exit
    ```
+
 6. 复制一份上述两个镜像到签名工具的目录，使用工具的 `非链式.sh` 签名上面提取的两个镜像；
    > [!important]
    > 始终确保自己留有镜像的一份备份，否则将无法接受增量更新。
@@ -161,6 +164,7 @@ blockdev --setro /dev/block/by-name/boot_a
    > 对于 GUI 用户，使用文件管理器访问 `/data/media/0` 后找到工具目录，运行 `非链式.sh` 。
 7. 将签好名的镜像命名为 `signed_init_boot.img` 和 `signed_vbmeta.img` 放置到内置存储的根目录。
 8. 刷入镜像到更新后的活动插槽：
+
    ```shell
    # 当前为 A 插槽，重启后为 B 插槽
    su
@@ -184,4 +188,5 @@ blockdev --setro /dev/block/by-name/boot_a
    blockdev --setro /dev/block/by-name/vbmeta_a
    exit
    ```
+
 9. 重启设备完成系统更新。

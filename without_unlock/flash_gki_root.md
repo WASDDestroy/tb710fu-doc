@@ -19,7 +19,7 @@ GKI Root 对于官方和第三方 ROM 都适用。
 >
 > 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。请参考 [Root 导航](./state_machine.md) 中使用 LKM 模式获取 Root 的教程获取 Root ，或者对于**已经使用 GKI 获取 Root 的用户**，先参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，然后使用 LKM 获取 Root 。
 
-## **Step 0**:
+## **Step 0**
 
 从本站 [下载页](../generic/resource_download.md) 下载下列文件：
 
@@ -27,7 +27,8 @@ GKI Root 对于官方和第三方 ROM 都适用。
 2. `boot` 镜像（`GKI` 内核）：建议选择 `KernelSU` 或者 `KernelSU Next` 文件夹中的镜像（单个镜像大小约为 `96MiB`）。
 3. Root 管理器：根据你使用的 `boot` 镜像自行选择匹配的分支 **和** 版本。
 
-## **Step 1**:
+## **Step 1**
+
 设备关机，按音量上键 **不松手**，插入数据线。先是出现电池标，后屏幕直接黑掉，电脑发出设备插入提示音。
 
 ![](../media/without_unlock/image28.webp)
@@ -38,12 +39,14 @@ GKI Root 对于官方和第三方 ROM 都适用。
 设备管理器出现如下图红线划出的 `9008 结尾的设备`就证明进入 9008 模式成功。
 ![](../media/without_unlock/image29.webp)
 
-## **Step 2**:
+## **Step 2**
+
 打开刷机匣，点击 `选择设备/引导/配置`，选择引导文件`xbl_s_devprg_ns.melf`如下图
 
 ![](../media/without_unlock/image30.webp)
 
-## **Step 3**:
+## **Step 3**
+
 然后刷机匣点击右侧 `读信息` 按钮，如下图
 
 ![](../media/without_unlock/image31.webp)
@@ -52,7 +55,8 @@ GKI Root 对于官方和第三方 ROM 都适用。
 
 ![](../media/without_unlock/image23.webp)
 
-## **Step 4**:
+## **Step 4**
+
 按 `槽位功能 -> 查看当前槽位` 来确定槽位。如下图
 
 ![](../media/without_unlock/image32.webp)
@@ -61,7 +65,8 @@ GKI Root 对于官方和第三方 ROM 都适用。
 
 ![](../media/without_unlock/image33.webp)
 
-## **Step 5**:
+## **Step 5**
+
 然后在对应分区名（`A 槽`为 `boot_a`, `B 槽`为 `boot_b`）后面点击选择文件，如下图
 
 ![](../media/without_unlock/image34.webp)
@@ -70,20 +75,24 @@ GKI Root 对于官方和第三方 ROM 都适用。
 
 ![](../media/without_unlock/image35.webp) ![](../media/without_unlock/image36.webp)
 
-## **Step 6**:
+## **Step 6**
+
 点击基础操作栏目中的刷入，将 `boot` 镜像烧录到平板中；
 
-## **Step 7**:
+## **Step 7**
+
 点击刷机匣右侧界面 `更多功能` 里的 `槽位功能`，然后点击 **重设当前槽位**，如下图；
 
 ![](../media/without_unlock/image37.webp)
 
-## **Step 8**:
+## **Step 8**
+
 完成上述步骤后，在刷机匣找到如下图选项，点击 `重启 -> 系统` 即可重启到 `Android 系统`。
 
 ![](../media/without_unlock/image38.webp)
 
-## **Step 9**:
+## **Step 9**
+
 设备应当正确启动。启动后请安装合适的 Root 管理器（例如作者使用 `KernelSU GKI, 那么安装 KernelSU），此时应当在看到管理器里显示工作中\<GKI>，如下图所示
 
 ![](../media/without_unlock/image39.webp)

@@ -60,6 +60,7 @@
 <img src="../../media/without_unlock/restore_aosp_trust_chain_on_android/select_images.jpeg" height="1200" />
 
 点击页面最下方的 `签名` 按钮，勾选签名作用域为：
+
 - boot
 - dtbo
 - init_boot
@@ -105,22 +106,22 @@
 
 依次读取所有被签名/生成的镜像的信息，要重点关注下面的检查点，如果你签名的镜像没有通过任一检查点，则这些镜像不能再使用。请核查你的配置文件是否来自本站的资源下载页面，或者创建配置时是否使用了错误的信息，然后重试签名：
 
-| 分区名         | 算法           | 公钥 SHA1                                  | 回滚索引                     | 标志 |
+| 分区名 | 算法 | 公钥 SHA1 | 回滚索引 | 标志 |
 | ------------- | -------------- | ------------------------------------------ | --------------------------- | ---- |
-| boot          | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | UNIX 时间戳，如 `1736035200` | 0    |
-| dtbo          | NONE           | /                                          | 0                           | 0    |
-| init_boot     | NONE           | /                                          | 0                           | 0    |
-| pvmfw         | NONE           | /                                          | 0                           | 0    |
-| recovery      | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | 1                           | 0    |
-| vendor_boot   | NONE           | /                                          | 0                           | 0    |
-| vbmeta        | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | 0                           | 1    |
-| vbmeta_system | SHA256_RSA2048 | `cdbb77177f731920bbe0a0f94f84d9038ae0617d` | UNIX 时间戳，如 `1783209600` | 0    |
+| boot | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | UNIX 时间戳，如 `1736035200` | 0 |
+| dtbo | NONE | / | 0 | 0 |
+| init_boot | NONE | / | 0 | 0 |
+| pvmfw | NONE | / | 0 | 0 |
+| recovery | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | 1 | 0 |
+| vendor_boot | NONE | / | 0 | 0 |
+| vbmeta | SHA256_RSA4096 | `2597c218aae470a130f61162feaae70afd97f011` | 0 | 1 |
+| vbmeta_system | SHA256_RSA2048 | `cdbb77177f731920bbe0a0f94f84d9038ae0617d` | UNIX 时间戳，如 `1783209600` | 0 |
 
 *<center>表： 通用检查点</center>*
 
-| 分区名         | 链式分区名:回滚索引位置:公钥 SHA1 | 包含分区 |
+| 分区名 | 链式分区名:回滚索引位置:公钥 SHA1 | 包含分区 |
 | ------------- | ------------------------------- | ------- |
-| vbmeta        | recovery:1:`2597c218aae470a130f61162feaae70afd97f011`, vbmeta_system:2:`cdbb77177f731920bbe0a0f94f84d9038ae0617d`, boot:3:`2597c218aae470a130f61162feaae70afd97f011` | dtbo, init_boot, vendor_boot |
+| vbmeta | recovery:1:`2597c218aae470a130f61162feaae70afd97f011`, vbmeta_system:2:`cdbb77177f731920bbe0a0f94f84d9038ae0617d`, boot:3:`2597c218aae470a130f61162feaae70afd97f011` | dtbo, init_boot, vendor_boot |
 | vbmeta_system | / | pvmfw |
 
 *<center>表： vbmeta 分区检查点</center>*

@@ -26,7 +26,7 @@ output: word_document
 
 下面开始正式教程：
 
-## **Step 1**:
+## **Step 1**
 
 <a id="BootToRecovery"></a>平板进入 Recovery 模式，下面两种方法可供随意选择：
 
@@ -34,7 +34,7 @@ output: word_document
 
 - 平板关机，按住 `电源键` 、 `音量+键`， 进入 `Fastboot (BootLoader)` 模式，然后用 `音量键` 移动光标，找到选项 `Boot to recovery` ，按 `电源键` 确认，即可进入 `TWRP`。
 
-## **Step 2**:
+## **Step 2**
 
 进入 `TWRP` 后，会看到下面的界面：
 
@@ -45,10 +45,10 @@ output: word_document
 
 ![](../media/without_unlock/TWRP_Homepage.webp)
 
-## **Step 3**:
+## **Step 3**
 
 点击 **Advanced** 按钮，进入二级界面，找到右侧的 **Install ksu lock-bl** 按钮。点击它，然后将滑块滑到右侧，即可自动安装。
 
-## **Step 4**:
+## **Step 4**
 
 安装完毕，重启平板即可。
