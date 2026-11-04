@@ -1,30 +1,30 @@
-# 我是真不知道怎么解除 Root......
+# 我是真不知道怎么解除 Root
 
 要解除 Root 就要做的干净，不要在`/data`目录下残留任何垃圾，以 `KernelSU` 为例，先跟随接下来的步骤处理这项工作：
 
-## **Step 1**:
+## **Step 1**
 
 在 `KernelSU` 的模块页面关闭所有模块，然后重启一次平板。
 
-![](../media/without_unlock/image62.png)
+![关闭全部模块](../media/without_unlock/image62.png)
 
-_例如上面这些模块全都要关掉_
+例如上面这些模块全都要关掉
 
-## **Step 2**:
+## **Step 2**
 
 **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）**重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
 
-![](../media/without_unlock/image63.jpeg)
+![点击左上角的设置按钮](../media/without_unlock/image63.jpeg)
 
-_点击左上角的设置_
+点击左上角的设置
 
-![](../media/without_unlock/image64.jpeg)
+![点击最小化稀疏文件](../media/without_unlock/image64.jpeg)
 
-_点击"最小化稀疏文件"_
+点击"最小化稀疏文件"
 
-![](../media/without_unlock/image65.jpeg)
+![确认更改](../media/without_unlock/image65.jpeg)
 
-_点击确定，完成最小化稀疏文件_
+点击确定，完成最小化稀疏文件
 
 完成上面的步骤之后，`KernelSU` 的模块镜像会被缩小到最小体积
 
@@ -34,13 +34,13 @@ _点击确定，完成最小化稀疏文件_
 >
 > (来自 KernelSU 官网 ~~，同样使用 vitePress 构建！~~)
 
-## **Step 3**:
+## **Step 3**
 
 使用 `MT 管理器` 等能够读写 `/data` 的文件管理器访问下面的目录：
 
-![](../media/without_unlock/image66.webp)
+![访问 /data 目录](../media/without_unlock/image66.webp)
 
-_MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹_
+MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹
 
 默认情况下左侧是平时说的 `内置存储空间` ，而右边是 "工作目录"。
 
@@ -48,14 +48,14 @@ _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文�
 
 长按 `adb 文件夹`，弹出选项菜单，如果你 _不需要_ 备份模块、Root 挂载名单和 APP Profile，直接点击 **删除** ；反之，点击 **移动** 将文件夹 **剪切－粘贴** 到 `内置存储空间`。
 
-![](../media/without_unlock/image67.webp)
+![如需备份，将文件夹移动到内置存储](../media/without_unlock/image67.webp)
 
-_长按 adb 文件夹，弹出操作菜单_
+长按 adb 文件夹，弹出操作菜单
 
 > [!warning]
 > **完成后不要再打开 Root 管理器！一旦打开又会重新创建 adb 文件夹！**
 
-## **Step 4**:
+## **Step 4**
 
 现在可以让平板进入 `9008 模式` 刷写原厂镜像了。解除 Root 的刷写过程和 Root 的过程异曲同工，但是你需要刷入自己设备的原始镜像。对于 `GKI` ，应当刷回原始 `boot` 镜像；对于 `LKM` ，则应当刷入原始 `init_boot` 和 `vbmeta` 镜像。具体的刷入过程在此不表，你应当参考 [刷写 GKI Root](./flash_gki_root.md) 和 [刷写 LKM Root](./flash_lkm_root_9008.md)。
 

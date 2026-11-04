@@ -3,8 +3,12 @@
 > [!tip]
 > 如果是初次 Root，请先看[Root 方案分析和对比](./comparison_and_warn.md)，然后按照下面的提示查找对应教程。
 
+---
+
 > [!important] 一个时代结束了...
 > [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
+
+---
 
 > [!danger] GKI 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。
@@ -23,7 +27,7 @@
 
 <a id="LKM_Root_Steps"></a>
 
-2. 无 Root 到 LKM Root：有两种解决方案。
+1. 无 Root 到 LKM Root：有两种解决方案。
 
 - 使用 9008 刷写镜像：[点击跳转 - 使用 9008 刷写 LKM Root](./flash_lkm_root_9008.md)
 
@@ -40,7 +44,7 @@
 
 <a id="GKI_To_LKM"></a>
 
-1.  GKI Root 到 LKM Root：
+1. GKI Root 到 LKM Root：
 
 第一步：[点击跳转 - 解除 Root ：GKI Version](./unroot_gki.md)
 
@@ -48,7 +52,7 @@
 
 <a id="LKM_To_GKI"></a>
 
-2.  LKM Root 到 GKI Root：
+1. LKM Root 到 GKI Root：
 
 第一步：[点击跳转 - 解除 Root ：LKM Version](./unroot_lkm.md)
 

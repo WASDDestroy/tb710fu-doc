@@ -4,20 +4,16 @@ output: word_document
 
 # 刷写 LKM Root - 使用 TWRP 刷入 KernelSU LKM
 
-> 如同题目提示的一样，这个方法目前暂时只支持刷写 KernelSU LKM。
->
-> 对于其他 Root 实现的支持：
->
-> APatch - 等待适配
->
-> 其他 KernelSU 分支 - 等待适配
->
-> Magisk - 不会适配，Recovery 模式无法正确识别设备信息。
+> 等待更新教程为新版 TWRP 适用的版本。
 >
 > 要使用本方法必须先 [刷入TWRP](./flash_twrp.md) 。
 
+---
+
 > [!important] 一个时代结束了...
 > [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
+
+---
 
 > [!warning]
 > 如果你希望从 GKI 模式 转到 LKM 模式 ，先还原 `boot` 分区，然后再使用此方法。
@@ -26,7 +22,7 @@ output: word_document
 
 下面开始正式教程：
 
-## **Step 1**:
+## **Step 1**
 
 <a id="BootToRecovery"></a>平板进入 Recovery 模式，下面两种方法可供随意选择：
 
@@ -34,7 +30,7 @@ output: word_document
 
 - 平板关机，按住 `电源键` 、 `音量+键`， 进入 `Fastboot (BootLoader)` 模式，然后用 `音量键` 移动光标，找到选项 `Boot to recovery` ，按 `电源键` 确认，即可进入 `TWRP`。
 
-## **Step 2**:
+## **Step 2**
 
 进入 `TWRP` 后，会看到下面的界面：
 
@@ -43,12 +39,12 @@ output: word_document
 >
 > 不过在本教程中，你可以直接选择 `Cancel` 跳过解密 `/data` 的流程。
 
-![](../media/without_unlock/TWRP_Homepage.webp)
+![TWRP 主页](../media/without_unlock/TWRP_Homepage.webp)
 
-## **Step 3**:
+## **Step 3**
 
 点击 **Advanced** 按钮，进入二级界面，找到右侧的 **Install ksu lock-bl** 按钮。点击它，然后将滑块滑到右侧，即可自动安装。
 
-## **Step 4**:
+## **Step 4**
 
 安装完毕，重启平板即可。

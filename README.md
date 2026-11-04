@@ -6,22 +6,26 @@
 > 请访问仓库 [我的文档总站](https://gitee.com/WASDDestroy/wasddestroy-docs) 进行构建。
 
 ## 预览、编辑和部署
+
 要使用 vitepress 预览网页，遵循下面的步骤：
 
 1. 安装 node.js
 
 2. 安装 pnpm：
+
 ```shell
 npm install -g pnpm
 ```
 
 1. 克隆仓库并切换到它：
+
 ```shell
 git clone https://gitee.com/WASDDestroy/tb710fu-doc.git
 cd tb710fu-doc
 ```
 
 1. 安装 vitepress：
+
 ```shell
 pnpm install -D vitepress
 ```
@@ -29,6 +33,7 @@ pnpm install -D vitepress
 1. 将仓库中的文件复制到 vitepress 所在目录，如有冲突，选择覆盖。
 
 2. 在终端启动 vitepress 开发服务器：
+
 ```shell
 pnpm docs:dev
 ```
@@ -38,7 +43,8 @@ pnpm docs:dev
 > [!note]
 > 话虽如此，更改资源时还是有可能导致网页*暂时*出错的。不过解决也简单，*刷新*就好。
 
-10. 构建最终上传到服务器的产物：
+ 1. 构建最终上传到服务器的产物：
+
 ```shell
 pnpm docs:build
 ```

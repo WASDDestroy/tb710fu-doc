@@ -4,11 +4,12 @@ output: word_document
 
 # 为您的联想小新 Pad Pro GT 解锁 Bootloader
 
-![](../media/generic/unlock_bootloader/header.jpg)
+![解锁 Bootloader 界面](../media/generic/unlock_bootloader/header.jpg)
 
 > [!important] 约定
+>
 > 1. 你知道终端、命令提示符、命令行指的是在 Windows 电脑上的 `cmd` 或者类似物。就是输入文字命令，例如 `fastboot --version` 能得到文字结果的一个软件。
-> 
+>
 > 2. 你能保证按照顺序阅读本教程，懂得使用页面内的快速跳转（手机点右上角展开，电脑上就展示在浏览器窗口当中的右侧）
 >
 > 3. 文本中的尖括号<>的意思是“你需要把尖括号里面的文字连同这一对尖括号替换成实际需要的东西”，比如将 fastboot flash unlock <path_to_your_sn.img> 替换成 fastboot flash unlock D:\sn.img
@@ -40,7 +41,7 @@ output: word_document
 5. 滑动右侧页面找到 **USB 调试**，打开这个选项。
 6. USB 调试选项需要在稍后再允许调试，按照下图来选择：
 
-![](../media/generic/unlock_bootloader/allow_usb_debugging.webp)
+![允许 USB 调试的弹窗](../media/generic/unlock_bootloader/allow_usb_debugging.webp)
 
 ## 打开 OEM 解锁
 
@@ -70,11 +71,11 @@ output: word_document
 2. 解压 platform-tools-latest-windows.zip 得到 platform-tools 文件夹，先放到一个不容易记错的地方。
 3. 将 platform-tools 文件夹中的所有文件复制到系统文件夹（也就是 Windows 文件夹）下的 `System32` 和 `SysWOW64` 文件夹中，也就是路径形如 `C:\Windows\System32` 和 `C:\Windows\SysWOW64` 的文件夹中。
 
-    ![](../media/generic/unlock_bootloader/files_in_platform_tools_dir.webp)
+    ![platform-tools 目录中的文件](../media/generic/unlock_bootloader/files_in_platform_tools_dir.webp)
 
-    ![](../media/generic/unlock_bootloader/system32_dir.webp)
+    ![System32 目录](../media/generic/unlock_bootloader/system32_dir.webp)
 
-    ![](../media/generic/unlock_bootloader/syswow64_dir.webp)
+    ![SysWOW64 目录](../media/generic/unlock_bootloader/syswow64_dir.webp)
 
     > [!tip]
     > 如果你会设置环境变量，一个很好的办法是把 platform-tools 文件夹放到一个你认为合适的地方后将 platform-tools 的路径添加到 `Path` 中。这样就可以在不污染系统保护目录的情况下使用 adb 工具了。
@@ -83,7 +84,7 @@ output: word_document
 
 4. 打开一个终端界面，可以使用快捷键 `Win + R` 打开运行对话框然后输入 `cmd` ，也可以按快捷键 `Win + X` 然后按 `I` 打开。
 5. 输入 `adb --version` ，如果能正常显示 adb 工具的版本和安装位置就说明工具安装成功了。就像下图这样：
-   ![](../media/generic/unlock_bootloader/successfully_installed_adb.webp)
+   ![成功安装 ADB 后的命令行结果](../media/generic/unlock_bootloader/successfully_installed_adb.webp)
 6. 别关命令行窗口，等会解锁还有用。
 
 ## 申请解锁 Bootloader
@@ -100,25 +101,29 @@ output: word_document
 1. 获取 GSN ，以下方法任选一种：
    - 从平板的包装盒标签获得
    - 从平板背面的标签获得
-    ![](../media/generic/unlock_bootloader/get_gsn_from_tablet_tag.jpg)
+    ![平板背面标签上的 GSN](../media/generic/unlock_bootloader/get_gsn_from_tablet_tag.jpg)
    - 从平板的设置中获得：设置 -> 关于平板电脑 -> 状态信息
-    ![](../media/generic/unlock_bootloader/get_gsn_from_settings_app.png)
+    ![状态信息面板中的 GSN](../media/generic/unlock_bootloader/get_gsn_from_settings_app.png)
    - 使用 adb shell 命令：
+
      ```batch
      adb shell "getprop ro.odm.lenovo.devinfo.gsn"
      ```
+
      会呈现如下图的结果，`HA2899VJ` 就是我的 GSN。
-    ![](../media/generic/unlock_bootloader/get_gsn_by_adb.png)
+    ![通过 ADB 获取的 GSN 属性](../media/generic/unlock_bootloader/get_gsn_by_adb.png)
    - 从平板的 Bootloader 画面中获得： SERIAL NUMBER - 你的8位串号
-    ![](../media/generic/unlock_bootloader/get_gsn_from_bootloader.jpg)
+    ![Bootloader 模式下显示的 GSN](../media/generic/unlock_bootloader/get_gsn_from_bootloader.jpg)
 2. 获取 Bootloader SN ，官网提供的方法不一定好用，按我这个来：
    - 重启到 Bootloader 模式：`adb reboot bootloader` 或者在关机状态按住电源键和音量上键
    - 依次输入下面两条命令，不要把减号也一起敲进去：
+
      ```batch
      fastboot getvar Bootloader_SN_Part1
      fastboot getvar Bootloader_SN_Part2
      ```
-     ![](../media/generic/unlock_bootloader/get_bootloader_sn.png)
+
+     ![两条获取 Bootloader SN 命令的执行结果](../media/generic/unlock_bootloader/get_bootloader_sn.png)
    - 把上面两条命令的结果拼接起来。例如：
      - 第一条命令输出了 *506D9326B25CAF7C7BB6E9844A9F2570*
      - 第二条输出了 *8999FC067CED8136C71291A8E5CD6695*
@@ -130,9 +135,9 @@ output: word_document
 
 1. 访问联想解锁申请网站 [ZUI官网 - 解锁](https://www.zui.com/iunlock) 。
 
-> [!tip] 移动端访问
-> 移动端访问解锁申请站点会被重定向到 m.zui.com/iunlock ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，然后手动把网址的 m.zui.com 改成 www.zui.com 。
-> ![](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.jpg)
+> [!warn] 移动端访问
+> 移动端访问解锁申请站点会被重定向到 <https://m.zui.com/iunlock> ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，切换电脑模式 UA 为 Chrome ，清除一次缓存后重新访问 <https://www.zui.com/iunlock> 。
+> ![移动端访问解锁申请页面的默认状况](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.jpg)
 
 1. 选择入口 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 。
 2. 先登录联想账号，不然都是白填。
@@ -142,9 +147,9 @@ output: word_document
    - 第三空，填写一个网易 163.com 或者 126.com 的邮箱，其他邮箱极大概率收不到解锁文件
    - 第四空，填写一个简单的验证码
    - 勾选“我已了解...”旁的复选框
-    ![](../media/generic/unlock_bootloader/fill_application_form.png)
+    ![勾选解锁风险确认](../media/generic/unlock_bootloader/fill_application_form.png)
 4. 点击“提交申请”，会得到提交成功的提示信息。
-    ![](../media/generic/unlock_bootloader/successfully_submitted.png)
+    ![解锁文件将发送至您的 email](../media/generic/unlock_bootloader/successfully_submitted.png)
 
 > [!note]
 > 如果你不慎使用 Pro GT 的申请入口填写和提交了申请，在点击提交按钮后会被提示“您的爱机版本暂不支持解锁”等搪塞字样。
@@ -160,9 +165,10 @@ output: word_document
 
 一般来说申请解锁后的 10 分钟内解锁文件的获取邮件会发到你的邮箱。在邮箱中找到来自 `devworld@lenovo.com` 的邮件，点击邮件中的链接就可以下载到 sn.img 了。
 
-### 如果没收到这封邮件...
+### 如果没收到这封邮件
 
 如果没有收到这封邮件，可能有下面的原因：
+
 1. 解锁申请因为邮箱问题没收到（被放到垃圾邮件文件夹、使用了外区邮箱、QQ 邮箱等）
 2. 根本没生成解锁文件（真的，没开玩笑，最好还是用 163 邮箱吧，成功率最高）。
 
@@ -183,6 +189,7 @@ http://cdn.zui.lenovomm.com/developer/enhancedboot/506D9326B25CAF7C7BB6E9844A9F2
 ```
 
 把填写好的链接复制到浏览器的地址栏中回车：
+
 - 假如文件已经生成了，那么这个链接会自动触发浏览器的下载功能。
 - 假如文件没有生成，会提示 404 。
 - 假如你发现错误码是 403 ，说明等待时间实在太短（少于 1 分钟）或者填错网址了！
@@ -199,10 +206,12 @@ http://cdn.zui.lenovomm.com/developer/enhancedboot/506D9326B25CAF7C7BB6E9844A9F2
 
 不知道怎么写 sn.img 的路径该怎办呢？请看下面：
 
-1. 先在命令行中敲 `fastboot flash unlock `，unlock 后面记得敲空格。或者复制下面的命令（同样不要忘了最后的空格）：
+1. 先在命令行中敲 `fastboot flash unlock`，unlock 后面记得敲空格。或者复制下面的命令（同样不要忘了最后的空格）：
+
    ```batch
    fastboot flash unlock 
    ```
+
 2. 将你的 `sn.img` 用鼠标拖到命令行窗口中
 3. 回车执行
 
@@ -221,6 +230,7 @@ Finished. Total time: 0.036s
 ### 发送解锁命令
 
 在命令行输入下面的命令：
+
 ```batch
 fastboot oem unlock-go
 ```
@@ -234,41 +244,46 @@ Finished. Total time: 0.033s
 ```
 
 > [!note] 故障排除
+>
 > 1. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'oem unlock fail, VERIFY')
->  fastboot: error: Command failed
->  ```
-> 
->  分析：刷入的 sn.img 文件无效！排查下面的原因：
->    - 文件不是来自官方解锁申请网站，例如使用了 lenovobl.neko.ink 生成的文件
->    - 文件生成有误，如果是早期通过人工审核分发 sn.img 的用户容易碰到这个问题。此外，注意检查你申请解锁时填写的表单是否有误
->    - 忘记了刷解锁文件，或者解锁文件没刷进去喵~
-> 
-> 2. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'Device dose not allow unlock')
->  fastboot: error: Command failed
->  ```
-> 
->  分析：忘记打开 OEM 解锁了！重启到系统，然后遵循步骤[打开 OEM 解锁](./flash_unlocked_device.md#打开-oem-解锁)后重试！
 >
-> 3. 终端输出如下：
->  ```batch
->  PS C:\Users\USER> fastboot oem unlock-go
->  FAILED (remote: 'unknow command')
->  fastboot: error: Command failed
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'oem unlock fail, VERIFY')
+> fastboot: error: Command failed
 >  ```
 >
->  分析：联想封堵解锁了，需要降级 abl 。
+> 分析：刷入的 sn.img 文件无效！排查下面的原因：
+>
+> - 文件不是来自官方解锁申请网站，例如使用了 lenovobl.neko.ink 生成的文件
+> - 文件生成有误，如果是早期通过人工审核分发 sn.img 的用户容易碰到这个问题。此外，注意检查你申请解锁时填写的表单是否有误
+> - 忘记了刷解锁文件，或者解锁文件没刷进去喵~
+>
+> 1. 终端输出如下：
+>
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'Device dose not allow unlock')
+> fastboot: error: Command failed
+>  ```
+>
+> 分析：忘记打开 OEM 解锁了！重启到系统，然后遵循步骤[打开 OEM 解锁](./flash_unlocked_device.md#打开-oem-解锁)后重试！
+>
+> 1. 终端输出如下：
+>
+> ```batch
+> PS C:\Users\USER> fastboot oem unlock-go
+> FAILED (remote: 'unknow command')
+> fastboot: error: Command failed
+>  ```
+>
+> 分析：联想封堵解锁了，需要降级 abl 。
 
 ### 确认解锁
 
 设备在上一步如果成功触发了解锁流程，电脑命令行上会显示 `[OKAY]` 字样。平板上会显示下面的画面：
 
-![](../media/generic/unlock_bootloader/triggered_unlock_flow.jpg)
+![平板上的解锁确认画面](../media/generic/unlock_bootloader/triggered_unlock_flow.jpg)
 
 现在尝试按音量键，会发现屏幕上出现了蓝色的底色，用来指示目前某个选项正在被选中。用音量键将蓝色底色移动到 `UNLOCK THE BOOTLOADER` 后按电源键就可以解锁了。
 

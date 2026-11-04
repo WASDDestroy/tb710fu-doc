@@ -24,14 +24,14 @@
 
 > [!note]
 > 密码：
-> 
+>
 > ```text
 > FC(fv:SknR
 > ```
 
 ## 低版本免解锁 Root 镜像
 
-**仅限 1.5.04.445 版本以下的用户使用，大于等于此版本的用户先改 AOSP**
+**仅限 1.5.04.445 版本以下的用户使用**，大于等于此版本的用户先改 AOSP
 
 1. GKI
    - KernelSU: [蓝奏云](https://wwapb.lanzout.com/b004jge9va) 密码:4lwk

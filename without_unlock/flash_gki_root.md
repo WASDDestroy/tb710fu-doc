@@ -9,8 +9,12 @@ GKI Root 对于官方和第三方 ROM 都适用。
 > [!warning]
 > 您是否已经阅读了 [重要警告](./important_warns.md) 和 [解锁 Bootloader 刷机](../generic/flash_unlocked_device.md)？
 
+---
+
 > [!important] 一个时代结束了...
 > [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
+
+---
 
 > [!danger] 弃用提示
 > KernelSU 官方维护的 GKI 内核已经停止更新。
@@ -19,7 +23,7 @@ GKI Root 对于官方和第三方 ROM 都适用。
 >
 > 基于以上考虑，我们不再推荐使用 GKI 作为设备获取 Root 的方式。请参考 [Root 导航](./state_machine.md) 中使用 LKM 模式获取 Root 的教程获取 Root ，或者对于**已经使用 GKI 获取 Root 的用户**，先参考还原原厂 `boot` 镜像的 [教程](./unroot_gki.md) 还原镜像，然后使用 LKM 获取 Root 。
 
-## **Step 0**:
+## **Step 0**
 
 从本站 [下载页](../generic/resource_download.md) 下载下列文件：
 
@@ -27,67 +31,80 @@ GKI Root 对于官方和第三方 ROM 都适用。
 2. `boot` 镜像（`GKI` 内核）：建议选择 `KernelSU` 或者 `KernelSU Next` 文件夹中的镜像（单个镜像大小约为 `96MiB`）。
 3. Root 管理器：根据你使用的 `boot` 镜像自行选择匹配的分支 **和** 版本。
 
-## **Step 1**:
+## **Step 1**
+
 设备关机，按音量上键 **不松手**，插入数据线。先是出现电池标，后屏幕直接黑掉，电脑发出设备插入提示音。
 
-![](../media/without_unlock/image28.webp)
+![正显示电池标记的平板](../media/without_unlock/image28.webp)
 
 > [!tip]
 > 如果上面的步骤不生效，将平板开机，[打开 USB 调试](../generic/flash_unlocked_device.md#unlock-usb-debugging)，电脑[安装 ADB 工具](../generic/flash_unlocked_device.md#unlock-install-adb)，然后在电脑端按组合键 `Win+R` 打开"运行"对话框，输入 `cmd`，打开命令提示符，输入`adb reboot edl`，即可重启到 9008 模式。
 
 设备管理器出现如下图红线划出的 `9008 结尾的设备`就证明进入 9008 模式成功。
-![](../media/without_unlock/image29.webp)
+![设备管理器出现 9008 设备](../media/without_unlock/image29.webp)
 
-## **Step 2**:
+## **Step 2**
+
 打开刷机匣，点击 `选择设备/引导/配置`，选择引导文件`xbl_s_devprg_ns.melf`如下图
 
-![](../media/without_unlock/image30.webp)
+![选择引导文件](../media/without_unlock/image30.webp)
 
-## **Step 3**:
+## **Step 3**
+
 然后刷机匣点击右侧 `读信息` 按钮，如下图
 
-![](../media/without_unlock/image31.webp)
+![点击读信息按钮](../media/without_unlock/image31.webp)
 
 弹出下图内容后证明读取成功。如不同，按 `电源键 + 音量下键` 强制重启，重新进入 9008 模式，并且重新从 *步骤2* 开始
 
-![](../media/without_unlock/image23.webp)
+![成功读取信息后的页面](../media/without_unlock/image23.webp)
 
-## **Step 4**:
+## **Step 4**
+
 按 `槽位功能 -> 查看当前槽位` 来确定槽位。如下图
 
-![](../media/without_unlock/image32.webp)
+![点击查看当前槽位按钮来确认槽位](../media/without_unlock/image32.webp)
 
 可以看到我的机器是 B 槽位，如下图（记住这个槽位号，不同批次设备槽位可能不同，**看到是哪个槽位等会就刷哪个槽位的 boot**）
 
-![](../media/without_unlock/image33.webp)
+![记住当前活动插槽](../media/without_unlock/image33.webp)
 
-## **Step 5**:
+## **Step 5**
+
 然后在对应分区名（`A 槽`为 `boot_a`, `B 槽`为 `boot_b`）后面点击选择文件，如下图
 
-![](../media/without_unlock/image34.webp)
+![点击对应分区的选择文件按钮](../media/without_unlock/image34.webp)
 
 选择刚才下载的 `boot` 镜像
 
-![](../media/without_unlock/image35.webp) ![](../media/without_unlock/image36.webp)
+![选择下载好的 boot 镜像](../media/without_unlock/image35.webp)
 
-## **Step 6**:
+## **Step 6**
+
+![点击刷入按钮](../media/without_unlock/image36.webp)
+
 点击基础操作栏目中的刷入，将 `boot` 镜像烧录到平板中；
 
-## **Step 7**:
+## **Step 7**
+
 点击刷机匣右侧界面 `更多功能` 里的 `槽位功能`，然后点击 **重设当前槽位**，如下图；
 
-![](../media/without_unlock/image37.webp)
+![点击重设当前槽位](../media/without_unlock/image37.webp)
 
-## **Step 8**:
+## **Step 8**
+
 完成上述步骤后，在刷机匣找到如下图选项，点击 `重启 -> 系统` 即可重启到 `Android 系统`。
 
-![](../media/without_unlock/image38.webp)
+![点击重启到系统](../media/without_unlock/image38.webp)
 
-## **Step 9**:
+## **Step 9**
+
 设备应当正确启动。启动后请安装合适的 Root 管理器（例如作者使用 `KernelSU GKI, 那么安装 KernelSU），此时应当在看到管理器里显示工作中\<GKI>，如下图所示
 
-![](../media/without_unlock/image39.webp)
+![管理器显示 GKI 模式工作中](../media/without_unlock/image39.webp)
 
 确认管理器提示 "工作中" 后 **请关闭管理器中的"检查更新"选项**，位置位于 `设置 -> 检查更新`，请参考下图
 
-![](../media/without_unlock/image40.webp) ![](../media/without_unlock/image41.webp)
+![关闭检查更新开关](../media/without_unlock/image40.webp)
+
+![如何打开设置页面](../media/without_unlock/image41.webp)

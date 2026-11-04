@@ -8,6 +8,7 @@
 3. contents.xml 说明目录内的文件在平板内的储存方式以及这些文件的构建方式
 4. provision.xml 用于初次使用 UFS 时的初始配置
 5. 剩余的 rawprogram.xml 和 patch.xml 同正常高通平台无差别，根据文件中带的数字决定他们作用于某个 LUN：
+
    | rawprogram / patch 号码 | 操作的分区                                                                                                                                                                                                                                                             |
    |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
    | 0                       | super, metadata, userdata, vbmeta_system                                                                                                                                                                                                                               |
@@ -16,7 +17,9 @@
    | 3                       | cdt, ddr                                                                                                                                                                                                                                                               |
    | 4                       | uefi, aop, aop_config, tz, hyp, modem, bluetooth, abl, dsp, keymaster, boot, devcfg, qupfw, vbmeta, dtbo, uefisecapp, imagefv, shrm, cpucp, featenabler, vendor_boot, recovery, xbl_ramdump, init_boot, cpucp_dtb, pvmfw, spuservice, toolsfv, storsec (Slot `A` Only) |
    | 5                       | modemst1, modemst2, fsg, fsc                                                                                                                                                                                                                                           |
+
 6. super_*.img 和 super 内子分区的对应关系，通过 avbtool 读取分区页脚获得。
+
    | super_*.img 号码 | 子分区名称             |
    |------------------|------------------------|
    | 1                | super 分区表，非子分区 |

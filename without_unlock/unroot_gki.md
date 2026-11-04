@@ -6,23 +6,23 @@
 
 1. 在 `KernelSU` 的模块页面关闭所有模块，然后重启一次平板。
 
-![](../media/without_unlock/image62.png)
+![关闭所有模块](../media/without_unlock/image62.png)
 
-_例如上面这些模块全都要关掉_
+例如上面这些模块全都要关掉
 
-2. **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）** 重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
+1. **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）** 重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
 
-![](../media/without_unlock/image63.jpeg)
+![点击设置图标](../media/without_unlock/image63.jpeg)
 
-_点击左上角的设置_
+点击左上角的设置
 
-![](../media/without_unlock/image64.jpeg)
+![点击最小化稀疏文件选项](../media/without_unlock/image64.jpeg)
 
-_点击"最小化稀疏文件"_
+点击"最小化稀疏文件"
 
-![](../media/without_unlock/image65.jpeg)
+![确认最小化稀疏文件](../media/without_unlock/image65.jpeg)
 
-_点击确定，完成最小化稀疏文件_
+点击确定，完成最小化稀疏文件
 
 完成上面的步骤之后，`KernelSU` 的模块镜像会被缩小到最小体积
 
@@ -32,11 +32,11 @@ _点击确定，完成最小化稀疏文件_
 >
 > (来自 KernelSU 官网 ~~，同样使用 vitePress 构建！~~)
 
-3. 使用 `MT 管理器` 等能够读写 `/data` 的文件管理器访问下面的目录：
+1. 使用 `MT 管理器` 等能够读写 `/data` 的文件管理器访问下面的目录：
 
-![](../media/without_unlock/image66.webp)
+![在 MT 管理器中导航到 /data 目录](../media/without_unlock/image66.webp)
 
-_MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹_
+MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文件夹
 
 默认情况下左侧是平时说的 `内置存储空间` ，而右边是 "工作目录"。
 
@@ -44,9 +44,9 @@ _MT 的界面，左侧为内置存储空间，右侧已经导航到了/data 文�
 
 长按 `adb 文件夹`，弹出选项菜单，直接点击 **删除**。
 
-![](../media/without_unlock/image67.webp)
+![按需删除或者移动 adb 文件夹](../media/without_unlock/image67.webp)
 
-_长按 adb 文件夹，弹出操作菜单_
+长按 adb 文件夹，弹出操作菜单
 
 <a id="Restore_boot"></a>
 
@@ -63,35 +63,35 @@ _长按 adb 文件夹，弹出操作菜单_
 
 - 点击 `选择设备/引导/配置`
 
-![](../media/without_unlock/image44.webp)
+![选择设备/引导/配置按钮](../media/without_unlock/image44.webp)
 
 - 在弹出的窗口中，点击 `引导文件` 处右侧的 `...` 按钮，并在弹出的对话框选择从下载页下载的引导文件 `xbl_s_devprg_ns.melf` ，并点 `打开` 选择它，最后在刷机匣的对话框点击 `确认` 。
 
-![](../media/without_unlock/image45.webp)
+![点击 "..." 按钮选择引导](../media/without_unlock/image45.webp)
 
-![](../media/without_unlock/image46.webp)
+![在文件选择窗口选择引导文件](../media/without_unlock/image46.webp)
 
 - 现在回到刷机匣的主界面，点击 `读信息` ，确认一下设备连接是否正常，如果正常，应当能够读取到分区信息。
 
-![](../media/without_unlock/image47.webp)
+![读信息按钮](../media/without_unlock/image47.webp)
 
-![](../media/without_unlock/image48.webp)
+![成功读取信息后的页面](../media/without_unlock/image48.webp)
 
 > [!note]
 > 日志内有上图所示的错误信息是正常的
 
-2. 使用工具箱的 `槽位功能 -> 查看槽位` 确认活动槽位，记住槽位号。
-   ![](../media/without_unlock/image49.webp)
+1. 使用工具箱的 `槽位功能 -> 查看槽位` 确认活动槽位，记住槽位号。
+   ![查看当前槽位按钮](../media/without_unlock/image49.webp)
 
-3. 如果槽位为 A，找到`boot_a`分区，反之，找到`boot_b`分区，并勾选分区前的复选框，然后选择之前备份的原`boot`分区文件，如果没有备份，可以尝试下载站提供的“快速取用镜像”链接中的文件，请同样注意槽位号
-   ![](../media/without_unlock/image50.webp)
+2. 如果槽位为 A，找到`boot_a`分区，反之，找到`boot_b`分区，并勾选分区前的复选框，然后选择之前备份的原`boot`分区文件，如果没有备份，可以尝试下载站提供的“快速取用镜像”链接中的文件，请同样注意槽位号
+   ![选择备份的对应槽位的 boot 分区镜像](../media/without_unlock/image50.webp)
 
-4. 现在，点击 `刷入` ，恢复原始 `boot` 镜像
-   ![](../media/without_unlock/image51.webp)
+3. 现在，点击 `刷入` ，恢复原始 `boot` 镜像
+   ![刷入按钮](../media/without_unlock/image51.webp)
 
-5. **点击“槽位功能”中的“重设当前槽位”**
-   ![](../media/without_unlock/image59.webp)
+4. **点击“槽位功能”中的“重设当前槽位”**
+   ![重设当前槽位按钮](../media/without_unlock/image59.webp)
 
-6. 完成后重启设备至系统，确认 Root 管理器中工作状态变为 `未安装 ` 即完成恢复步骤
+5. 完成后重启设备至系统，确认 Root 管理器中工作状态变为 `未安装` 即完成恢复步骤
 
-   ![](../media/without_unlock/image52.webp)
+   ![重启到系统按钮](../media/without_unlock/image52.webp)
