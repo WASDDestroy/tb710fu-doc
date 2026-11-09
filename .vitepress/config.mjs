@@ -164,7 +164,6 @@ export default defineConfig({
               link: "/without_unlock/update_while_keeping_root",
             },
             { text: "移除 Root", link: "/without_unlock/unroot" },
-            { text: "附录：第三方ROM相关", link: "/without_unlock/appendix_3rd_party_roms" },
           ],
         },
       ],
