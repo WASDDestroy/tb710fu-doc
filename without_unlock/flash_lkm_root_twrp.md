@@ -10,11 +10,6 @@ output: word_document
 
 ---
 
-> [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
-
----
-
 > [!warning]
 > 如果你希望从 GKI 模式 转到 LKM 模式 ，先还原 `boot` 分区，然后再使用此方法。
 >

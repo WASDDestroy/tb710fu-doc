@@ -9,8 +9,8 @@ output: word_document
 
 ---
 
-> [!important] 一个时代结束了...
-> [1.5.04.445 修复了免解锁漏洞](../generic/faq.md#faq-no-unlock-note)，如果可能，请解锁刷机。
+> [!important] 如果你的系统版本是 1.5.04.445 及以上
+> 先按照 `高版本用户必读` 板块的教程重建 AOSP 信任链，然后再按照教程操作。
 
 下面开始正式教程：
 
