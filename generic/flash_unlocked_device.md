@@ -4,7 +4,7 @@ output: word_document
 
 # 为您的联想小新 Pad Pro GT 解锁 Bootloader
 
-![解锁 Bootloader 界面](../media/generic/unlock_bootloader/header.jpg)
+![解锁 Bootloader 界面](../media/generic/unlock_bootloader/header.webp)
 
 > [!important] 约定
 >
@@ -101,9 +101,9 @@ output: word_document
 1. 获取 GSN ，以下方法任选一种：
    - 从平板的包装盒标签获得
    - 从平板背面的标签获得
-    ![平板背面标签上的 GSN](../media/generic/unlock_bootloader/get_gsn_from_tablet_tag.jpg)
+    ![平板背面标签上的 GSN](../media/generic/unlock_bootloader/get_gsn_from_tablet_tag.webp)
    - 从平板的设置中获得：设置 -> 关于平板电脑 -> 状态信息
-    ![状态信息面板中的 GSN](../media/generic/unlock_bootloader/get_gsn_from_settings_app.png)
+    ![状态信息面板中的 GSN](../media/generic/unlock_bootloader/get_gsn_from_settings_app.webp)
    - 使用 adb shell 命令：
 
      ```batch
@@ -111,9 +111,9 @@ output: word_document
      ```
 
      会呈现如下图的结果，`HA2899VJ` 就是我的 GSN。
-    ![通过 ADB 获取的 GSN 属性](../media/generic/unlock_bootloader/get_gsn_by_adb.png)
+    ![通过 ADB 获取的 GSN 属性](../media/generic/unlock_bootloader/get_gsn_by_adb.webp)
    - 从平板的 Bootloader 画面中获得： SERIAL NUMBER - 你的8位串号
-    ![Bootloader 模式下显示的 GSN](../media/generic/unlock_bootloader/get_gsn_from_bootloader.jpg)
+    ![Bootloader 模式下显示的 GSN](../media/generic/unlock_bootloader/get_gsn_from_bootloader.webp)
 2. 获取 Bootloader SN ，官网提供的方法不一定好用，按我这个来：
    - 重启到 Bootloader 模式：`adb reboot bootloader` 或者在关机状态按住电源键和音量上键
    - 依次输入下面两条命令，不要把减号也一起敲进去：
@@ -123,7 +123,7 @@ output: word_document
      fastboot getvar Bootloader_SN_Part2
      ```
 
-     ![两条获取 Bootloader SN 命令的执行结果](../media/generic/unlock_bootloader/get_bootloader_sn.png)
+     ![两条获取 Bootloader SN 命令的执行结果](../media/generic/unlock_bootloader/get_bootloader_sn.webp)
    - 把上面两条命令的结果拼接起来。例如：
      - 第一条命令输出了 *506D9326B25CAF7C7BB6E9844A9F2570*
      - 第二条输出了 *8999FC067CED8136C71291A8E5CD6695*
@@ -137,7 +137,7 @@ output: word_document
 
 > [!warn] 移动端访问
 > 移动端访问解锁申请站点会被重定向到 <https://m.zui.com/iunlock> ，这个针对移动设备优化的网址不包含最近更新的一些设备的解锁通道。移动端访问，需要先打开浏览器的电脑模式，切换电脑模式 UA 为 Chrome ，清除一次缓存后重新访问 <https://www.zui.com/iunlock> 。
-> ![移动端访问解锁申请页面的默认状况](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.jpg)
+> ![移动端访问解锁申请页面的默认状况](../media/generic/unlock_bootloader/visit_unlock_website_with_mobile.webp)
 
 1. 选择入口 **拯救者Y700 第五代 & 联想平板拯救者 Y900 13** 。
 2. 先登录联想账号，不然都是白填。
@@ -147,9 +147,9 @@ output: word_document
    - 第三空，填写一个网易 163.com 或者 126.com 的邮箱，其他邮箱极大概率收不到解锁文件
    - 第四空，填写一个简单的验证码
    - 勾选“我已了解...”旁的复选框
-    ![勾选解锁风险确认](../media/generic/unlock_bootloader/fill_application_form.png)
+    ![勾选解锁风险确认](../media/generic/unlock_bootloader/fill_application_form.webp)
 4. 点击“提交申请”，会得到提交成功的提示信息。
-    ![解锁文件将发送至您的 email](../media/generic/unlock_bootloader/successfully_submitted.png)
+    ![解锁文件将发送至您的 email](../media/generic/unlock_bootloader/successfully_submitted.webp)
 
 > [!note]
 > 如果你不慎使用 Pro GT 的申请入口填写和提交了申请，在点击提交按钮后会被提示“您的爱机版本暂不支持解锁”等搪塞字样。
@@ -283,7 +283,7 @@ Finished. Total time: 0.033s
 
 设备在上一步如果成功触发了解锁流程，电脑命令行上会显示 `[OKAY]` 字样。平板上会显示下面的画面：
 
-![平板上的解锁确认画面](../media/generic/unlock_bootloader/triggered_unlock_flow.jpg)
+![平板上的解锁确认画面](../media/generic/unlock_bootloader/triggered_unlock_flow.webp)
 
 现在尝试按音量键，会发现屏幕上出现了蓝色的底色，用来指示目前某个选项正在被选中。用音量键将蓝色底色移动到 `UNLOCK THE BOOTLOADER` 后按电源键就可以解锁了。
 

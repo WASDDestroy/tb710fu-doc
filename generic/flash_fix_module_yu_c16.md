@@ -82,7 +82,7 @@ output: word_document
   > 1. "Root" 后跟着的是你的 Root 实现。如果你用的是 Magisk 或者不同版本、不同分支的 KernelSU ，这里显示的内容将会多少有些不一样。
   > 2. 如果 Zygisk Next 提示 `[× Stop zygisk due to crash, Root: √ KernelSU (32601), ZL]` 但是 LSPosed 管理器可以正常打开，则这个报错可以暂时忽略。
 
-![安装完毕的 3 个基础模块](../media/generic/flash_fix_module_yu_c16/common/kernelsu_module_page_infrastructure_ready.jpg)
+![安装完毕的 3 个基础模块](../media/generic/flash_fix_module_yu_c16/common/kernelsu_module_page_infrastructure_ready.webp)
 
 如果以上三个模块全部正常工作，就可以继续。否则卸载并重新安装模块。
 
@@ -94,22 +94,22 @@ output: word_document
 先安装组件：
 
 1. 刷入模块 `PenBridge-Root-v4.0.1.zip`
-   ![成功刷入模块后的日志页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/kernelsu_module_install_page_stylus_bridging.jpg)
+   ![成功刷入模块后的日志页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/kernelsu_module_install_page_stylus_bridging.webp)
 2. 安装应用 `PenBridge-Hook-v4.0.1.apk`
-   ![成功安装 PenBridge-Hook 应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/mt_app_install_page_stylus_bridging.jpg)
+   ![成功安装 PenBridge-Hook 应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/mt_app_install_page_stylus_bridging.webp)
 3. 安装应用 `PenHidCtl-v4.0.1.apk`
-   ![成功安装 PenHidCtl 应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/mt_app_install_page_hid_service.jpg)
+   ![成功安装 PenHidCtl 应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/mt_app_install_page_hid_service.webp)
 
 安装完成之后：
 
 1. 打开 LSPosed 管理器
-   ![打开的 LSPosed 主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.jpg)
+   ![打开的 LSPosed 主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.webp)
 2. 点击 `模块`
-   ![LSPosed 模块页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_module_page_stylus_bridging_disabled.jpg)
+   ![LSPosed 模块页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_module_page_stylus_bridging_disabled.webp)
 3. 点击 `联想平板 Pro GT - 手写笔桥接`
-   ![进入手写笔桥接 APP 的作用域设置页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_disabled.jpg)
+   ![进入手写笔桥接 APP 的作用域设置页面](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_disabled.webp)
 4. 打开 `启用模块` 的开关
-   ![启用手写笔桥接模块](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_enabled.jpg)
+   ![启用手写笔桥接模块](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_enabled.webp)
 5. 这时候管理器应该自动勾选了下列作用域：
    - 系统框架 (system)
    - 便签 (com.coloros.note)
@@ -123,18 +123,18 @@ output: word_document
 如果没有勾选：
 
 - 点击界面右上角的 `...` 图标打开下拉菜单
-  ![点击右上角的 "..." 打开下拉菜单](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_open_dropdown.jpg)
+  ![点击右上角的 "..." 打开下拉菜单](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_open_dropdown.webp)
 - 选择 `勾选推荐` 后确定选择推荐的应用
-  ![确认勾选推荐应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_dialog_select_recommended.jpg)
+  ![确认勾选推荐应用](../media/generic/flash_fix_module_yu_c16/stylus_bridging/lsposed_scope_page_stylus_bridging_dialog_select_recommended.webp)
 
 完成安装后：
 
 1. **重启一次平板**
 2. 将手写笔吸附到磁吸充电位置（如手写笔支持磁吸充电，磁吸位置位于平板上边缘偏右侧，当手写笔靠近时将会被自动吸引到位）
 3. 打开蓝牙并连接手写笔
-   ![打开蓝牙，扫描到手写笔](../media/generic/flash_fix_module_yu_c16/stylus_bridging/system_settings_page_connect_stylus.jpg)
+   ![打开蓝牙，扫描到手写笔](../media/generic/flash_fix_module_yu_c16/stylus_bridging/system_settings_page_connect_stylus.webp)
 4. 看到手写笔弹窗后即可使用全部 ColorOS 手写笔功能
-   ![出现手写笔弹窗，修复成功](../media/generic/flash_fix_module_yu_c16/stylus_bridging/system_settings_page_stylus_popup.jpg)
+   ![出现手写笔弹窗，修复成功](../media/generic/flash_fix_module_yu_c16/stylus_bridging/system_settings_page_stylus_popup.webp)
 
 如果你的手写笔已经吸附在充电位置，但是还没有被识别，请拿起并重新吸附一次。
 
@@ -149,7 +149,7 @@ output: word_document
 
 在管理器内刷入内核模块 `OplusBSP-Modules-v4.0.1.zip`:
 
-![刷入 BSP 模块](../media/generic/flash_fix_module_yu_c16/kernel/kernelsu_module_install_page_oplus_bsp.jpg)
+![刷入 BSP 模块](../media/generic/flash_fix_module_yu_c16/kernel/kernelsu_module_install_page_oplus_bsp.webp)
 
 安装完毕后，必须同步刷入第三方内核，否则会卡开机。
 
@@ -158,7 +158,7 @@ output: word_document
 1. 在电脑上 [安装 ADB 工具](./flash_unlocked_device.md#unlock-install-adb)、[Fastboot 驱动](./flash_unlocked_device.md#unlock-install-driver)，并 [打开平板的 USB 调试](./flash_unlocked_device.md#unlock-usb-debugging)
 2. 将平板使用 USB 线连接到电脑
 3. 在你于电脑端下载修复模块的目录下按住 `Shift` 按键并按鼠标右键打开菜单，点击 `在此处打开 PowerShell 窗口`
-   ![打开的上下文菜单](../media/generic/flash_fix_module_yu_c16/kernel/open_context_menu.png)
+   ![打开的上下文菜单](../media/generic/flash_fix_module_yu_c16/kernel/open_context_menu.webp)
    > [!important]
    > 如果你从网盘下载镜像，请前往 `内核` 目录后再按上面的指示操作。
 4. 将平板重启到 Bootloader 模式，有两种办法：
@@ -179,7 +179,7 @@ output: word_document
 
 完整的命令操作流程请见下图：
 
-![完整的命令行结果](../media/generic/flash_fix_module_yu_c16/kernel/command_screen.png)
+![完整的命令行结果](../media/generic/flash_fix_module_yu_c16/kernel/command_screen.webp)
 
 ## 安装定制调度器
 >
@@ -189,13 +189,13 @@ output: word_document
 > 如果不想付费，可以尝试开源的 Scene 4。
 
 1. 安装应用 [Scene](https://omarea.com/#/)：
-   ![安装 Scene](../media/generic/flash_fix_module_yu_c16/govornor/mt_app_install_page_scene.jpg)
+   ![安装 Scene](../media/generic/flash_fix_module_yu_c16/govornor/mt_app_install_page_scene.webp)
 2. 授予 Scene Root 权限并使用软件中的 Root 模式。如果软件提示登陆账号或者充值，请根据指示操作。完成后将见到下面的界面：
-   ![Root 模式的 Scene 主页](../media/generic/flash_fix_module_yu_c16/govornor/scene_home_page_with_root.jpg)
+   ![Root 模式的 Scene 主页](../media/generic/flash_fix_module_yu_c16/govornor/scene_home_page_with_root.webp)
 3. 在管理器内刷入模块 `SM8650Q-Scene-Scheduler-v4.0.1.zip`
-   ![刷入调度模块](../media/generic/flash_fix_module_yu_c16/govornor/kernelsu_module_install_page_govornor.jpg)
+   ![刷入调度模块](../media/generic/flash_fix_module_yu_c16/govornor/kernelsu_module_install_page_govornor.webp)
 4. 重启平板即可在 Scene 的 `调节` 选项卡下使用调度模块:
-   ![Scene 调节页面已识别到模块](../media/generic/flash_fix_module_yu_c16/govornor/scene_adjusting_page.jpg)
+   ![Scene 调节页面已识别到模块](../media/generic/flash_fix_module_yu_c16/govornor/scene_adjusting_page.webp)
 
 ## 安装基础修复模块
 
@@ -203,15 +203,15 @@ output: word_document
 > 修复用的 KernelSU 模块内已经内置了一个修复 Hook 模块，因此，如果你通过 SHA256 校验确定修复套件内单独提供的 BaseFix APK 文件和模块 ZIP 内提供的 APK 文件完全一致，可以跳过安装应用并勾选作用域的步骤（1 到 6 步）。
 
 1. 安装应用 `BaseFix-Hook-v4.0.1.apk`
-   ![安装 BaseFix-Hook 模块](../media/generic/flash_fix_module_yu_c16/base_fix/mt_app_install_page_base_fix.jpg)
+   ![安装 BaseFix-Hook 模块](../media/generic/flash_fix_module_yu_c16/base_fix/mt_app_install_page_base_fix.webp)
 2. 打开 LSPosed 管理器
-   ![LSPosed 管理器主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.jpg)
+   ![LSPosed 管理器主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.webp)
 3. 点击 `模块`
-   ![LSPosed 模块页面](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_module_page_base_fix_disabled.jpg)
+   ![LSPosed 模块页面](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_module_page_base_fix_disabled.webp)
 4. 点击 `联想平板 Pro GT - ColorOS 基础修复`
-   ![基础修复模块作用域页面](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_disabled.jpg)
+   ![基础修复模块作用域页面](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_disabled.webp)
 5. 打开 `启用模块` 的开关
-   ![启用基础修复模块](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_enabled.jpg)
+   ![启用基础修复模块](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_enabled.webp)
 6. 这时候管理器应该自动勾选了下列作用域：
    - 系统框架 (system)
    - 常用信息与密码 (com.coloros.codebook)
@@ -228,35 +228,35 @@ output: word_document
 如果没有勾选：
 
 - 点击界面右上角的 `...` 图标打开下拉菜单:
-  ![点击 "..." 打开下拉菜单](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_open_dropdown.jpg)
+  ![点击 "..." 打开下拉菜单](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_open_dropdown.webp)
 - 选择 `勾选推荐` 后确定选择推荐的应用：
-  ![确认勾选推荐作用域](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_dialog_select_recommended.jpg)
+  ![确认勾选推荐作用域](../media/generic/flash_fix_module_yu_c16/base_fix/lsposed_scope_page_base_fix_dialog_select_recommended.webp)
 
 1. 刷入模块 `FixModule-v4.0.1.zip`：
-   ![刷入修复模块](../media/generic/flash_fix_module_yu_c16/base_fix/kernelsu_module_install_page_base_fix.jpg)
+   ![刷入修复模块](../media/generic/flash_fix_module_yu_c16/base_fix/kernelsu_module_install_page_base_fix.webp)
 2. 重启一次平板
 
 ## 安装相机移植模块
 
 1. 刷入模块 `LenovoPadProGT-ZUI-Camera-Port-v4.0.1.zip`
-   ![刷入相机移植模块](../media/generic/flash_fix_module_yu_c16/camera/flash_module.jpg)
+   ![刷入相机移植模块](../media/generic/flash_fix_module_yu_c16/camera/flash_module.webp)
 2. 重启一次平板后若发现相机桌面图标异常：
-   ![桌面的异常图标](../media/generic/flash_fix_module_yu_c16/camera/abnormal_desktop_icon.jpg)
+   ![桌面的异常图标](../media/generic/flash_fix_module_yu_c16/camera/abnormal_desktop_icon.webp)
 
    则从第一步要求你刷入的相机移植模块中提取相机 APK 安装：
 
-   ![找到相机移植模块中的 APK 并安装](../media/generic/flash_fix_module_yu_c16/camera/camera_apk_path.jpg)
+   ![找到相机移植模块中的 APK 并安装](../media/generic/flash_fix_module_yu_c16/camera/camera_apk_path.webp)
 
 3. 安装 `ZUI-Camera-Compat-v4.0.1.apk`
-   ![安装 Camera-Compat 模块](../media/generic/flash_fix_module_yu_c16/camera/mt_install_camera_compat.jpg)
+   ![安装 Camera-Compat 模块](../media/generic/flash_fix_module_yu_c16/camera/mt_install_camera_compat.webp)
 4. 打开 LSPosed 管理器
-   ![LSPosed 管理器主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.jpg)
+   ![LSPosed 管理器主页](../media/generic/flash_fix_module_yu_c16/common/lsposed_home_page.webp)
 5. 点击 `模块`
-   ![LSPosed 管理器模块页面](../media/generic/flash_fix_module_yu_c16/camera/lsposed_modules_page.jpg)
+   ![LSPosed 管理器模块页面](../media/generic/flash_fix_module_yu_c16/camera/lsposed_modules_page.webp)
 6. 点击 `联想平板 Pro GT - ZUI 相机兼容`
-   ![ZUI 相机兼容模块页面](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_disabled.jpg)
+   ![ZUI 相机兼容模块页面](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_disabled.webp)
 7. 打开 `启用模块` 的开关
-   ![启用 ZUI 相机兼容模块](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_enabled.jpg)
+   ![启用 ZUI 相机兼容模块](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_enabled.webp)
 8. 这时候管理器应该自动勾选了下列作用域：
 
 - 相机 (com.zui.camera)
@@ -264,9 +264,9 @@ output: word_document
 如果没有勾选：
 
 - 点击界面右上角的 `...` 图标打开下拉菜单：
-  ![点击 "..." 按钮打开下拉菜单](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_dropdown.jpg)
+  ![点击 "..." 按钮打开下拉菜单](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_dropdown.webp)
 - 选择 `勾选推荐` 后确定选择推荐的应用：
-  ![确认勾选推荐应用](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_dialog.jpg)
+  ![确认勾选推荐应用](../media/generic/flash_fix_module_yu_c16/camera/lsposed_scope_page_dialog.webp)
 
 ## 问题解答
 

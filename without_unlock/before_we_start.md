@@ -15,7 +15,7 @@
 
 请见流程图：
 
-![免解锁流程图](../media/without_unlock/before_we_start/without_ubl_version_flow.png)
+![免解锁流程图](../media/without_unlock/before_we_start/without_ubl_version_flow.webp)
 
 如果你需要改 AOSP 签名，请查看 [高版本概览](./high_versions/overview.md)
 

@@ -99,9 +99,9 @@
    4. 在打开的菜单中找到 `7-Zip` 或者 `Nanazip`
    5. 将鼠标停在 `7-Zip` 或者 `Nanazip` 一行的上方，会打开下图所示的二级菜单：
    6. 点击二级菜单中的 `SHA256` ：
-      ![SHA256 选项](../media/generic/flash_3rd_party_rom_yu/sha256_file_nanazip.png)
+      ![SHA256 选项](../media/generic/flash_3rd_party_rom_yu/sha256_file_nanazip.webp)
    7. 程序会自动计算压缩文件的 SHA256 摘要值，计算完毕后自行将计算得到的 SHA256 后六位和压缩文件提供的 6 位摘要对比即可。
-      ![完成 SHA256 计算的页面](../media/generic/flash_3rd_party_rom_yu/sha256_result.png)
+      ![完成 SHA256 计算的页面](../media/generic/flash_3rd_party_rom_yu/sha256_result.webp)
 
 **方法 2：** 使用 Windows `CertUtil` （Windows 证书综合工具）。
 
@@ -204,7 +204,7 @@ ROM
    - 插入 USB 线，此时不应该松开 `音量 +`
    - 设备应当先亮起充电符号，然后灭屏，随即进入 9008 模式。电脑会发出提示音提示有新设备接入。你可以在设备管理器中观察到新增的 `端口（COM 和 LPT）` 类别；如果你展开了 `端口（COM 和 LPT）` 这个类别，就可以直接看到新的 9008 设备。此时可以松手了。
    - 9008 设备的名称：`Qualcomm HS-USB QDLoader 9008`。例如 `Qualcomm HS-USB QDLoader 9008 (COM3)` 。这个设备名称可以在点击 `端口（COM 和 LPT）` 这个类别左侧的小三角后看到。你的设备名称的括号中提示的 COM 号很可能不一样，请记住**你自己的**9008设备的 COM 号，稍后需要输入。
-   ![设备管理器中的 9008 设备和端口号](../media/generic/flash_3rd_party_rom_yu/devmgr_ports.png)
+   ![设备管理器中的 9008 设备和端口号](../media/generic/flash_3rd_party_rom_yu/devmgr_ports.webp)
 
 > [!tip]
 > 如果设备开机了，重新按照上面的步骤尝试一次。如果还是失败，对于用户，请先按照“平板端准备”一节打开 USB 调试，然后，你有下面的一些解决方案：
@@ -244,9 +244,9 @@ ROM
    ```
 
    此时请输入 9008 设备的 COM 号，例如我根据我设备管理器的显示输入 `COM3`，回车。
-   ![输入端口号](../media/generic/flash_3rd_party_rom_yu/type_com_number.png)
+   ![输入端口号](../media/generic/flash_3rd_party_rom_yu/type_com_number.webp)
 4. 如果一切正常，刷入工具会每 2 秒在命令行刷新一条日志，日志内容包括刷机操作已消耗的时间、刷入文件字节数占总字节数的百分比、以及 USB 文件传输的速度。如果工具超过 10 秒没有刷新新的日志，说明 USB 连接中断，你需要参考下面的提示重新进入 9008 模式。
-   ![刷机日志](../media/generic/flash_3rd_party_rom_yu/flash_log.png)
+   ![刷机日志](../media/generic/flash_3rd_party_rom_yu/flash_log.webp)
    > [!important]
    > 如果刷机失败了，按照下面的提示重新进入 9008 模式：
    > 1. 按 `电源 + 音量下` 强制重启设备

@@ -57,9 +57,9 @@ output: word_document
 使用 ZUXOS 系统自带的系统更新功能升级到最新版本：
 
 1. 打开设置 APP ，找到 **关于平板电脑** 并点击，这会打开系统概述页：
-   ![关于平板电脑页面](../media/generic/lock_bootloader/settings_page.png)
+   ![关于平板电脑页面](../media/generic/lock_bootloader/settings_page.webp)
 2. 点击上一张图中的 **系统更新** 按钮，进入系统更新页面，确保它提示 `当前为最新版本` 。如果提示有系统更新可用，必须安装，直到系统更新页面提示 `当前为最新版本` 。
-   ![提示当前为最新版本的系统更新页面](../media/generic/lock_bootloader/update_page.png)
+   ![提示当前为最新版本的系统更新页面](../media/generic/lock_bootloader/update_page.webp)
    > [!danger]
    > 如果是刷完系统后初次开机，系统更新软件可能检测不到更新，这个时候重启一次平板再按照步骤 1 和 2 依次尝试。如果重启后系统更新页面依旧提示版本为最新，说明确实没有可用的新版本，可以安全回锁了。
 

@@ -6,21 +6,21 @@
 
 1. 在 `KernelSU` 的模块页面关闭所有模块，然后重启一次平板。
 
-![关闭所有模块](../media/without_unlock/image62.png)
+![关闭所有模块](../media/without_unlock/image62.webp)
 
 例如上面这些模块全都要关掉
 
 1. **（对于 KernelSU 3.0 及更新版本以及对应的分支，不需要执行本步骤）** 重启完成之后，点击 `KernelSU` 主页左上角的设置，然后找到 `最小化稀疏文件` 选项，点击并确认。
 
-![打开设置页面](../media/without_unlock/image63.jpeg)
+![打开设置页面](../media/without_unlock/image63.webp)
 
 点击左上角的设置
 
-![点击最小化稀疏文件](../media/without_unlock/image64.jpeg)
+![点击最小化稀疏文件](../media/without_unlock/image64.webp)
 
 点击"最小化稀疏文件"
 
-![确认最小化稀疏文件](../media/without_unlock/image65.jpeg)
+![确认最小化稀疏文件](../media/without_unlock/image65.webp)
 
 点击确定，完成最小化稀疏文件
 

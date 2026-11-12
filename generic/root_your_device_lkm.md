@@ -24,10 +24,10 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 ## 确定内核版本并推断必要信息
 
 1. 打开平板上的设置应用，找到 *关于平板电脑* 选项：
-![关于平板电脑页面](../media/generic/unlock_lkm/android_about_page.jpg)
+![关于平板电脑页面](../media/generic/unlock_lkm/android_about_page.webp)
 
 2. 在 *关于平板电脑* 屏幕内找到 *软件版本* 一行并点击进入：
-![Android 软件版本页面](../media/generic/unlock_lkm/android_kernel_version.jpg)
+![Android 软件版本页面](../media/generic/unlock_lkm/android_kernel_version.webp)
 
 3. 现在来看内核版本号，比如我这里是 `6.1.157-android14-11-g82d681c9b06b-ab14634535`, 对应可以解析出下面的信息：
     - 内核 KMI 为 `6.1-android14-11`
@@ -68,48 +68,48 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    - （部分版本不稳定） 拔掉 USB 线（如连接），将平板彻底关机。按住平板的 `音量上` 不放，同时插入 USB 线，期间保持音量键被按住不放。看到平板屏幕亮起充电符号并熄灭，电脑提示有设备接入后，就可以松手了。
    - （需要二代工程线） 拔掉 USB 线（如连接），将平板彻底关机。按住二代高通工程线上的按钮不放，将工程线连上平板，电脑提示有设备接入后就可以松手了。
 2. 打开刷机匣软件，点击 `QC/高通` 下的 `深度刷机` 选项进入深刷页面：
-   ![QC/高通深度刷机页面](../media/generic/unlock_lkm/gft_edl_page.jpg)
+   ![QC/高通深度刷机页面](../media/generic/unlock_lkm/gft_edl_page.webp)
 3. 点击 `选择设备/引导/配置`，打开下面的窗口，点击窗口中的 `...` 按钮打开文件选择页面：
-   ![选择设备/引导/配置面板](../media/generic/unlock_lkm/gft_melf_selecting_page.jpg)
+   ![选择设备/引导/配置面板](../media/generic/unlock_lkm/gft_melf_selecting_page.webp)
 4. 在文件选择页面中选择解压好的 9008 引导（文件名为 `xbl_s_devprg_ns.melf`）。这个引导文件可以在 [资源下载](./resource_download.md) 找到：
-   ![在文件选择窗口中选择引导文件](../media/generic/unlock_lkm/gft_saf_melf_file.jpg)
+   ![在文件选择窗口中选择引导文件](../media/generic/unlock_lkm/gft_saf_melf_file.webp)
 5. 选择完引导文件之后的页面是这样的，点击确认返回到深度刷机页面：
-   ![选定好引导文件的选择设备/引导/配置页面](../media/generic/unlock_lkm/gft_melf_selected.jpg)
+   ![选定好引导文件的选择设备/引导/配置页面](../media/generic/unlock_lkm/gft_melf_selected.webp)
 6. 点击深度刷机页面的 `读信息`：
-   ![点击读信息](../media/generic/unlock_lkm/gft_click_read_info.jpg)
+   ![点击读信息](../media/generic/unlock_lkm/gft_click_read_info.webp)
 7. 等待信息读取完成会看到这样的页面，记住这里的活动槽位：
-   ![完成信息读取的深度刷机页面，需记住当前槽位](../media/generic/unlock_lkm/gft_current_slot.jpg)
+   ![完成信息读取的深度刷机页面，需记住当前槽位](../media/generic/unlock_lkm/gft_current_slot.webp)
 8. 在搜索框输入 `init_boot`, 软件自动过滤出 A 和 B 插槽的两个 init_boot 分区：
-   ![搜索筛选 init_boot 分区](../media/generic/unlock_lkm/gft_search_init_boot.jpg)
+   ![搜索筛选 init_boot 分区](../media/generic/unlock_lkm/gft_search_init_boot.webp)
 9. 本例中插槽为 A ,因此勾选 `init_boot_a` 分区：
-    ![勾选本例活动插槽对应的 init_boot_a_分区](../media/generic/unlock_lkm/gft_select_partition.jpg)
+    ![勾选本例活动插槽对应的 init_boot_a_分区](../media/generic/unlock_lkm/gft_select_partition.webp)
 10. 勾选完毕后点击 `回读`，选择一个保存位置后确定：
-    ![在文件选择窗口中选择回读保存位置](../media/generic/unlock_lkm/gft_select_readback_directory.jpg)
+    ![在文件选择窗口中选择回读保存位置](../media/generic/unlock_lkm/gft_select_readback_directory.webp)
 11. 软件自动完成读取操作，读取完成后点击日志页面的 `重启至` 选择重启到 `系统模式`：
-    ![点击重启到系统模式](../media/generic/unlock_lkm/gft_reboot_to_system.jpg)
+    ![点击重启到系统模式](../media/generic/unlock_lkm/gft_reboot_to_system.webp)
 
 ## 修补分区镜像
 
 1. 回读镜像在你选择的目录下以 `GeekFlashTool` 开头的文件夹中：
-   ![找到 GeekFlashTool 开头的回读文件夹](../media/generic/unlock_lkm/windows_readback_file_at.jpeg)
+   ![找到 GeekFlashTool 开头的回读文件夹](../media/generic/unlock_lkm/windows_readback_file_at.webp)
 2. 将分区镜像放到你的平板的存储中：
-   ![复制分区镜像到平板](../media/generic/unlock_lkm/windows_copy_file_to_tablet.jpeg)
+   ![复制分区镜像到平板](../media/generic/unlock_lkm/windows_copy_file_to_tablet.webp)
 3. 安装 KernelSU 并打开，会看到此时 KernelSU 提示未安装：
-   ![KernelSU 提示未安装](../media/generic/unlock_lkm/kernelsu_not_installed.jpg)
+   ![KernelSU 提示未安装](../media/generic/unlock_lkm/kernelsu_not_installed.webp)
 4. 点击 `未安装` 打开镜像修补页面，选择 `选择一个文件并修补` 后在你的文件管理器中找到刚刚传输到平板的 `init_boot` 镜像：
-   ![使用“选择一个文件”的修补选项](../media/generic/unlock_lkm/kernelsu_select_a_file.jpg)
+   ![使用“选择一个文件”的修补选项](../media/generic/unlock_lkm/kernelsu_select_a_file.webp)
 5. 现在应该回到镜像修补页面，由于我们保证当前镜像就是原厂镜像，可以勾选 `备份为原厂镜像` 方便在增量系统更新时还原镜像：
-   ![勾选备份为原厂镜像](../media/generic/unlock_lkm/kernelsu_backup_as_stock_image.jpg)
+   ![勾选备份为原厂镜像](../media/generic/unlock_lkm/kernelsu_backup_as_stock_image.webp)
 6. 点按 `下一步` ，按照最开始的推断选择 KMI 为 `android14-6.1` 并点确认：
-   ![选择 KMI 为 android14-6.1](../media/generic/unlock_lkm/kernelsu_select_kmi.jpg)
+   ![选择 KMI 为 android14-6.1](../media/generic/unlock_lkm/kernelsu_select_kmi.webp)
 7. KernelSU 将输出修补日志，提示 `刷写完成` 即为修补成功：
-   ![刷写（修补）完成时的日志](../media/generic/unlock_lkm/kernelsu_patch_log.jpg)
+   ![刷写（修补）完成时的日志](../media/generic/unlock_lkm/kernelsu_patch_log.webp)
 
 ## 复制镜像到电脑
 
 1. 重新插拔一次 USB 线，让平板重新握手 MTP 刷新文件列表；
 2. 从平板的 `Download` 目录复制文件名开头为 `kernelsu_patched_` 的镜像到电脑存储：
-   ![将 kernelsu_patched_ 开头的镜像复制到电脑](../media/generic/unlock_lkm/windows_patched_file_at.jpeg)
+   ![将 kernelsu_patched_ 开头的镜像复制到电脑](../media/generic/unlock_lkm/windows_patched_file_at.webp)
 
 ## 刷入修补后的镜像
 
@@ -121,7 +121,7 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
    > 使用第二种办法进入 Bootloader 模式后，建议先松开按住电源键的手指，再松开按住音量键的手指，以防误触让平板重新开机。
 
 2. 在电脑上导航到你放置修补文件的文件夹，按住 `Shift` 按键不放，同时单击鼠标右键，打开上下文菜单：
-   ![打开的上下文菜单](../media/generic/unlock_lkm/open_context_menu.png)
+   ![打开的上下文菜单](../media/generic/unlock_lkm/open_context_menu.webp)
 3. 选择 `在此处打开 PowerShell 窗口` 打开一个命令提示符窗口：
 4. 要用命令 `fastboot flash init_boot <文件名>` 来刷入镜像：
    - 命令中的 `<文件名>` 等会要被替换成你修补的镜像文件的实际名称，三种方法选其一：
@@ -136,12 +136,12 @@ Magisk, KernelSU 以及它们的分支通过修补设备的 `ramdisk` 加载二�
 
 这里提供所有命令运行后的参考：
 
-![成功的刷入流程对应的命令行结果](../media/generic/unlock_lkm/windows_command_overview.jpg)
+![成功的刷入流程对应的命令行结果](../media/generic/unlock_lkm/windows_command_overview.webp)
 
 ## 确认 KernelSU 正常工作
 
 1. 平板开机后打开 KernelSU, 发现其显示 `工作中` 则 Root 成功：
-   ![提示工作中的 KernelSU](../media/generic/unlock_lkm/kernelsu_working.jpg)
+   ![提示工作中的 KernelSU](../media/generic/unlock_lkm/kernelsu_working.webp)
 
 教程正文到此结束。
 

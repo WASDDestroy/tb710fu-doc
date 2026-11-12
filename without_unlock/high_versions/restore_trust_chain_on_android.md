@@ -33,31 +33,31 @@
 
 创建一个文件夹，例如命名为 `免解锁`：
 
-![在设备上创建文件夹](../../media/without_unlock/restore_aosp_trust_chain_on_android/make_dir.jpeg)
+![在设备上创建文件夹](../../media/without_unlock/restore_aosp_trust_chain_on_android/make_dir.webp)
 
 然后将本机镜像放进文件夹中：
 
-![放置本机的 8 个待签名镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/extract_images.jpeg)
+![放置本机的 8 个待签名镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/extract_images.webp)
 
 ## 导入配置
 
 安装 AVBDroid 后打开 APP 进入 `签名配置` 功能页，这个时候应该还没有任何配置：
 
-![打开签名配置页面](../../media/without_unlock/restore_aosp_trust_chain_on_android/import_config_page.jpeg)
+![打开签名配置页面](../../media/without_unlock/restore_aosp_trust_chain_on_android/import_config_page.webp)
 
 点击 `导入配置`，在文件管理器中选择你刚刚得到的签名配置文件后确定导入，应该能看到下面的成功导入页面：
 
-![成功导入配置的页面](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_imported_config.jpeg)
+![成功导入配置的页面](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_imported_config.webp)
 
 ## 签名镜像
 
 滑动页面找到 `输入映像` 部分：
 
-![滑动找到输入映像部分](../../media/without_unlock/restore_aosp_trust_chain_on_android/slide_to_image_segment.jpeg)
+![滑动找到输入映像部分](../../media/without_unlock/restore_aosp_trust_chain_on_android/slide_to_image_segment.webp)
 
 按照配置管理页面的指示，你需要依次用文件管理器选择你得到的六个镜像。选择完毕后界面应当像下面这样：
 
-![完成文件选择后的映像部分](../../media/without_unlock/restore_aosp_trust_chain_on_android/select_images.jpeg)
+![完成文件选择后的映像部分](../../media/without_unlock/restore_aosp_trust_chain_on_android/select_images.webp)
 
 点击页面最下方的 `签名` 按钮，勾选签名作用域为：
 
@@ -70,23 +70,23 @@
 - vbmeta_system
 - vbmeta
 
-![选择签名作用域为上面的 8 个镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/select_signing_scope.jpeg)
+![选择签名作用域为上面的 8 个镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/select_signing_scope.webp)
 
 软件将弹出原地改写镜像的提示，点击 `继续` 即可：
 
-![确认原地改写镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/confirm_warning.jpeg)
+![确认原地改写镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/confirm_warning.webp)
 
 软件会自动完成签名（需要几秒钟）。签名完成后将询问你在何处保存生成的 vbmeta 和 vbmeta_system 镜像：
 
-![完成签名的提示](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_signed_images.jpeg)
+![完成签名的提示](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_signed_images.webp)
 
 ## 保存新镜像
 
 将生成的 `vbmeta` 镜像和 `vbmeta_system` 镜像保存到刚刚创建的免解锁文件夹中：
 
-![保存 vbmeta_system 镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/save_vbmeta_system.jpeg)
+![保存 vbmeta_system 镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/save_vbmeta_system.webp)
 
-![保存 vbmeta 镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/save_vbmeta.jpeg)
+![保存 vbmeta 镜像](../../media/without_unlock/restore_aosp_trust_chain_on_android/save_vbmeta.webp)
 
 > [!note]
 > 生成的 vbmeta 和 vbmeta_system 镜像使用的扩展名在一些品牌的设备上（比如一加）固定为 `.BIN`, 请放心，这对稍后刷入镜像没有影响。
@@ -95,15 +95,15 @@
 
 回到 AVBDroid APP, 切换到 `首页` 屏幕：
 
-![首页屏幕](../../media/without_unlock/restore_aosp_trust_chain_on_android/gui_screen.jpeg)
+![首页屏幕](../../media/without_unlock/restore_aosp_trust_chain_on_android/gui_screen.webp)
 
 点击 `映像信息` 功能：
 
-![映像信息屏幕](../../media/without_unlock/restore_aosp_trust_chain_on_android/read_image_info_screen.jpeg)
+![映像信息屏幕](../../media/without_unlock/restore_aosp_trust_chain_on_android/read_image_info_screen.webp)
 
 选择文件并点击 `运行` 后，它会自动解析镜像的 AVB 信息：
 
-![读取到的镜像信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_read_image_info.jpeg)
+![读取到的镜像信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/successfully_read_image_info.webp)
 
 依次读取所有被签名/生成的镜像的信息，要重点关注下面的检查点，如果你签名的镜像没有通过任一检查点，则这些镜像不能再使用。请核查你的配置文件是否来自本站的资源下载页面，或者创建配置时是否使用了错误的信息，然后重试签名：
 
@@ -127,15 +127,15 @@
 
 表： vbmeta 分区检查点
 
-![boot, dtbo, init_boot 和 pvmfw 的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_1.jpg)
+![boot, dtbo, init_boot 和 pvmfw 的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_1.webp)
 
 上图：boot, dtbo, init_boot 和 pvmfw 镜像
 
-![recovery, vendor_boot 和 vbmeta_system 的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_2.jpg)
+![recovery, vendor_boot 和 vbmeta_system 的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_2.webp)
 
 上图：recovery, vendor_boot 和 vbmeta_system 镜像
 
-![vbmeta 镜像的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_3.jpg)
+![vbmeta 镜像的正确信息](../../media/without_unlock/restore_aosp_trust_chain_on_android/correct_info_3.webp)
 
 上图：vbmeta 镜像
 
